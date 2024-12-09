@@ -31,7 +31,7 @@
         font-size: 21px;
         text-decoration: none;
         color: rgba(83, 192, 247, 0.91);
-    }
+    }      
 
 /*     /* Adjust the size of the logo here */
     .header-logo-img {
@@ -57,8 +57,19 @@
     /* Adjusting the space for all list items if needed */
     ol.quote-content > li {
         margin-bottom: 0; /* Adjust the bottom margin to reduce the space */
-    }
+    }  
 
+    .quote-content {
+        list-style-type: disc; /* Use disc bullets */
+        margin-left: 20px; /* Indent the bullet points */
+        padding-left: 0; /* Remove any extra padding */
+    }
+    
+    .quote-content li {
+        margin-bottom: 10px; /* Add spacing between items */
+        line-height: 1.5; /* Improve readability */
+    }    
+            
     .circular-image {
         width: 200px; /* Width of the image */
         height: 200px; /* Height of the image */
@@ -172,39 +183,23 @@
         margin-top: 20px; /* Adjust this value as needed */
     }
 
-        
     /* Sponsorship Section Styles */
-    #sponsorship .widget-description {
-        background-color: #f0f0f0; /* Light grey background for the section */
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px auto;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    #sponsorship {
+        margin-top: 40px; /* Consistent spacing with other sections */
+        margin-bottom: 40px; /* Add bottom spacing */
     }
     
-    #sponsorship h2.widget-heading {
-        color: #333;
-        text-align: center; /* Center align the title */
-        margin-bottom: 20px; /* Space below the title */
+    #sponsorship .widget-header {
+        text-align: center; /* Center align the header */
+        margin-bottom: 20px; /* Adjust bottom spacing */
     }
     
-    #sponsorship ul {
-        list-style-type: none; /* Remove bullet points */
-        padding: 0;
-    }
-    
-    #sponsorship ul li {
-        background-color: #fff; /* White background for list items */
-        border: 1px solid #ddd; /* Light grey border */
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-    
-    #sponsorship ul li strong {
-        color: #0056b3; /* Dark blue for emphasis */
+    #sponsorship .quote-content {
+        margin: 15px 0; /* Add spacing between paragraphs */
+        line-height: 1.6; /* Improve readability */
     }
 
+    <!--    
     .ai_sponsor-section {
         text-align: center;
         padding: 50px 0;
@@ -246,7 +241,8 @@
         object-fit: contain; /* Ensure the logo fits within its box without being cut off */
         margin: 20px auto; /* Center the logo vertically and horizontally in its container */
     }
-    
+    -->
+        
     /* Media queries for mobile devices */
     @media only screen and (max-width: 600px) {
         /* Adjust the size of the circular images for smaller screens */
@@ -401,18 +397,21 @@
             </a> -->
             <!-- Navigation Bar -->
             <nav class="navbar" role="navigation">
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="tyler-navigation">
                     <div class="menu-current-container">
                         <ul id="menu-primary" class="navbar-menu">
-                            <li class="menu-item"><a href="#">Home</a></li>
+                            <li class="menu-item"><a href="#mission">Mission</a></li>
                             <li class="menu-item"><a href="#introduction">Call for Participation</a></li>
+                            <!-- Commenting out Keynote Speakers tab -->
                             <!-- <li class="menu-item"><a href="#keynote-speakers">Keynote Speakers</a></li> -->
+                            <!-- Commenting out Panel Discussion tab -->
                             <!-- <li class="menu-item"><a href="#panel-discussion">Panel Discussion</a></li> -->
-                            <!-- <li class="menu-item"><a href="#invited-speakers">Invited Speakers</a></li> -->
+                            <!-- Commenting out Invited Speakers tab -->
+                            <!-- <li class="menu-item"><a href="#invited-speakers">Invited Speakers</a></li> -->                            
                             <li class="menu-item"><a href="#steering-committee">Steering Committee</a></li>
-                            <li class="menu-item"><a href="#organizational-committee">Organizational Committee</a></li>
+                            <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li>
                             <li class="menu-item"><a href="#submissions">Submissions</a></li>
+                            <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li>
                             <li class="menu-item"><a href="#contact">Contact Us</a></li>
                         </ul>
                     </div>
@@ -425,7 +424,7 @@
             <div class="carousel slide" id="hero-carousel" data-ride="carousel" data-interval="6000">
                 <div class="carousel-inner" role="listbox" id="item-img">
                     <div class="item active">
-                        <img class="hero-carousel" style="width: 90%; margin: auto" src="./AI_Summit2025.png" alt>
+                        <img class="hero-carousel" style="width: 50%; margin: auto" src="./TMC_AI_Summit_2025.png" alt>
                     </div>
                 </div>
                 <ol class="carousel-indicators" style="bottom:50px">
@@ -441,122 +440,77 @@
                 <div class="col-md-8 col-md-push-2">
                     <h2 class="widget-heading">Welcome to TMC AI Summit 2025</h2>
                     <!-- Registration Notice -->
-                    <!--
                     <p style="text-align: center; font-size: 20px; margin-top: 20px;">
-                        <strong>Please register for the virtual session using the provided link:</strong> <br>
-                        <a href="https://events.teams.microsoft.com/event/14fd5aab-565e-40cb-9fbf-7c9b332e11ea@7b326d24-41ad-4f57-bc60-89e4a6ac721b" target="_blank" style="color: blue; text-decoration: underline;">Virtual Session Registration</a>
+                        <strong>Registration Coming Soon</strong>
                     </p>
-                    -->
                     <!-- Location Information -->
                     <h3 class="widget-heading" style="font-size: 30px; color: #333; text-align: center; margin-top: 20px;">Location</h3>
                     <h3 style="margin-left:20px"><strong><span style="font-size:20px">TMC 3 Helix Park<br>7255 Helix Park Avenue, Houston, Texas, 77030</strong></span></h3>
-                    <!-- Registration Button -->
-                    <!--
                     <div style="width:300px; background-color:#006791; margin-left:30%; border-radius: 4px;">
-                        <a style="font-family:Ubuntu; color: #fff; font-size:28px; margin:0 11px; text-decoration: none;" href="https://docs.google.com/forms/d/e/1FAIpQLSdWO7bX-UNklo2JXv6JEzVEia4Lfn7C3z7jT6yNT0ZH1JJmPQ/viewform">Registration</a>
+                        <a style="font-family:Ubuntu;color: #fff; font-size:28px; margin:0 11px; text-decoration: none;" href="https://docs.google.com/forms/d/e/1FAIpQLSfnY3_AYCPvxp9rh3mDuz8MTCeTDbbY1abbqMO1Hb7xlJTqCA/viewform">Submission</a>
                     </div>
-                    -->
-                    <!-- Program Link -->
-                    <!--
-                    <div style="margin-top: 20px; text-align: center;">
-                        <a href="TMC_AI_Summit_2025-Program.pdf" target="_blank" style="font-size: 20px; color: blue; text-decoration: underline;">The whole program goes here!</a>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
-        
-        <!-- Program Section -->
-        <!--
-        <div id="program" class="widget widget-speakers">
-            <div class="container">
-                <div class="widget-header">
-                    <h2 class="widget-body">Important Dates</h2>
-                    <h3 style="margin-left:20px"><strong><span style="font-size:20px">
-                        Abstract Submission Deadline: 
-                        <span style="background-color: yellow;">Dec 21, 2025</span>
-                    </strong></span></h3>
-                    <h3 style="margin-left:20px"><strong><span style="font-size:20px">
-                        Notification of Acceptance: 
-                        <span style="background-color: yellow;">Jan 7, 2025</span>
-                    </strong></span></h3>
-                    <h3 style="margin-left:20px"><strong><span style="font-size:20px">Conference date: Feb 6-7, 2025</strong></span></h3>
-                </div>
-            </div>
-        </div>
-        -->
 
         
 <!-- Rest of the HTML content continues here... -->
         
+        <!-- Mission Section -->
+        <div id="mission" class="widget widget-speakers">
+            <div class="container">
+                <div class="widget-header">
+                    <h2 class="widget-body">Mission</h2>
+                </div>
+                <div>
+                    <p class="quote-content">Our mission is to foster a vibrant, collaborative ecosystem at the Texas Medical Center, leveraging its unparalleled talent, diverse data resources, and entrepreneurial energy to translate advanced AI innovations into practical solutions for real-world biomedical and healthcare challenges. By uniting researchers, clinicians, and industry leaders, we aim to revolutionize healthcare delivery, improve outcomes, and catalyze meaningful, global impact. Our commitment ensures that AI technologies in healthcare generate tangible benefits for individuals, healthcare systems, and communities worldwide.</p>
+                </div>
+            </div>
+        </div>
         
         <!-- Overview -->
         <div id="introduction" class="widget widget-speakers">
             <div class="container">
                 <div class="widget-header">
-                    <h2 class="widget-body">Call for Participation</h2>
-                    <p class="quote-content">Our mission is to establish the TMC AI Summit as a premier event at Texas Medical Center, fostering a dynamic community dedicated to transforming cutting-edge AI innovations into actionable solutions that address the real-world challenges in biomedicine and healthcare. By uniting researchers, clinicians, and industry innovators, we aim to enhance healthcare outcomes, drive impactful change both locally and globally, and ensure that AI technologies in healthcare deliver meaningful benefits to individuals, healthcare systems, and societies around the world.</p>                    
-                    <p class="quote-content"> We are excited to announce the Call for Participation for the TMC AI Summit, a premier event hosted by Texas Medical Center institutions. The summit will feature keynotes, poster and oral presentations, workshops, tutorials, industry talks, and student showcases. Join us to share your insights and advance the future of healthcare AI! This is a prime opportunity to share your findings, interact with experts, and contribute to an ever-evolving field.</p>
-                    <p class="quote-content"> We welcome your submissions on organizing workshops and tutorials for specific topic areas relevant to our event mission.</p>
-                    <p class="quote-content"> Your submission can be considered for poster and oral presentations for three tracks in the main program:</p>
-                    <ol class="quote-content" style="margin-left:40px">
-                        <li>Foundation Track:</li>
-                        <br>
-                        <ul class="quote-content" style="margin-left:40px">
-                            <li>Highlight data science, AI, and informatics innovations that are transforming healthcare AI</li>
-                            <li>
-                                Contributions should explore cutting-edge methods in data-driven discovery, precision medicine advancements, and informatics frameworks designed to optimize healthcare outcomes</li>
-                        </ul>
-                        <br>
-                        <li>Applied Track:</li>
-                        <br>
-                        <ul class="quote-content" style="margin-left:40px">
-                            <li>Showcase concrete AI applications for biomedical discovery and healthcare</li>
-                            <li>
-                                Such as diagnostic tools, imaging analysis, and drug development</li>
-                        </ul>
-                        <br>
-                        <li>Implementation Track:</li>
-                        <br>
-                        <ul class="quote-content" style="margin-left:40px">
-                            <li>Focus on AI implementation including regulatory and ethical considerations, AI safety and fairness, AI educational strategies, and real-world clinical integration</li>
-                        </ul>
-                        <br>
-                     </ol>
+                    <h2 class="widget-body">Call for Participation</h2>                    
+                    <p class="quote-content">We are thrilled to announce the <strong>Call for Participation</strong> for the <strong>Texas Medical Center (TMC) AI Summit 2025</strong>, a flagship event hosted by TMC institutions. Join us on <strong>February 20-21, 2025</strong>, at <strong>TMC Helix Park in Houston, TX!</strong></p>
+                    <p class="quote-content">This summit is dedicated to cultivating a vibrant, collaborative ecosystem at the Texas Medical Center by harnessing its world-class talent, diverse data resources, and entrepreneurial spirit. Our goal is to translate cutting-edge AI innovations into actionable solutions for real-world biomedical and healthcare challenges. By bringing together researchers, clinicians, and industry leaders, we aim to revolutionize healthcare delivery, enhance outcomes, and drive impactful, global change. </p>
+                    <p class="quote-content"><strong>Program Tracks</strong></p>
+
+                    <p class="quote-content"><strong>Foundation Track:</strong></p>
+                    <ul class="quote-content" style="margin-left: 20px;">
+                        <li>Explore innovations in data science, AI, and informatics that are reshaping healthcare.</li>
+                        <li>Submissions should highlight advanced methodologies in data-driven discovery, precision medicine, and informatics frameworks for optimizing outcomes.</li>
+                    </ul>
+                    
+                    <p class="quote-content"><strong>Applied Track:</strong></p>
+                    <ul class="quote-content" style="margin-left: 20px;">
+                        <li>Showcase transformative AI applications in biomedical discovery and healthcare, including diagnostic tools, imaging analysis, drug development, and more.</li>
+                    </ul>
+                    
+                    <p class="quote-content"><strong>Implementation Track:</strong></p>
+                    <ul class="quote-content" style="margin-left: 20px;">
+                        <li>Discuss challenges and strategies for AI integration, including regulatory and ethical considerations, safety and fairness, educational approaches, and clinical deployment.</li>
+                    </ul>
+
                     <p class="quote-content"> Please join us in shaping the future of biomedicine and healthcare with AI. This is a prime opportunity to share your findings, interact with experts, and contribute to an ever-evolving field.</p>
                 </div>
             </div>
         </div>
-        
         <!-- Program -->
+       
         <div id="program" class="widget widget-speakers">
             <div class="container">
                 <div class="widget-header">
                     <h2 class="widget-body">Important Dates</h2>
-                    <!-- Commented out Submission Deadline -->
-                    
                     <h3 style="margin-left:20px"><strong><span style="font-size:20px">
-                        Abstract Submission Deadline: 
-                        <span style="background-color: yellow;">Dec 21, 2025</span>
-                    <!--    
-                        <span style="background-color: yellow;">Jan 25, 2025</span>
-                    -->    
-                    </strong></span></h3>
-                    
-                    
-                    <!-- Commented out Notification of Acceptance -->
-                    
+                        Submission Deadline: Jan 6, 2025</strong></span></h3>
+                     
                     <h3 style="margin-left:20px"><strong><span style="font-size:20px">
-                        Notification of Acceptance: 
-                        <span style="background-color: yellow;">Jan 7, 2025</span>
-                    <!--    
-                        <span style="background-color: yellow;">Feb 5, 2025</span>
-                    -->    
-                    </strong></span></h3>
+                        Notification of Acceptance: Jan 20, 2025</strong></span></h3>
                     
-
-                    <h3 style="margin-left:20px"><strong><span style="font-size:20px">Conference date: Feb 20 -21, 2025</strong></span></h3>
-
+                    <h3 style="margin-left:20px"><strong><span style="font-size:20px">Conference date: Conference date: Feb 20-21, 2025</strong></span></h3>
+        
                     <!-- Commented out Time -->
                     <!--
                     <h3 style="margin-left:20px"><strong><span style="font-size:20px">Time: 7:30 AM - 5:30 PM</strong></span></h3>
@@ -660,7 +614,6 @@
 </div>
 -->
 
-
         
         <!-- Steering Committee Section -->
         <div id="steering-committee" class="widget widget-speakers">
@@ -687,29 +640,29 @@
         </div>
 
         
-        <!-- Organizational Committee Section -->
+        <!-- Organization Committee Section -->
         <div id="organizational-committee" class="widget widget-speakers">
             <div class="container">
                 <div class="widget-header">
-                    <h2 class="widget-body">Organizational Committee</h2>
-                    <table width="100%" style="margin-left:20px">
+                    <h2 class="widget-body">Organization Committee</h2>
+                    <table width=100% style="margin-left:20px">
                         <tr>
                             <td>
                                 <ul class="quote-content">
-                                    <!-- <li>Sunyang Fu, PhD, UTHealth Houston</li> -->
-                                    <!-- <li>Ming Huang, PhD, UTHealth Houston</li> -->
-                                    <!-- <li>Liwei Wang, MD, PhD, UTHealth Houston</li> -->
-                                    <li>TBD</li>
-                                    <li>TBD</li>
-                                    <li>TBD</li>
-                                </ul>
+                                    <li>Hongfang Liu, PhD, UTHealth Houston</li>
+                                    <li>Xia Hu, PhD, Rice University</li>
+                                    <li>Issac Middleton, co-Chairs, Texas Medical Center</li>
+                                    <li>Sunyang Fu, PhD, Student Research Showcase Chair, UTHealth Houston</li>
+                                    <li>Quamishia Shuron Green, Finance Chair, UTHealth Houston</li>
+                                    <li>Rubab Ali, Event Manager, UTHealth Houston</li>
+                                    <li>Carina Wang, Web Chair, UTHealth Houston</li>
+                              </ul>
                             </td>                            
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
-
 
         
         <!-- Submissions Section -->
@@ -718,57 +671,115 @@
                 <div class="widget-header">
                     <h2 class="widget-body">Submissions</h2>
                     <div class="submission-section">
-                        <h3 class="submission-title"><strong>Poster</strong></h3>
-                        <p class="quote-content">All researchers working in biomedical and clinical AI fields aiming for Discovery, Translation and Application are invited to submit applications for a poster presentation of their research. Abstracts for the poster presentation must be written in English and should ideally not exceed 500 words.</p>
-                    </div>
-                    <div class="submission-section">
-                        <h3 class="submission-title"><strong>Student research showcase</strong></h3>
-                        <p class="quote-content">Graduate students are invited to submit a 2-page abstract (including figures, tables, and references) for a 10-minute podium presentation on their research in biomedical and clinical AI.</p>
-                    </div>
-                        <p class="quote-content"><strong>Submission format:</strong> single PDF.</p>
-                        <!-- Competition Criteria Section -->
-                        <p class="quote-content"><strong>Competition criteria:</strong> Based on the 2-page abstract submission and presentation, we will select the top three presenters and award them certificates and small prizes. The evaluation criteria for the presentation are threefold: comprehension, novelty, and engagement. The presentation should elucidate the research's background, significance, and key findings in a structured manner suitable for a non-specialist audience, avoiding excessive jargon and ensuring balanced time allocation for each segment. Novelty assesses the originality and innovative nature of the research. Engagement-wise, presenters are expected to pique audience interest without oversimplifying, exude enthusiasm, and demonstrate effective public speaking skills.</p>
-                        <p class="quote-content">The submission is suggested to include the following sections:</p>
+                        <h3 class="submission-title"><strong>Poster and Oral Abstract Submission</strong></h3>
                         <br>
                         <ul class="quote-content" style="margin-left:40px">
-                            <li><strong>Aims and Objectives</strong> - State the main objective(s) of your project.</li>
+                            <li>Abstract Length: <strong>500 words maximum</strong></li>
+                            <li>Content: Provide a concise summary of your research, innovation, or application relevant to the selected track (Foundation, Applied, or Implementation).</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="submission-section">
+                        <h3 class="submission-title"><strong>Workshop and Tutorial Submission</strong></h3>
+                        <br>
+                        <ul class="quote-content" style="margin-left:40px">
+                            <li><strong>Speaker Information:</strong> List all speakers in the order they should appear in the program, including their affiliations.</li>
                             <li>
-                                <strong>Justification for the Research Topic</strong> - Explain the motivations for your project.</li>
+                                <strong>Summary:</strong> Include a <strong>500-word maximum</strong> description detailing the takeaway skills, knowledge, or material participants will acquire.</li>
+                                <ul>
+                                    <li>Note: This summary will also be used for the program description.</li>
+                                </ul>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="submission-section">
+                        <h3 class="submission-title"><strong>Student Research Showcase Submission</strong></h3>
+                    </div>
+                        <!-- Competition Criteria Section -->
+                        <p class="quote-content">Submissions should include the following sections: </p>
+                        <br>
+                        <ul class="quote-content" style="margin-left:40px">
+                            <li><strong>Aims and Objectives:</strong> Clearly state the primary goals of your project. </li>
                             <li>
-                                <strong>Research Questions</strong> - Stating your research question is essential. This might be done in a list.</li>
+                                <strong>Justification for the Research Topic:</strong> Explain the motivation and significance of your research.</li>
                             <li>
-                                <strong>Research Methodology</strong> - If you already have plans for your research methodology, explain them here. If you have not found an appropriate methodology yet, or wonder which one to choose, this is also the place to mention it. In this case, list the requirements your methodology should fulfill.</li>
+                                <strong>Research Questions:</strong> List the key research questions you aim to address.</li>
                             <li>
-                                <strong>Research Results to Date</strong> - You are not required to have results. But if you already have some, present them here. </li>
-                            <li><strong>References</strong> – Any citation.</li>
+                                <strong>Research Methodology:</strong> </li>
+                                <ul>
+                                    <li>Describe your planned or ongoing research methods.</li>
+                                </ul>
+                                <ul>
+                                    <li>If undecided, list the requirements your methodology should fulfill.</li>
+                                </ul>
+                            <li>
+                                <strong>Research Results to Date:</strong> </li>
+                                <ul>
+                                    <li>While results are not required, please include any preliminary findings if available.</li>
+                                </ul>
+                            <li><strong>References:</strong> Include any citations relevant to your research. </li>
                         </ul>
                         <br>       
                     </div>
+                    <div class="submission-section">
+                        <p class="quote-content">
+                            <a href="https://github.com/OHNLP/TMCAISummit2024/blob/main/TMCAISummitTemplate.pdf" target="_blank" style="color: blue; text-decoration: underline;">
+                                Submission Template and Instructions
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Sponsorship Section -->
-        <div id="sponsorship" class="widget widget-description">
-            <div class="container">
-                <div class="col-md-8 col-md-push-2">
-                    <h2 class="widget-heading">Call for Sponsorship</h2>
-                    <p>The TMC AI Summit serves as a dynamic confluence of advanced AI research and its real-world impact in healthcare and biomedicine. Partnering with [sponsor name]—a leader in AI, data science, and computing—promises to not only elevate the summit experience but also to amplify your organization’s influential role in these rapidly evolving sectors.</p>
-                    <p>By sponsoring our summit, [sponsor name] will gain substantial exposure to top AI professionals and enjoy extensive branding opportunities. We plan to showcase [sponsor name] prominently on our digital platforms, in summit materials, and with a dedicated exhibition space, ensuring high engagement with attendees.</p>
-                    <h3>Sponsorship Levels:</h3>
-                    <ul>
-                        <li><strong>Silver: $500</strong> - Digital exposure by featuring your brand on our event website.</li>
-                        <li><strong>Gold: $1000</strong> - Includes the website feature plus a dedicated desk at the event for engaging directly with attendees.</li>
-                        <li><strong>Platinum: $2500</strong> - All the benefits of Gold, plus the exclusive chance to host a lunch talk - a fantastic platform to establish thought leadership in the sector.</li>
-                    </ul>
-                    <p>We are enthusiastic about discussing the potential impact [sponsor name] could have at our summit. For further details or to begin this partnership, please contact us at [email_email_address].</p>
-                    <p>Thank you for considering this collaboration. We are hopeful and excited about the prospect of working alongside [sponsor name] to make the TMC AI Summit 2025 a milestone event.</p>
-                </div>
+        <div id="sponsorship" class="widget widget-speakers">
+        <div class="container">
+            <div class="widget-header">
+                <h2 class="widget-body">Call for Sponsorship</h2>
+            </div>
+            <div>
+                <p class="quote-content">
+                    The <strong>TMC AI Summit 2025</strong> is a premier gathering at the intersection of cutting-edge AI research and its transformative impact on healthcare and biomedicine. Your partnership will offer an unparalleled opportunity to elevate the summit experience while amplifying your organization’s pivotal role in shaping these rapidly evolving fields.
+                </p>
+                <h3 class="quote-content"><strong>Why Sponsor the TMC AI Summit?</strong></h3>
+                <p class="quote-content">
+                    By sponsoring our summit, you will gain significant exposure to a diverse audience of top AI professionals, researchers, and clinicians, while enjoying extensive branding opportunities. 
+                </p>
+                <ul class="quote-content">
+                    <li>Prominent showcasing of your brand across our digital platforms, summit materials, and on-site displays.</li>
+                    <li>A dedicated exhibition space to engage directly with attendees.</li>
+                    <li>Alignment with a world-class event shaping the future of AI in healthcare.</li>
+                </ul>
+                <p class="quote-content">
+                    This sponsorship represents more than a financial collaboration, it is a shared commitment to pioneering advancements in AI and healthcare. Together, we can highlight your innovative solutions and leadership in the medical AI domain.
+                </p>
+                <h3 class="quote-content"><strong>Sponsorship Tiers</strong></h3>
+                <p class="quote-content">
+                    Choose from three sponsorship levels, designed to maximize engagement and visibility:  
+                </p>
+                <ol class="quote-content">
+                    <li><strong>Silver</strong> - $500
+                        <ul>
+                            <li>Digital exposure with your brand featured on the event website.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gold</strong> - $1,000
+                        <ul>
+                            <li>Website branding plus a <strong>dedicated desk at the event</strong> to engage directly with participants.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Platinum</strong> - $2,500
+                        <ul>
+                            <li>All Gold-level benefits, plus <strong>exclusive presentation opportunities</strong> to initiate meaningful engagement and showcase your thought leadership.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="quote-content"><strong>Let’s Build the Future Together</strong></p>
             </div>
         </div>
+    </div>
 
 
-        
         <!-- ai_Sponsor Section -->
         <!--
         <div class="ai_sponsor-section">
