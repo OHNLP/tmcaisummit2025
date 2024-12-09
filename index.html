@@ -43,6 +43,28 @@
         color: rgba(83, 192, 247, 0.91);
     }      
 
+    .header-image {
+        width: 80%; /* 默认情况下占屏幕宽度的80% */
+        height: auto; /* 保持图片比例 */
+        display: block;
+        margin: auto; /* 图片居中 */
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .header-image {
+            width: 100%; /* 在手机屏幕上占满宽度 */
+            height: auto; /* 保持图片比例 */
+        }
+    }
+    
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .header-image {
+            width: 90%; /* 在平板设备上更大 */
+            height: auto;
+        }
+    }
+
+        
 /*     /* Adjust the size of the logo here */
     .header-logo-img {
         width: 300px; /* You can change this value to adjust the size */
@@ -430,18 +452,19 @@
     </header>
     <main id="main">
   <div class="hero-container">
-            <div class="carousel slide" id="hero-carousel" data-ride="carousel" data-interval="6000">
-                <div class="carousel-inner" role="listbox" id="item-img">
-                    <div class="item active">
-                        <img class="hero-carousel" style="width: 50%; margin: auto" src="./TMC_AI_Summit25.png" alt>
-                    </div>
-                </div>
-                <ol class="carousel-indicators" style="bottom:50px">
-                    <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#hero-carousel" data-slide-to="1"></li>
-                </ol>
+    <div class="carousel slide" id="hero-carousel" data-ride="carousel" data-interval="6000">
+        <div class="carousel-inner" role="listbox" id="item-img">
+            <div class="item active">
+                <img class="hero-carousel header-image" src="./TMC_AI_Summit25.png" alt>
             </div>
         </div>
+        <ol class="carousel-indicators" style="bottom:50px">
+            <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#hero-carousel" data-slide-to="1"></li>
+        </ol>
+    </div>
+</div>
+
        
         <!-- Welcome Section -->
         <div id="text" class="widget widget-description">
