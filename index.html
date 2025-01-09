@@ -563,67 +563,100 @@
                 </div>
             </div>
     
-            <!-- 折叠区域：Registration Info -->
-            <div id="registration-info">
-                <h2>Registration Information</h2>
-                <p><strong>Registration includes:</strong></p>
-                <ul>
-                    <li>Feb 20, PM Coffee Break</li>
-                    <li>Feb 20, Reception</li>
-                    <li>Feb 21, Breakfast</li>
-                    <li>Feb 21, AM Coffee Break</li>
-                    <li>Feb 21, Lunch</li>
-                    <li>Feb 21, PM Coffee Break</li>
-                </ul>
-                <table>
-                    <tr>
-                        <th>Participant</th>
-                        <th>Registration Fee</th>
-                    </tr>
-                    <tr>
-                        <td>Professional</td>
-                        <td>$150.00</td>
-                    </tr>
-                    <tr>
-                        <td>Student</td>
-                        <td>$50</td>
-                    </tr>
-                </table>
+            <div id="registration-info" style="
+            display: none;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;">
+          
+          <h2 style="text-align:center; margin-top:0;">Registration Information</h2>
+          <!-- 上半部分：左右并排 -->
+          <div style="display: flex; flex-wrap: wrap; gap: 20px;">
             
-                <!-- 第一组：with Contribution -->
-                <div style="margin-top: 20px;">
-                    <p style="margin-bottom: 5px;">
-                        <em>If you register with contribution to the event, register here:</em>
-                    </p>
-                    <a class="btn-register-inner"
-                       style="background-color: #ae6042; /* 自定义按钮颜色 */"
-                       href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
-                       target="_blank">
-                       Register (with Contribution)
-                    </a>
-                </div>
-            
-                <!-- 第二组：w/o Contribution -->
-                <div style="margin-top: 20px;">
-                    <p style="margin-bottom: 5px;">
-                        <em>If you register without contribution to the event, register here:</em>
-                    </p>
-                    <a class="btn-register-inner"
-                       style="background-color: #4e738a; /* 另一种按钮颜色 */"
-                       href="https://forms.gle/bTrPBP3MHrHiQe5V6"
-                       target="_blank">
-                       Register (w/o Contribution)
-                    </a>
-                </div>
-
-                <!-- 新增一句话说明：Discounted prices are available ... -->
-                <p style="margin-top:20px;">
-                    <em>Discounted prices are available for those who are eligible. 
-                    Please email <a href="mailto:tmcaisummit@gmail.com">tmcaisummit@gmail.com</a>.</em>
-                </p>
+            <!-- 左边：Registration includes -->
+            <div style="flex:1; min-width: 240px;">
+              <p><strong>Registration includes:</strong></p>
+              <ul style="margin-top:10px; margin-left:20px; padding-left:0; line-height:1.6;">
+                <li>Feb 20, PM Coffee Break</li>
+                <li>Feb 20, Reception</li>
+                <li>Feb 21, Breakfast</li>
+                <li>Feb 21, AM Coffee Break</li>
+                <li>Feb 21, Lunch</li>
+                <li>Feb 21, PM Coffee Break</li>
+              </ul>
             </div>
+            
+            <!-- 右边：Participant / Registration Fee 表格 -->
+            <div style="flex:1; min-width: 240px;">
+              <table style="border-collapse: collapse; width:100%; margin-top: 15px;">
+                <tr style="background-color:#f0f0f0;">
+                  <th style="text-align:left; padding:8px 12px; border-bottom:1px solid #ddd;">Participant</th>
+                  <th style="text-align:left; padding:8px 12px; border-bottom:1px solid #ddd;">Registration Fee</th>
+                </tr>
+                <tr>
+                  <td style="padding:8px 12px; border-bottom:1px solid #ddd;">Professional</td>
+                  <td style="padding:8px 12px; border-bottom:1px solid #ddd;">$150.00</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 12px;">Student</td>
+                  <td style="padding:8px 12px;">$50</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- /上半部分 -->
+        
+          <!-- 下半部分：贡献/非贡献说明 + 按钮 + 最底部Discounted提示 -->
+          <div style="margin-top: 20px;">
+            <!-- with Contribution -->
+            <p style="margin-bottom:5px;"><em>If you register with contribution to the event, register here:</em></p>
+            <a style="
+               display:inline-block;
+               margin-bottom:20px; /* 与下一个块分隔 */
+               padding:10px 20px;
+               background-color:#ae6042; /* 贡献按钮颜色 */
+               color:#fff;
+               text-decoration:none;
+               border-radius:4px;
+               font-size:18px;"
+               href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
+               target="_blank">
+              Register (with Contribution)
+            </a>
+        
+            <!-- w/o Contribution -->
+            <p style="margin-bottom:5px;"><em>If you register without contribution to the event, register here:</em></p>
+            <a style="
+               display:inline-block;
+               margin-bottom:20px; /* 与最底部提示分隔 */
+               padding:10px 20px;
+               background-color:#4e738a; /* 无贡献按钮颜色 */
+               color:#fff;
+               text-decoration:none;
+               border-radius:4px;
+               font-size:18px;"
+               href="https://forms.gle/bTrPBP3MHrHiQe5V6"
+               target="_blank">
+              Register (w/o Contribution)
+            </a>
+        
+            <!-- 最底部：Discounted prices 提示 -->
+            <p style="margin-top:20px;">
+              <em>
+                Discounted prices are available for those who are eligible.
+                Please email 
+                <a href="mailto:tmcaisummit@gmail.com">tmcaisummit@gmail.com</a>.
+              </em>
+            </p>
+          </div>
         </div>
     </div>
+</div>
 
         
 <!-- Rest of the HTML content continues here... -->
