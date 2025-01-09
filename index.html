@@ -45,15 +45,16 @@
           margin-top: 0;
       }
       #registration-info table {
-          border-collapse: collapse;
-          margin: 10px 0;
-      }
-      #registration-info th,
-      #registration-info td {
-          text-align: left;
-          padding: 6px 10px;
-          border-bottom: 1px solid #ddd;
-      }
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 100%;
+        }
+        #registration-info th,
+        #registration-info td {
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+        }
       /* “Register Here”内嵌按钮 */
       .btn-register-inner {
           display: inline-block;
@@ -544,65 +545,65 @@
                 </a>
               </div>
     
-              <!-- 重要：把原先直接跳转的Registration按钮改为 onclick 展开/折叠 #registration-info -->
-              <div style="background-color:#28a745; border-radius: 4px;">
-                <a style="font-family:Ubuntu; color: #fff; font-size: 28px; padding: 10px 20px; 
-                          text-decoration: none; display: inline-block; cursor: pointer;"
-                   href="javascript:void(0);" 
-                   onclick="toggleRegistrationInfo()">
-                  Registration
-                </a>
-              </div>
+              <!-- Registration按钮：点击后显示/隐藏注册详情（#registration-info） -->
+                <div style="background-color:#28a745; border-radius: 4px;">
+                    <a style="font-family:Ubuntu; color: #fff; font-size: 28px; 
+                              padding: 10px 20px; text-decoration: none; display: inline-block; cursor: pointer;"
+                       href="javascript:void(0);"
+                       onclick="toggleRegistrationInfo()">
+                        Registration
+                    </a>
+                </div>
             </div>
     
-            <!-- 折叠/展开区域：包含附件示例的“Registration includes...”及费用表格等信息 -->
+            <!-- 折叠区域：显示附件所示的“Registration includes…”及表格 -->
             <div id="registration-info">
-              <h2>Registration Information</h2>
-              <p><strong>Registration includes:</strong></p>
-              <ul>
-                <li>
-                  <strong>Breakfast &amp; Snacks (Thursday &amp; Friday)</strong><br>
-                  A choice of hot or continental breakfast, with all day beverage service, mid-day and afternoon snacks.
-                </li>
-                <li>
-                  <strong>Buffet Lunch (Thursday &amp; Friday)</strong><br>
-                  Gourmet lunch of fresh salads, hearty sandwiches and dessert.
-                </li>
-                <li>
-                  <strong>Cocktail Reception (Thursday)</strong><br>
-                  Passed hors d’ oeuvres &amp; select beverages.
-                </li>
-                <li>
-                  <strong>Dinner Banquet (Thursday evening)</strong><br>
-                  A toast to Ed! Enjoy a delicious dinner buffet in the Presidents Ballroom curated by Washington Duke Inn’s
-                  award-winning culinary team, followed by birthday cake, of course!
-                </li>
-              </ul>
-              <table>
-                <tr>
-                  <th>Participant</th>
-                  <th>Registration Fee</th>
-                </tr>
-                <tr>
-                  <td>Professional</td>
-                  <td>$500.00</td>
-                </tr>
-                <tr>
-                  <td>Student</td>
-                  <td>$100</td>
-                </tr>
-              </table>
+                <h2>Registration Information</h2>
+                <p><strong>Registration includes:</strong></p>
+                <ul>
+                    <li>
+                        <strong>Breakfast &amp; Snacks (Thursday &amp; Friday)</strong><br>
+                        A choice of hot or continental breakfast, with all day beverage service, mid-day and afternoon snacks.
+                    </li>
+                    <li>
+                        <strong>Buffet Lunch (Thursday &amp; Friday)</strong><br>
+                        Gourmet lunch of fresh salads, hearty sandwiches and dessert.
+                    </li>
+                    <li>
+                        <strong>Cocktail Reception (Thursday)</strong><br>
+                        Passed hors d’ oeuvres &amp; select beverages.
+                    </li>
+                    <li>
+                        <strong>Dinner Banquet (Thursday evening)</strong><br>
+                        A toast to Ed! Enjoy a delicious dinner buffet in the Presidents Ballroom curated by Washington Duke Inn’s
+                        award-winning culinary team, followed by birthday cake, of course!
+                    </li>
+                </ul>
+                <table>
+                    <tr>
+                        <th>Participant</th>
+                        <th>Registration Fee</th>
+                    </tr>
+                    <tr>
+                        <td>Professional</td>
+                        <td>$500.00</td>
+                    </tr>
+                    <tr>
+                        <td>Student</td>
+                        <td>$100</td>
+                    </tr>
+                </table>
     
-              <!-- 在折叠区域最下方，再加一个“Register Here”按钮，链接到你原先付款链接 -->
-              <a class="btn-register-inner"
-                 href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
-                 target="_blank">
-                Register Here
-              </a>
-            </div> <!-- /#registration-info -->
-          </div>
+                <!-- 在折叠区域底部加一个“Register Here”跳转付款链接 -->
+                <a class="btn-register-inner"
+                   href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
+                   target="_blank">
+                    Register Here
+                </a>
+            </div><!-- #registration-info 结束 -->
         </div>
-      </div>
+    </div>
+</div>
 
         
 <!-- Rest of the HTML content continues here... -->
@@ -1003,19 +1004,17 @@
         <a href="#" id="scroll-up" style="display: none;"><img src="./scrollup.png" alt>TOP</a>
     </div>
 
-<!-- 下面是控制折叠的JS，可以放在body结束前，也可放到head里 -->
-<script>
-function toggleRegistrationInfo() {
-  var infoDiv = document.getElementById("registration-info");
-  if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
-    // 显示
-    infoDiv.style.display = "block";
-  } else {
-    // 隐藏
-    infoDiv.style.display = "none";
-  }
-}
-</script>
+    <!-- 折叠逻辑：点击“Registration”按钮时，切换 #registration-info 显示/隐藏 -->
+    <script>
+    function toggleRegistrationInfo() {
+      var infoDiv = document.getElementById("registration-info");
+      if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
+        infoDiv.style.display = "block";
+      } else {
+        infoDiv.style.display = "none";
+      }
+    }
+    </script>
     
 </body>
 
