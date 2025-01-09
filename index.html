@@ -724,101 +724,86 @@
             </div>
         </div>
 
-      <!-- Registration Section (Expanded) -->
+      <!-- Registration Section (expanded) -->
         <div id="registration" class="widget widget-speakers">
           <div class="container">
+            <!-- 与其他section一样的标题结构 -->
             <div class="widget-header">
               <h2 class="widget-body">Registration</h2>
             </div>
-            
-            <!-- 这里直接放原先折叠区域的所有内容，无需按钮/折叠 -->
-            <div style="
-              margin-top: 20px;
-              background-color: #f9f9f9;
-              border: 1px solid #cccccc;
-              border-radius: 8px;
-              padding: 20px;
-              max-width: 800px;
-              margin-left: auto;
-              margin-right: auto;
-              text-align: left;">
         
-              <h2 style="margin-top: 0; text-align: left;">Registration Information</h2>
+            <!-- 整体去掉原先的带框样式，只保持左对齐和合适的margin -->
+            <div style="margin-top: 20px; text-align: left;">
+              
+              <!-- 可以用 p 或 h3 + ul 的组合；这里都改成 quote-content 让其与其他Section保持一致 -->
+              <h3 class="quote-content" style="font-size: 20px; margin-bottom: 10px;">
+                Under the registration includes:
+              </h3>
+              <ul class="quote-content" style="margin-left: 20px;">
+                <li>Feb 20, PM Coffee Break</li>
+                <li>Feb 20, Reception</li>
+                <li>Feb 21, Breakfast</li>
+                <li>Feb 21, AM Coffee Break</li>
+                <li>Feb 21, Lunch</li>
+                <li>Feb 21, PM Coffee Break</li>
+              </ul>
         
-              <!-- 第一行：左右并排 -->
-              <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-                <!-- 左侧 -->
-                <div style="flex:1; min-width:240px;">
-                  <p><strong>Under the registration includes:</strong></p>
-                  <ul style="margin-top:10px; margin-left:20px; padding-left:0; line-height:1.6;">
-                    <li>Feb 20, PM Coffee Break</li>
-                    <li>Feb 20, Reception</li>
-                    <li>Feb 21, Breakfast</li>
-                    <li>Feb 21, AM Coffee Break</li>
-                    <li>Feb 21, Lunch</li>
-                    <li>Feb 21, PM Coffee Break</li>
-                  </ul>
-                </div>
+              <!-- With/Without Contribution -->
+              <p class="quote-content" style="margin-top: 20px;">
+                <em>If you register with contribution to the event, register here:</em>
+              </p>
+              <a style="
+                display: inline-block;
+                margin-bottom: 20px;
+                padding: 10px 20px;
+                background-color: #ae6042;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;"
+                href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
+                target="_blank">
+                Register with Contribution
+              </a>
         
-                <!-- 右侧：with/without Contribution -->
-                <div style="flex:1; min-width:240px;">
-                  <p style="margin-bottom:5px;">
-                    <em>If you register with contribution to the event, register here:</em>
-                  </p>
-                  <a style="
-                     display:inline-block;
-                     margin-bottom:20px;
-                     padding:10px 20px;
-                     background-color:#ae6042;
-                     color:#fff;
-                     text-decoration:none;
-                     border-radius:4px;
-                     font-size:18px;"
-                     href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
-                     target="_blank">
-                    Register with Contribution
-                  </a>
+              <p class="quote-content" style="margin-bottom: 5px;">
+                <em>If you register without contribution to the event, register here:</em>
+              </p>
+              <a style="
+                display: inline-block;
+                margin-bottom: 10px;
+                padding: 10px 20px;
+                background-color: #4e738a;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;"
+                href="https://forms.gle/bTrPBP3MHrHiQe5V6"
+                target="_blank">
+                Register without Contribution
+              </a>
         
-                  <p style="margin-bottom:5px;">
-                    <em>If you register without contribution to the event, register here:</em>
-                  </p>
-                  <a style="
-                     display:inline-block;
-                     margin-bottom:10px;
-                     padding:10px 20px;
-                     background-color:#4e738a;
-                     color:#fff;
-                     text-decoration:none;
-                     border-radius:4px;
-                     font-size:18px;"
-                     href="https://forms.gle/bTrPBP3MHrHiQe5V6"
-                     target="_blank">
-                    Register without Contribution
-                  </a>
-                </div>
-              </div><!-- /第一行 -->
-        
-              <!-- 第二行：表格 -->
-              <div style="margin-top: 30px;">
-                <table style="border-collapse:collapse; width:100%;">
-                  <tr style="background-color:#f0f0f0;">
-                    <th style="padding:8px 12px; border-bottom:1px solid #ddd; text-align:left;">Participant</th>
-                    <th style="padding:8px 12px; border-bottom:1px solid #ddd; text-align:left;">Recommended Contribution</th>
+              <!-- Recommended Contribution表格，改成与其他Section类似的字体/配色 -->
+              <div style="margin-top: 20px;">
+                <h3 class="quote-content" style="margin-bottom: 10px;">Recommended Contribution</h3>
+                <table style="border-collapse: collapse; width: 100%;">
+                  <tr style="background-color: #f0f0f0;">
+                    <th style="text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd;">Participant</th>
+                    <th style="text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd;">Recommended Contribution</th>
                   </tr>
                   <tr>
-                    <td style="padding:8px 12px; border-bottom:1px solid #ddd;">Professional</td>
-                    <td style="padding:8px 12px; border-bottom:1px solid #ddd;">$150.00</td>
+                    <td style="padding: 8px 12px; border-bottom: 1px solid #ddd;">Professional</td>
+                    <td style="padding: 8px 12px; border-bottom: 1px solid #ddd;">$150.00</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 12px;">Student</td>
-                    <td style="padding:8px 12px;">$50.00</td>
+                    <td style="padding: 8px 12px;">Student</td>
+                    <td style="padding: 8px 12px;">$50.00</td>
                   </tr>
                 </table>
               </div>
-            </div><!-- /展开的 Registration 内容-->
-            
+        
+            </div><!-- /style="margin-top:20px;" -->
           </div><!-- /.container -->
         </div><!-- /#registration -->
+
 
 
 
