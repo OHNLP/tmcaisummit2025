@@ -25,55 +25,6 @@
         text-decoration: none; /* Optional: removes underline from links */
     }
 
-    /* =========================================
-       2. 折叠区域：Registration Info 样式
-       ========================================= */
-    #registration-info {
-        display: none; /* 默认隐藏 */
-        margin-top: 20px;
-        background-color: #f9f9f9;
-        border: 1px solid #cccccc;
-        border-radius: 8px;
-        padding: 20px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #registration-info h2 {
-        text-align: center;
-        margin-top: 0;
-    }
-    /* 列表左对齐，去除额外缩进，可按需微调 */
-    #registration-info ul {
-        margin-top: 10px;
-        margin-left: 20px;  /* 左对齐 */
-        padding-left: 0;    /* 去掉默认缩进 */
-        line-height: 1.6;
-    }
-    /* 表格样式 */
-    #registration-info table {
-        border-collapse: collapse;
-        margin-top: 15px;
-        width: 100%;
-    }
-    #registration-info th,
-    #registration-info td {
-        text-align: left;
-        padding: 8px 12px;
-        border-bottom: 1px solid #ddd;
-    }
-    /* “Register Here”按钮 */
-    .btn-register-inner {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #006791;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 4px;
-        font-size: 18px;
-    }
-
     #mission {
         margin-bottom: -50px !important; /* Further reduce the margin below the Mission section */
         padding-bottom: 0 !important; /* Ensure no extra padding below */
@@ -150,59 +101,15 @@
         margin-bottom: 10px; /* Add spacing between items */
         line-height: 1.5; /* Improve readability */
     }    
-
-    /* Basic Container */
-    .grid-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .grid-x {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .cell {
-      box-sizing: border-box;
-      padding: 1rem; /* space around each card */
-      width: 100%;
-    }
-    /* Show 1 card per row on small screens, 2 cards per row on medium+ screens */
-    @media (min-width: 640px) {
-      .cell.medium-6 {
-        width: 50%; /* 2 columns */
-      }
-    }
-
-    /* Card Styles */
-    .card {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      transition: transform 0.2s ease;
-      background-color: #fff;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    /* Circular Images */
+            
     .circular-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
+        width: 200px; /* Width of the image */
+        height: 200px; /* Height of the image */
+        border-radius: 50%; /* Makes the image round */
+        object-fit: cover; /* This will cover the area of the container without stretching the image */
+        object-position: center 0.00006%; /* Adjust this value if you need to move the image up or down to show the hair */
+        margin-bottom: 10px; /* Space between the image and the text */
     }
-
-    /* Sample text styling */
-    h4 {
-      margin-top: 0.5em;
-      margin-bottom: 0.3em;
-    }
-    p {
-      margin: 0.3em 0;
-    }
-        
     /* Adjustments to panel discussion speaker elements */
     #panel-discussion .speaker .circular-image {
         margin-left: 5px; /* Adjust this value as needed to move the images to the right */
@@ -287,7 +194,6 @@
     /* Add bottom margin to the Important Dates section */
     #program .widget-header {
         margin-bottom: 20px; /* Increase this value as needed */
-        text-align: left;
     }
     
     /* Or add top margin to the Keynote Speakers section */
@@ -525,10 +431,8 @@
                 <div class="collapse navbar-collapse" id="tyler-navigation">
                     <div class="menu-current-container">
                         <ul id="menu-primary" class="navbar-menu">
-                            <!-- <li class="menu-item"><a href="#mission">Mission</a></li> -->
+                            <li class="menu-item"><a href="#mission">Mission</a></li>
                             <li class="menu-item"><a href="#introduction">Call for Participation</a></li>
-                            <!-- 在这里插入新tab “Registration” -->
-                            <li class="menu-item"><a href="#registration">Registration</a></li>
                             <!-- Commenting out Keynote Speakers tab -->
                             <!-- <li class="menu-item"><a href="#keynote-speakers">Keynote Speakers</a></li> -->
                             <!-- Commenting out Panel Discussion tab -->
@@ -536,7 +440,7 @@
                             <!-- Commenting out Invited Speakers tab -->
                             <!-- <li class="menu-item"><a href="#invited-speakers">Invited Speakers</a></li> -->                            
                             <li class="menu-item"><a href="#steering-committee">Steering Committee</a></li>
-                            <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li>                            
+                            <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li>
                             <li class="menu-item"><a href="#submissions">Submissions</a></li>
                             <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li>
                             <li class="menu-item"><a href="#contact">Contact Us</a></li>
@@ -562,133 +466,53 @@
 </div>
 
        
-      <!-- Welcome Section -->
-      <div id="text" class="widget widget-description">
-        <div class="container">
-          <div class="col-md-8 col-md-push-2">
-            <h2 class="widget-heading">Welcome to TMC AI Summit 2025</h2>
-                
-            <!-- Location等也保持不变 -->
-            <h3 class="widget-heading" style="font-size: 30px; color: #333; text-align: center; margin-top: 20px;">Location</h3>
-            <h3 style="margin-left:20px">
-              <strong><span style="font-size:20px">TMC3 Collaborative Building<br>7255 Helix Park Avenue, Houston, Texas, 77030</span></strong>
-            </h3>    
-            
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
-              <!-- Submission按钮保持原链接 -->
-              <div style="background-color:#006791; border-radius: 4px;">
-                <a style="font-family:Ubuntu; color: #fff; font-size: 28px; padding: 10px 20px; 
-                          text-decoration: none; display: inline-block;" 
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSfnY3_AYCPvxp9rh3mDuz8MTCeTDbbY1abbqMO1Hb7xlJTqCA/viewform">
-                  Submission
-                </a>
-              </div>              
-            </div>    
-            
-            <div id="registration-info" style="
-              display: none;
-              margin-top: 20px;
-              background-color: #f9f9f9;
-              border: 1px solid #cccccc;
-              border-radius: 8px;
-              padding: 20px;
-              max-width: 800px;
-              margin-left: auto;
-              margin-right: auto;
-              text-align: left; /* 强制左对齐 */
-            ">
-              <h2 style="margin-top: 0; text-align: left;">Registration Information</h2>
-            
-              <!-- 第一行：左右并排 -->
-              <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-                <!-- 左侧：Under the registration includes -->
-                <div style="flex:1; min-width:240px;">
-                  <p><strong>Under the registration includes:</strong></p>
-                  <ul class="quote-content" style="margin-left:80px">
-                    <li>Feb 20, PM Coffee Break</li>
-                    <li>Feb 20, Reception</li>
-                    <li>Feb 21, Breakfast</li>
-                    <li>Feb 21, AM Coffee Break</li>
-                    <li>Feb 21, Lunch</li>
-                    <li>Feb 21, PM Coffee Break</li>
-                  </ul>
+        <!-- Welcome Section -->
+        <div id="text" class="widget widget-description">
+            <div class="container">
+                <div class="col-md-8 col-md-push-2">
+                    <h2 class="widget-heading">Welcome to TMC AI Summit 2025</h2>
+                    <!-- Registration Notice -->
+                    <p style="text-align: center; font-size: 20px; margin-top: 20px;">
+                        <strong>Registration and Submissions Are Now Open!</strong>
+                    </p>
+                    <!-- BEGIN NEW CODE BLOCK -->
+                    <p style="text-align: center; font-size: 16px; margin-top: 10px;">
+                        <strong>Registration Fee:</strong><br>
+                        Students/Trainees: $50<br>
+                        Professionals: $150<br><br>
+                        <em>
+                            Discounted prices are available for those who are eligible. 
+                            Please email 
+                            <a href="mailto:tmcaisummit@gmail.com">tmcaisummit@gmail.com</a>.
+                        </em>
+                    </p>
+                    <!-- END NEW CODE BLOCK -->
+                    <!-- Location Information -->
+                    <h3 class="widget-heading" style="font-size: 30px; color: #333; text-align: center; margin-top: 20px;">Location</h3>
+                    <h3 style="margin-left:20px">
+                        <strong><span style="font-size:20px">TMC 3 Helix Park<br>7255 Helix Park Avenue, Houston, Texas, 77030</span></strong>
+                    </h3>
+                    <!-- Buttons Section -->
+                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+                        <!-- Submission Button -->
+                        <div style="background-color:#006791; border-radius: 4px;">
+                            <a style="font-family:Ubuntu; color: #fff; font-size: 28px; padding: 10px 20px; text-decoration: none; display: inline-block;" 
+                               href="https://docs.google.com/forms/d/e/1FAIpQLSfnY3_AYCPvxp9rh3mDuz8MTCeTDbbY1abbqMO1Hb7xlJTqCA/viewform">
+                                Submission
+                            </a>
+                        </div>
+                        <!-- Registration Button -->
+                        <div style="background-color:#28a745; border-radius: 4px;">
+                            <a style="font-family:Ubuntu; color: #fff; font-size: 28px; padding: 10px 20px; text-decoration: none; display: inline-block;" 
+                               href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636" 
+                               target="_blank">
+                                Registration
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            
-                <!-- 右侧：两个按钮并列 (with/without contribution) -->
-                <div style="flex:1; min-width:240px;">
-                  <!-- with Contribution -->
-                  <p style="margin-bottom:5px;">
-                    <em>If you register with contribution to the event, register here:</em>
-                  </p>
-                  <a style="
-                     display:inline-block;
-                     margin-bottom:20px;
-                     margin-left:80px; /* 往右边挪一点 */ 
-                     padding:10px 20px;
-                     background-color:#ae6042;
-                     color:#fff;
-                     text-decoration:none;
-                     border-radius:4px;
-                     font-size:18px;"
-                     href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
-                     target="_blank">
-                    Register with Contribution
-                  </a>
-            
-                  <!-- without Contribution -->
-                  <p style="margin-bottom:5px;">
-                    <em>If you register without contribution to the event, register here:</em>
-                  </p>
-                  <a style="
-                     display:inline-block;
-                     margin-bottom:10px;
-                     margin-left:80px; /* 往右边挪一点 */ 
-                     padding:10px 20px;
-                     background-color:#4e738a;
-                     color:#fff;
-                     text-decoration:none;
-                     border-radius:4px;
-                     font-size:18px;"
-                     href="https://forms.gle/bTrPBP3MHrHiQe5V6"
-                     target="_blank">
-                    Register without Contribution
-                  </a>
-                </div>
-              </div>
-              <!-- /第一行 -->
-            
-              <!-- 第二行：表格 (将“Registration Fee”改为“Recommended Contribution”) -->
-              <div style="margin-top: 30px;">
-                <table style="border-collapse:collapse; width:100%;">
-                  <tr style="background-color:#f0f0f0;">
-                    <th style="padding:8px 12px; border-bottom:1px solid #ddd; text-align:left;">
-                      Participant
-                    </th>
-                    <th style="padding:8px 12px; border-bottom:1px solid #ddd; text-align:left;">
-                      Recommended Contribution
-                    </th>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 12px; border-bottom:1px solid #ddd;">
-                      Professional
-                    </td>
-                    <td style="padding:8px 12px; border-bottom:1px solid #ddd;">
-                      $150.00
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 12px;">
-                      Student
-                    </td>
-                    <td style="padding:8px 12px;">
-                      $50.00
-                    </td>
-                  </tr>
-                </table>
-              </div>
             </div>
-    </div>
-</div>
+        </div>
 
         
 <!-- Rest of the HTML content continues here... -->
@@ -710,7 +534,7 @@
             <div class="container">
                 <div class="widget-header">
                     <h2 class="widget-body">Call for Participation</h2>                    
-                    <p class="quote-content">We are thrilled to announce the <strong>Call for Participation</strong> for the <strong>Texas Medical Center (TMC) AI Summit 2025</strong>, a flagship event hosted by TMC institutions. Join us on <strong>February 20-21, 2025</strong>, at <strong>TMC3 Collaborative Building in Houston, TX!</strong></p>
+                    <p class="quote-content">We are thrilled to announce the <strong>Call for Participation</strong> for the <strong>Texas Medical Center (TMC) AI Summit 2025</strong>, a flagship event hosted by TMC institutions. Join us on <strong>February 20-21, 2025</strong>, at <strong>TMC Helix Park in Houston, TX!</strong></p>
                     <p class="quote-content">This summit is dedicated to cultivating a vibrant, collaborative ecosystem at the Texas Medical Center by harnessing its world-class talent, diverse data resources, and entrepreneurial spirit. Our goal is to translate cutting-edge AI innovations into actionable solutions for real-world biomedical and healthcare challenges. By bringing together researchers, clinicians, and industry leaders, we aim to revolutionize healthcare delivery, enhance outcomes, and drive impactful, global change. </p>
                     <p class="quote-content"><strong>Program Tracks</strong></p>
 <ul>                   
@@ -742,7 +566,7 @@
                     <h3 style="margin-left:20px">
                         <strong>
                             <span style="font-size:20px">
-                                Submission Deadline: <del>Jan 6, 2025</del> Jan 19, 2025
+                                Submission Deadline: <del>Jan 6, 2025</del> Jan 9, 2025
                             </span>
                         </strong>
                     </h3>
@@ -760,91 +584,6 @@
                 </div>
             </div>
         </div>
-
-      <!-- Registration Section (expanded) -->
-        <div id="registration" class="widget widget-speakers">
-          <div class="container">
-            <!-- 与其他section一样的标题结构 -->
-            <div class="widget-header">
-              <h2 class="widget-body">Registration</h2>
-            </div>
-        
-            <!-- 整体去掉原先的带框样式，只保持左对齐和合适的margin -->
-            <div style="margin-top: 20px; text-align: left;">
-              
-              <!-- 可以用 p 或 h3 + ul 的组合；这里都改成 quote-content 让其与其他Section保持一致 -->
-              <h3 style="margin-left:20px">
-                Under the registration includes:
-              </h3>
-              <ul class="quote-content" style="margin-left: 20px;">
-                <li>Feb 20, PM Coffee Break</li>
-                <li>Feb 20, Reception</li>
-                <li>Feb 21, Breakfast</li>
-                <li>Feb 21, AM Coffee Break</li>
-                <li>Feb 21, Lunch</li>
-                <li>Feb 21, PM Coffee Break</li>
-              </ul>
-        
-              <!-- With/Without Contribution -->
-              <p class="quote-content" style="margin-top: 20px;">
-                <em>If you register with contribution to the event, register here:</em>
-              </p>
-              <a style="
-                display: inline-block;
-                margin-bottom: 20px;
-                margin-left:80px !important; /* 强制往右挪 */  
-                padding: 10px 20px;
-                background-color: #ae6042;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 4px;"
-                href="https://www.acipayonline.com/pc_entry_cobrand.jsp?productId=444202014235665590455487488926060636"
-                target="_blank">
-                Register with Contribution
-              </a>
-        
-              <p class="quote-content" style="margin-bottom: 5px;">
-                <em>If you register without contribution to the event, register here:</em>
-              </p>
-              <a style="
-                display: inline-block;
-                margin-bottom: 10px;
-                margin-left:80px !important; /* 强制往右挪 */  
-                padding: 10px 20px;
-                background-color: #4e738a;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 4px;"
-                href="https://forms.gle/bTrPBP3MHrHiQe5V6"
-                target="_blank">
-                Register without Contribution
-              </a>
-        
-              <!-- Recommended Contribution表格，改成与其他Section类似的字体/配色 -->
-              <div style="margin-top: 20px;">
-                <h3 class="quote-content" style="margin-bottom: 10px;">Recommended Contribution</h3>
-                <table style="border-collapse: collapse; width: 100%;">
-                  <tr style="background-color: #f0f0f0;">
-                    <th style="text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd;">Participant</th>
-                    <th style="text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd;">Recommended Contribution</th>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 12px; border-bottom: 1px solid #ddd;">Professional</td>
-                    <td style="padding: 8px 12px; border-bottom: 1px solid #ddd;">$150.00</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 8px 12px;">Student</td>
-                    <td style="padding: 8px 12px;">$50.00</td>
-                  </tr>
-                </table>
-              </div>
-        
-            </div><!-- /style="margin-top:20px;" -->
-          </div><!-- /.container -->
-        </div><!-- /#registration -->
-
-
-
 
         
 <!-- Keynote Speakers Section -->
@@ -940,382 +679,126 @@
     </div>
 </div>
 -->
-
+        
         <!-- Steering Committee Section -->
         <div id="steering-committee" class="widget widget-speakers">
-          <div class="container">
-            <div class="widget-header">
-              <h2 class="widget-body">Steering Committee</h2>
+            <div class="container">
+                <div class="widget-header">
+                    <h2 class="widget-body">Steering Committee</h2>
+                    <table width="100%" style="margin-left:20px">
+                        <tr>
+                            <td style="width:100%;">
+                                <ul class="quote-content">
+                                    <li>Ananth V. Annapragada, PhD, Baylor College of Medicine</li>
+                                    <li>David A. Jaffray, PhD, UT MD Anderson Cancer Center</li>
+                                    <li>Ioannis Kakadiaris, PhD, University of Houston</li>
+                                    <li>Kelvin Wong, PhD, Houston Methodist</li>
+                                    <li>Lydia E. Kavraki, PhD, Rice University</li>
+                                    <li>Siraj Anwar, MBBS, MS, CPHIMS, Harris Health</li>
+                                    <li>Xiaoqian Jiang, PhD, UTHealth Houston</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        
-            <!-- 核心结构：grid-container + grid-x -->
-            <div class="grid-container">
-              <div class="grid-x"><!-- 一行最多并排3张卡片 -->
-                
-                <!-- Card 1 -->
-                <div class="cell medium-6">
-                  <div class="card">
-                    <div style="display:flex;align-items:center;">
-                      <img class="circular-image" 
-                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/annaprag.jpeg" 
-                           alt="Ananth V. Annapragada">
-                      <div style="margin-left:15px;">
-                        <h4>Ananth V. Annapragada, PhD</h4>
-                        <p>Baylor College of Medicine</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-                <!-- Card 2 -->
-                <div class="cell medium-6">
-                  <div class="card">
-                    <div style="display:flex;align-items:center;">
-                      <img class="circular-image"
-                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Anwar.jpg" 
-                           alt="Siraj Anwar">
-                      <div style="margin-left:15px;">
-                        <h4>Siraj Anwar, MBBS, MS, CPHIMS</h4>
-                        <p>Harris Health</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-                <!-- Card 3 -->
-                <div class="cell medium-6">
-                  <div class="card">
-                    <div style="display:flex;align-items:center;">
-                      <img class="circular-image"
-                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/david_jaffray.jpg.resize.810.1150.high.jpg"
-                           alt="David A. Jaffray">
-                      <div style="margin-left:15px;">
-                        <h4>David A. Jaffray, PhD</h4>
-                        <p>UT MD Anderson Cancer Center</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-                <!-- Card 4 -->
-                <div class="cell medium-6">
-                  <div class="card">
-                    <div style="display:flex;align-items:center;">
-                      <img class="circular-image"
-                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/xiaoqian-jiang.jpg"
-                           alt="Xiaoqian Jiang">
-                      <div style="margin-left:15px;">
-                        <h4>Xiaoqian Jiang, PhD</h4>
-                        <p>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 卡片5 -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/kakadiaris.jpg" 
-                             alt="Ioannis Kakadiaris">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Ioannis Kakadiaris, PhD</h4>
-                        <p>University of Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 卡片6 -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/lk4_sm.jpg" 
-                             alt="Lydia E. Kavraki">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Lydia E. Kavraki, PhD</h4>
-                        <p>Rice University</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 卡片7 -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Wong_K.jpg" 
-                             alt="Kelvin Wong">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Kelvin Wong, PhD</h4>
-                        <p>Houston Methodist</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-              </div> <!-- /grid-x -->
-            </div> <!-- /grid-container -->
-          </div>
         </div>
+
         
         <!-- Organization Committee Section -->
         <div id="organizational-committee" class="widget widget-speakers">
-          <div class="container">
-            <div class="widget-header">
-              <h2 class="widget-body">Organization Committee</h2>
+            <div class="container">
+                <div class="widget-header">
+                    <h2 class="widget-body">Organization Committee</h2>
+                    <table width=100% style="margin-left:20px">
+                        <tr>
+                            <td>
+                                <ul class="quote-content">
+                                    <li>Hongfang Liu, PhD, Chair, UTHealth Houston</li>
+                                    <li>Xia Hu, PhD, co-Chair, Rice University</li>
+                                    <li>Issac Middleton, co-Chair, Texas Medical Center</li>
+                                    <li>Sunyang Fu, PhD, Student Research Showcase Chair, UTHealth Houston</li>
+                                    <li>Quamishia Shuron Green, Finance Chair, UTHealth Houston</li>
+                                    <li>Rubab Ali, Event Manager, UTHealth Houston</li>
+                                    <li>Nyma Shah, Event Coordinator, Executive Director in Strategy, UT MD Anderson Cancer Center</li>
+                                    <li>Wanjing Wang, Web Chair, UTHealth Houston</li>
+                              </ul>
+                            </td>                            
+                        </tr>
+                    </table>
+                </div>
             </div>
-        
-            <div class="grid-container">
-              <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
-                
-                <!-- 卡片1: Hongfang Liu -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/HongfangLiu-240x332.jpg" 
-                             alt="Hongfang Liu">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Hongfang Liu, PhD</h4>
-                        <p>Chair<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 卡片2: Xia Hu -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/BenHu.jpg" alt="Xia Hu">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Xia Hu, PhD</h4>
-                        <p>co-Chair<br/>Rice University</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 卡片3: Issac Middleton -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Issac.jpg" alt="Issac Middleton">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Issac Middleton</h4>
-                        <p>co-Chair<br/>Texas Medical Center</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- 再往下依次写4,5,6... -->
-                <!-- Sunyang Fu -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Sunyang-Fu-332x240.jpg" alt="Sunyang Fu">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Sunyang Fu, PhD</h4>
-                        <p>Student Research Showcase Chair<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- Quamishia Shuron Green -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Shuron.jpg" alt="Quamishia Shuron Green">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Quamishia Shuron Green</h4>
-                        <p>Finance Chair<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- ... 依次添加全部人员 ... -->
-                <!-- Rubab Ali -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/rubab-ali.jpg" alt="Rubab Ali">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Rubab Ali</h4>
-                        <p>Event Manager<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        </div>
 
-                <!-- Nyma Shah -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Nyma.jpg" alt="Nyma Shah">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Nyma Shah</h4>
-                        <p>Event Coordinator, Executive Director in Strategy<br/>UT MD Anderson Cancer Center</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Kirsten Reid -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Kirsten.jpg" alt="Kirsten Reid">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Kirsten Reid</h4>
-                        <p>Logistics Specialist<br/>UT MD Anderson Cancer Center</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Wanjing Wang -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/wanjing-wang.jpg" alt="Wanjing Wang">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Wanjing Wang</h4>
-                        <p>Web Chair<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>  
-
-                <!-- Zehan Li -->
-                <div class="cell">
-                  <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Zehan.JPG" alt="Zehan Li">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
-                        <h4>Zehan Li</h4>
-                        <p>Marketing Specialist<br/>UTHealth Houston</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>  
-        
-              </div> <!-- /grid-x -->
-            </div> <!-- /grid-container -->
-          </div>
-        </div>  
         
         <!-- Submissions Section -->
         <div id="submissions" class="widget widget-speakers">
-          <div class="container" style="text-align: left;"> <!-- 确保容器左对齐 -->
-            <div class="widget-header" style="text-align: left;"> <!-- 确保标题左对齐 -->
-              <h2 class="widget-body">Submissions</h2>
-            </div>    
-            
-            <!-- 1. Poster and Oral Abstract Submission -->
-            <div class="submission-section" style="text-align:left;"> 
-              <h3 class="submission-title"><strong>Poster and Oral Abstract Submission</strong></h3>
-              <br>
-              <ul class="quote-content" style="margin-left: 40px;">
-                <li>Abstract Length: <strong>500 words maximum</strong></li>
-                <li>Content: Provide a concise summary of your research, innovation, or application relevant to the selected track (Foundation, Applied, or Implementation).</li>
-              </ul>
-              <br>
+            <div class="container">
+                <div class="widget-header">
+                    <h2 class="widget-body">Submissions</h2>
+                    <div class="submission-section">
+                        <h3 class="submission-title"><strong>Poster and Oral Abstract Submission</strong></h3>
+                        <br>
+                        <ul class="quote-content" style="margin-left:40px">
+                            <li>Abstract Length: <strong>500 words maximum</strong></li>
+                            <li>Content: Provide a concise summary of your research, innovation, or application relevant to the selected track (Foundation, Applied, or Implementation).</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="submission-section">
+                        <h3 class="submission-title"><strong>Workshop and Tutorial Submission</strong></h3>
+                        <br>
+                        <ul class="quote-content" style="margin-left:40px">
+                            <li><strong>Speaker Information:</strong> List all speakers in the order they should appear in the program, including their affiliations.</li>
+                            <li>
+                                <strong>Summary:</strong> Include a <strong>500-word maximum</strong> description detailing the takeaway skills, knowledge, or material participants will acquire.</li>
+                                <ul>
+                                    <li>Note: This summary will also be used for the program description.</li>
+                                </ul>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="submission-section">
+                        <h3 class="submission-title"><strong>Student Research Showcase Submission</strong></h3>
+                    </div>
+                        <!-- Competition Criteria Section -->
+                        <p class="quote-content">Submissions should include the following sections: </p>
+                        <br>
+                        <ul class="quote-content" style="margin-left:40px">
+                            <li><strong>Aims and Objectives:</strong> Clearly state the primary goals of your project. </li>
+                            <li>
+                                <strong>Justification for the Research Topic:</strong> Explain the motivation and significance of your research.</li>
+                            <li>
+                                <strong>Research Questions:</strong> List the key research questions you aim to address.</li>
+                            <li>
+                                <strong>Research Methodology:</strong> </li>
+                                <ul>
+                                    <li>Describe your planned or ongoing research methods.</li>
+                                </ul>
+                                <ul>
+                                    <li>If undecided, list the requirements your methodology should fulfill.</li>
+                                </ul>
+                            <li>
+                                <strong>Research Results to Date:</strong> </li>
+                                <ul>
+                                    <li>While results are not required, please include any preliminary findings if available.</li>
+                                </ul>
+                            <li><strong>References:</strong> Include any citations relevant to your research. </li>
+                        </ul>
+                        <br>       
+                    </div>
+                    <div class="submission-section">
+                        <p class="quote-content">
+                            <a href="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/TMCAISummitTemplate.docx" 
+                               download="TMCAISummitTemplate.docx" 
+                               style="color: blue; text-decoration: underline;">
+                                Submission Template and Instructions
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
-        
-            <!-- 2. Workshop and Tutorial Submission -->
-            <div class="submission-section" style="text-align:left;">
-              <h3 class="submission-title"><strong>Workshop and Tutorial Submission</strong></h3>
-              <br>
-              <ul class="quote-content" style="margin-left: 40px;">
-                <li><strong>Speaker Information:</strong> List all speakers in the order they should appear in the program, including their affiliations.</li>
-                <li>
-                  <strong>Summary:</strong> Include a <strong>500-word maximum</strong> description detailing the takeaway skills, knowledge, or material participants will acquire.
-                  <ul>
-                    <li>Note: This summary will also be used for the program description.</li>
-                  </ul>
-                </li>
-              </ul>
-              <br>
-            </div>
-        
-            <!-- 3. Student Research Showcase Submission -->
-            <div class="submission-section" style="text-align:left;">
-              <h3 class="submission-title"><strong>Student Research Showcase Submission</strong></h3>
-              <br>
-              <p class="quote-content">Submissions should include the following sections: </p>
-              <br>
-              <ul class="quote-content" style="margin-left: 40px;">
-                <li><strong>Aims and Objectives:</strong> Clearly state the primary goals of your project.</li>
-                <li><strong>Justification for the Research Topic:</strong> Explain the motivation and significance of your research.</li>
-                <li><strong>Research Questions:</strong> List the key research questions you aim to address.</li>
-                <li>
-                  <strong>Research Methodology:</strong>
-                  <ul>
-                    <li>Describe your planned or ongoing research methods.</li>
-                  </ul>
-                  <ul>
-                    <li>If undecided, list the requirements your methodology should fulfill.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Research Results to Date:</strong>
-                  <ul>
-                    <li>While results are not required, please include any preliminary findings if available.</li>
-                  </ul>
-                </li>
-                <li><strong>References:</strong> Include any citations relevant to your research.</li>
-              </ul>
-              <br>
-            </div>
-        
-            <!-- 4. Submission Template and Instructions -->
-            <div class="submission-section" style="text-align:left;">
-              <h3 class="submission-title"><strong>Submission Template and Instructions</strong></h3>
-              <br>
-              <ul class="quote-content" style="margin-left: 40px;">
-                <li>
-                  <a href="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/TMCAISummitTemplate.docx"
-                     download="TMCAISummitTemplate.docx"
-                     style="color: blue; text-decoration: underline;">
-                    Download the Template
-                  </a>
-                </li>
-              </ul>
-              <br>
-            </div>
-            
-          </div><!-- /.container -->
-        </div><!-- /#submissions -->
-
+        </div>
 
         <div id="sponsorship" class="widget widget-speakers">
         <div class="container">
@@ -1429,19 +912,6 @@
     <div id="scroll">
         <a href="#" id="scroll-up" style="display: none;"><img src="./scrollup.png" alt>TOP</a>
     </div>
-
-    <!-- 点击Registration按钮展开/折叠逻辑 -->
-    <script>
-    function toggleRegistrationInfo() {
-      var infoDiv = document.getElementById("registration-info");
-      if (infoDiv.style.display === "none" || infoDiv.style.display === "") {
-        infoDiv.style.display = "block";
-      } else {
-        infoDiv.style.display = "none";
-      }
-    }
-    </script>
-    
 </body>
 
 </html>
