@@ -160,7 +160,24 @@
     .card:hover {
       transform: scale(1.03);
     }
-    
+
+    .grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .grid-x {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .cell {
+      box-sizing: border-box;
+      padding: 1rem;
+      width: 100%; /* 默认全宽 */
+    }
+    @media (min-width: 640px) {
+      .cell.small-4 { width: 33.333%; }
+      .cell.small-8 { width: 66.666%; }
+    }  
             
     .circular-image {
         width: 200px; /* Width of the image */
