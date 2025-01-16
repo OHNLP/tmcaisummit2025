@@ -896,104 +896,136 @@
     </div>
 </div>
 -->
-        
+
         <!-- Steering Committee Section -->
         <div id="steering-committee" class="widget widget-speakers">
           <div class="container">
             <div class="widget-header">
               <h2 class="widget-body">Steering Committee</h2>
             </div>
-            
-            <!-- 第一行（2位：Annapragada、Anwar） -->
-            <div class="speakers-container">
-              <!-- Ananth V. Annapragada -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/annaprag.jpeg" 
-                     alt="Ananth V. Annapragada" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Ananth V. Annapragada, PhD</strong></h3>
-                  <h4 class="speaker-position">Baylor College of Medicine</h4>
-                </div>
-              </div>
-
-              <!-- Siraj Anwar -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Anwar.jpg" 
-                     alt="Siraj Anwar" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Siraj Anwar, MBBS, MS, CPHIMS</strong></h3>
-                  <h4 class="speaker-position">Harris Health</h4>
-                </div>
-              </div>
-            </div> <!-- /.speakers-container -->
-            
-            <!-- 第二行（2位：Jaffray、Jiang） -->
-            <div class="speakers-container">
-              <!-- David A. Jaffray -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/david_jaffray.jpg.resize.810.1150.high.jpg" 
-                     alt="David A. Jaffray" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>David A. Jaffray, PhD</strong></h3>
-                  <h4 class="speaker-position">UT MD Anderson Cancer Center</h4>
-                </div>
-              </div>
+        
+            <!-- 核心结构：grid-container + grid-x -->
+            <div class="grid-container">
+              <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3"><!-- 一行最多并排3张卡片 -->
                 
-              <!-- Xiaoqian Jiang -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/xiaoqian-jiang.jpg" 
-                     alt="Xiaoqian Jiang" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Xiaoqian Jiang, PhD</strong></h3>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
+                <!-- 卡片1 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <!-- 左侧头像 -->
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/annaprag.jpeg" 
+                             alt="Ananth V. Annapragada">
+                      </div>
+                      <!-- 右侧文字 -->
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Ananth V. Annapragada, PhD</h4>
+                        <p>Baylor College of Medicine</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div> <!-- /.speakers-container -->
-            
-            <!-- 第三行（3位：Kakadiaris、Kavraki、Wong） -->
-            <div class="speakers-container">
-              <!-- Ioannis Kakadiaris -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/kakadiaris.jpg" 
-                     alt="Ioannis Kakadiaris" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Ioannis Kakadiaris, PhD</strong></h3>
-                  <h4 class="speaker-position">University of Houston</h4>
-                </div>
-              </div>
                 
-              <!-- Lydia E. Kavraki -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/lk4_sm.jpg" 
-                     alt="Lydia E. Kavraki" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Lydia E. Kavraki, PhD</strong></h3>
-                  <h4 class="speaker-position">Rice University</h4>
+                <!-- 卡片2 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Anwar.jpg" 
+                             alt="Siraj Anwar">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Siraj Anwar, MBBS, MS, CPHIMS</h4>
+                        <p>Harris Health</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+        
+                <!-- 卡片3 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/david_jaffray.jpg.resize.810.1150.high.jpg" 
+                             alt="David A. Jaffray">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>David A. Jaffray, PhD</h4>
+                        <p>UT MD Anderson Cancer Center</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
-              <!-- Kelvin Wong -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Wong_K.jpg" 
-                     alt="Kelvin Wong" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Kelvin Wong, PhD</strong></h3>
-                  <h4 class="speaker-position">Houston Methodist</h4>
+                <!-- 卡片4 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/xiaoqian-jiang.jpg" 
+                             alt="Xiaoqian Jiang">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Xiaoqian Jiang, PhD</h4>
+                        <p>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div> 
-            </div> <!-- /.speakers-container -->
-            
+        
+                <!-- 卡片5 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/kakadiaris.jpg" 
+                             alt="Ioannis Kakadiaris">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Ioannis Kakadiaris, PhD</h4>
+                        <p>University of Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- 卡片6 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/lk4_sm.jpg" 
+                             alt="Lydia E. Kavraki">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Lydia E. Kavraki, PhD</h4>
+                        <p>Rice University</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- 卡片7 -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Wong_K.jpg" 
+                             alt="Kelvin Wong">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Kelvin Wong, PhD</h4>
+                        <p>Houston Methodist</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+              </div> <!-- /grid-x -->
+            </div> <!-- /grid-container -->
           </div>
         </div>
-
-
         
         <!-- Organization Committee Section -->
         <div id="organizational-committee" class="widget widget-speakers">
@@ -1002,148 +1034,166 @@
               <h2 class="widget-body">Organization Committee</h2>
             </div>
         
-            <!-- 第一行：3 位 -->
-            <div class="speakers-container">
-              <!-- 1. Hongfang Liu -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/HongfangLiu-240x332.jpg" 
-                     alt="Hongfang Liu" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Hongfang Liu, PhD</strong></h3>
-                  <!-- 将Chair与单位分两行 -->
-                  <h4 class="speaker-position">Chair</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
-                </div>
-              </div>
-        
-              <!-- 2. Xia Hu -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/BenHu.jpg" 
-                     alt="Xia Hu" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Xia Hu, PhD</strong></h3>
-                  <h4 class="speaker-position">co-Chair</h4>
-                  <h4 class="speaker-position">Rice University</h4>
-                </div>
-              </div>
-        
-              <!-- 3. Issac Middleton -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Issac.jpg" 
-                     alt="Issac Middleton" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Issac Middleton</strong></h3>
-                  <h4 class="speaker-position">co-Chair</h4>
-                  <h4 class="speaker-position">Texas Medical Center</h4>
-                </div>
-              </div>
-            </div> 
-            <!-- /.speakers-container -->
-        
-            <!-- 第二行：2 位 -->
-            <div class="speakers-container">
-              <!-- 4. Sunyang Fu -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Sunyang-Fu-332x240.jpg" 
-                     alt="Sunyang Fu" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Sunyang Fu, PhD</strong></h3>
-                  <h4 class="speaker-position">Student Research Showcase Chair</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
-                </div>
-              </div>
-        
-              <!-- 5. Quamishia Shuron Green -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Shuron.jpg" 
-                     alt="Quamishia Shuron Green" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Quamishia Shuron Green</strong></h3>
-                  <h4 class="speaker-position">Finance Chair</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
-                </div>
-              </div>
-
-              <!-- 6. Rubab Ali -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/rubab-ali.jpg" 
-                     alt="Rubab Ali" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Rubab Ali</strong></h3>
-                  <h4 class="speaker-position">Event Manager</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
-                </div>
-              </div>
-            </div>
-            <!-- /.speakers-container -->
-        
-            <!-- 第三行：2 位 -->
-            <div class="speakers-container">
-              <!-- 7. Nyma Shah -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Nyma.jpg" 
-                     alt="Nyma Shah" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Nyma Shah</strong></h3>
-                  <h4 class="speaker-position">Event Coordinator, Executive Director in Strategy</h4>
-                  <h4 class="speaker-position">UT MD Anderson Cancer Center</h4>
-                </div>
-              </div>
+            <div class="grid-container">
+              <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
                 
-              <!-- 8. Kirsten Reid -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Kirsten.jpg" 
-                     alt="Kirsten Reid" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Kirsten Reid</strong></h3>
-                  <h4 class="speaker-position">Logistics Specialist</h4>
-                  <h4 class="speaker-position">UT MD Anderson Cancer Center</h4>
+                <!-- 卡片1: Hongfang Liu -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/HongfangLiu-240x332.jpg" 
+                             alt="Hongfang Liu">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Hongfang Liu, PhD</h4>
+                        <p>Chair<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div> 
-            </div>
-            <!-- /.speakers-container -->
         
-          </div>
-        </div>
-
-        <!-- 第四行：2 位 -->
-            <div class="speakers-container">        
-              <!-- 9. Wanjing Wang -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/wanjing-wang.jpg" 
-                     alt="Wanjing Wang" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Wanjing Wang</strong></h3>
-                  <h4 class="speaker-position">Web Chair</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
+                <!-- 卡片2: Xia Hu -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/BenHu.jpg" alt="Xia Hu">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Xia Hu, PhD</h4>
+                        <p>co-Chair<br/>Rice University</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <!-- 10. Zehan Li -->
-              <div class="speaker">
-                <img src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Zehan.JPG" 
-                     alt="Zehan Li" 
-                     class="circular-image">
-                <div class="speaker-info-container">
-                  <h3 class="speaker-title"><strong>Zehan Li</strong></h3>
-                  <h4 class="speaker-position">Marketing Specialist</h4>
-                  <h4 class="speaker-position">UTHealth Houston</h4>
-                </div>
-              </div>
-            </div>
-            <!-- /.speakers-container -->
         
+                <!-- 卡片3: Issac Middleton -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Issac.jpg" alt="Issac Middleton">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Issac Middleton</h4>
+                        <p>co-Chair<br/>Texas Medical Center</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- 再往下依次写4,5,6... -->
+                <!-- Sunyang Fu -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Sunyang-Fu-332x240.jpg" alt="Sunyang Fu">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Sunyang Fu, PhD</h4>
+                        <p>Student Research Showcase Chair<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Quamishia Shuron Green -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Shuron.jpg" alt="Quamishia Shuron Green">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Quamishia Shuron Green</h4>
+                        <p>Finance Chair<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- ... 依次添加全部人员 ... -->
+                <!-- Rubab Ali -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/rubab-ali.jpg" alt="Rubab Ali">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Rubab Ali</h4>
+                        <p>Event Manager<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Nyma Shah -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Nyma.jpg" alt="Nyma Shah">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Nyma Shah</h4>
+                        <p>Event Coordinator, Executive Director in Strategy<br/>UT MD Anderson Cancer Center</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Kirsten Reid -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Kirsten.jpg" alt="Kirsten Reid">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Kirsten Reid</h4>
+                        <p>Logistics Specialist<br/>UT MD Anderson Cancer Center</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Wanjing Wang -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/wanjing-wang.jpg" alt="Wanjing Wang">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Wanjing Wang</h4>
+                        <p>Web Chair<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+
+                <!-- Zehan Li -->
+                <div class="cell">
+                  <div class="card">
+                    <div class="grid-x">
+                      <div class="cell small-4">
+                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Zehan.JPG" alt="Zehan Li">
+                      </div>
+                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                        <h4>Zehan Li</h4>
+                        <p>Marketing Specialist<br/>UTHealth Houston</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+        
+              </div> <!-- /grid-x -->
+            </div> <!-- /grid-container -->
           </div>
-        </div>
+        </div>  
         
         <!-- Submissions Section -->
         <div id="submissions" class="widget widget-speakers">
