@@ -151,42 +151,58 @@
         line-height: 1.5; /* Improve readability */
     }    
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-
+    /* Basic Container */
     .grid-container {
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .grid-x {
       display: flex;
       flex-wrap: wrap;
     }
     .cell {
       box-sizing: border-box;
-      padding: 1rem;
-      width: 100%; /* 默认全宽 */
+      padding: 1rem; /* space around each card */
+      width: 100%;
     }
+    /* Show 1 card per row on small screens, 2 cards per row on medium+ screens */
     @media (min-width: 640px) {
-      .cell.small-4 { width: 33.333%; }
-      .cell.small-8 { width: 66.666%; }
-    }  
-            
-    .circular-image {
-        width: 200px; /* Width of the image */
-        height: 200px; /* Height of the image */
-        border-radius: 50%; /* Makes the image round */
-        object-fit: cover; /* This will cover the area of the container without stretching the image */
-        object-position: center 0.00006%; /* Adjust this value if you need to move the image up or down to show the hair */
-        margin-bottom: 10px; /* Space between the image and the text */
+      .cell.medium-6 {
+        width: 50%; /* 2 columns */
+      }
     }
+
+    /* Card Styles */
+    .card {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease;
+      background-color: #fff;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    /* Circular Images */
+    .circular-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    /* Sample text styling */
+    h4 {
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
+    }
+    p {
+      margin: 0.3em 0;
+    }
+        
     /* Adjustments to panel discussion speaker elements */
     #panel-discussion .speaker .circular-image {
         margin-left: 5px; /* Adjust this value as needed to move the images to the right */
@@ -934,67 +950,61 @@
         
             <!-- 核心结构：grid-container + grid-x -->
             <div class="grid-container">
-              <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3"><!-- 一行最多并排3张卡片 -->
+              <div class="grid-x"><!-- 一行最多并排3张卡片 -->
                 
-                <!-- 卡片1 -->
-                <div class="cell">
+                <!-- Card 1 -->
+                <div class="cell medium-6">
                   <div class="card">
-                    <div class="grid-x">
-                      <!-- 左侧头像 -->
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/annaprag.jpeg" 
-                             alt="Ananth V. Annapragada">
-                      </div>
-                      <!-- 右侧文字 -->
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div style="display:flex;align-items:center;">
+                      <img class="circular-image" 
+                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/annaprag.jpeg" 
+                           alt="Ananth V. Annapragada">
+                      <div style="margin-left:15px;">
                         <h4>Ananth V. Annapragada, PhD</h4>
                         <p>Baylor College of Medicine</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <!-- 卡片2 -->
-                <div class="cell">
+            
+                <!-- Card 2 -->
+                <div class="cell medium-6">
                   <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Anwar.jpg" 
-                             alt="Siraj Anwar">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div style="display:flex;align-items:center;">
+                      <img class="circular-image"
+                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/Anwar.jpg" 
+                           alt="Siraj Anwar">
+                      <div style="margin-left:15px;">
                         <h4>Siraj Anwar, MBBS, MS, CPHIMS</h4>
                         <p>Harris Health</p>
                       </div>
                     </div>
                   </div>
                 </div>
-        
-                <!-- 卡片3 -->
-                <div class="cell">
+            
+                <!-- Card 3 -->
+                <div class="cell medium-6">
                   <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/david_jaffray.jpg.resize.810.1150.high.jpg" 
-                             alt="David A. Jaffray">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div style="display:flex;align-items:center;">
+                      <img class="circular-image"
+                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/david_jaffray.jpg.resize.810.1150.high.jpg"
+                           alt="David A. Jaffray">
+                      <div style="margin-left:15px;">
                         <h4>David A. Jaffray, PhD</h4>
                         <p>UT MD Anderson Cancer Center</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <!-- 卡片4 -->
-                <div class="cell">
+            
+                <!-- Card 4 -->
+                <div class="cell medium-6">
                   <div class="card">
-                    <div class="grid-x">
-                      <div class="cell small-4">
-                        <img class="circular-image" src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/xiaoqian-jiang.jpg" 
-                             alt="Xiaoqian Jiang">
-                      </div>
-                      <div class="cell small-8" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div style="display:flex;align-items:center;">
+                      <img class="circular-image"
+                           src="https://raw.githubusercontent.com/OHNLP/tmcaisummit2025/main/xiaoqian-jiang.jpg"
+                           alt="Xiaoqian Jiang">
+                      <div style="margin-left:15px;">
                         <h4>Xiaoqian Jiang, PhD</h4>
                         <p>UTHealth Houston</p>
                       </div>
