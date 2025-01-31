@@ -1136,7 +1136,7 @@
         </div>
       </div>
 
-      <!-- Sponsors -->
+      <!-- Sponsor Section (unchanged, except for inline style on the Nucleati logo) -->
         <div class="ai_sponsor-section">
             <h2 class="ai_sponsor-title">Sponsors</h2>
             <p class="ai_sponsor-thank-you">
@@ -1148,18 +1148,29 @@
                     <h3>Platinum Sponsor</h3>
                     <div class="ai_sponsor-logos">
                         <div class="ai_sponsor">
+                            <!-- Only add inline style for the Nucleati logo to preserve its text at bottom -->
                             <a href="https://www.nucleati.com" target="_blank">
-                                <img src="./NucleatiLogo.jpg" alt="Nucleati Logo">
+                                <img 
+                                  src="./NucleatiLogo.jpg" 
+                                  alt="Nucleati Logo"
+                                  style=" /* override only for this image */
+                                    width: 200px;
+                                    height: auto; 
+                                    object-fit: contain; 
+                                    border-radius: 0; 
+                                    margin: 20px auto;
+                                  "
+                                >
                             </a>
                             <p style="text-align:center; margin-top:10px;">
-                              <a href="https://www.nucleati.com" target="_blank" style="text-decoration:none; color:#006791;">
-                                https://www.nucleati.com
-                              </a>
+                                <a href="https://www.nucleati.com" target="_blank" style="text-decoration:none; color:#006791;">
+                                    https://www.nucleati.com
+                                </a>
                             </p>
                             <p style="text-align:center;">
-                              <a href="https://adenine.ai" target="_blank" style="text-decoration:none; color:#006791;">
-                                Product: Adenine.ai
-                              </a>
+                                <a href="https://adenine.ai" target="_blank" style="text-decoration:none; color:#006791;">
+                                    Product: Adenine.ai
+                                </a>
                             </p>
                         </div>
                     </div>
