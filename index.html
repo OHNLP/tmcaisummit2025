@@ -304,6 +304,59 @@
         margin: 20px auto;
     }
 
+    /* Highlighted sponsor card container */
+    .sponsor-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      margin: 20px auto;
+      max-width: 320px; /* or whatever width you like */
+      text-align: center;
+      position: relative;
+      padding: 1.5em 1em;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    
+    /* The top label (e.g. "PLATINUM") */
+    .sponsor-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffd700; /* gold color for "Platinum" */
+      color: #333;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 0.4em 0.6em;
+      border-bottom-right-radius: 8px;
+    }
+    
+    /* Sponsor name below the logo */
+    .sponsor-card .sponsor-name {
+      margin-top: 1em;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    
+    /* Sponsor description text */
+    .sponsor-card .sponsor-description {
+      margin-top: 0.5em;
+      font-size: 0.95em;
+      line-height: 1.4em;
+      color: #444;
+    }
+    
+    /* Make sure the sponsor logo fits nicely within the card */
+    .sponsor-card img {
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0;
+      margin: 0 auto;
+      display: block;
+    }
+    
+
     @media only screen and (max-width: 600px) {
         .circular-image {
             width: 120px;
@@ -1209,7 +1262,8 @@
                 and may not represent the views of these organizations.
             </p>
             <div class="ai_sponsor-levels">
-        
+
+                <!--
                 <!-- ====== Platinum Sponsor (Nucleati) ====== -->
                 <div class="silver-ai_sponsor">
                     <h3>Platinum</h3>
@@ -1245,6 +1299,38 @@
                         </div>
                     </div>
                 </div>
+                -->
+
+                <!-- ====== Featured Platinum Sponsor Card (Nucleati) ====== -->
+                <div class="silver-ai_sponsor" style="margin-bottom:40px;">
+                    <!-- The card container -->
+                    <div class="sponsor-card">
+                        <!-- The top label reading "PLATINUM" -->
+                        <div class="sponsor-badge">Platinum</div>
+                        
+                        <!-- The sponsor logo -->
+                        <img src="./NucleatiLogo.jpg" alt="Nucleati Logo">
+                
+                        <!-- Sponsor Name -->
+                        <div class="sponsor-name">Nucleati</div>
+                        
+                        <!-- Sponsor Description -->
+                        <p class="sponsor-description">
+                            Nucleati is a healthcare AI company specializing in <em>AI-driven digital pathology</em>. 
+                            Their flagship product, <a href="https://adenine.ai" target="_blank">Adenine.ai</a>,
+                            helps labs improve turnaround time and diagnostic accuracy. 
+                        </p>
+                        
+                        <!-- Sponsor Link -->
+                        <p style="margin-top:10px;">
+                          <a href="https://www.nucleati.com" target="_blank" 
+                             style="text-decoration:none; color:#006791; font-weight:bold;">
+                            Visit Website &raquo;
+                          </a>
+                        </p>
+                    </div>
+                </div>
+
         
                 <!-- ====== Next Sponsor (UTHealth), placed below Platinum ====== -->
                 <div class="silver-ai_sponsor">
@@ -1265,13 +1351,13 @@
                                   "
                                 >
                             </a>
-                            <p style="text-align:center; margin-top:10px;">
+                          <!--   <p style="text-align:center; margin-top:10px;">
                                 <a href="https://www.uth.edu" 
                                    target="_blank" 
                                    style="text-decoration:none; color:#006791;">
                                     https://www.uth.edu
                                 </a>
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
