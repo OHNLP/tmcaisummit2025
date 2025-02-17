@@ -355,7 +355,27 @@
       margin: 0 auto;
       display: block;
     }
-    
+
+    /* Audubon + MarsShot: 用於縮小Mars Shot Logo的style */
+    .audubon-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .audubon-logo-container img {
+      width: 45%;
+      height: auto;
+    }
+
+    /* For smaller Mars Shot Logo if placed separately */
+    .mars-shot-small {
+      width: 60px;
+      height: auto;
+      vertical-align: middle;
+      margin-left: 6px; /* optional spacing */
+    }
 
     @media only screen and (max-width: 600px) {
         .circular-image {
@@ -1381,17 +1401,16 @@
             </div>
           </div><!-- End Platinum Sponsors Row -->
     
-          <!-- Gold Sponsors in One Row -->
-          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px auto;">
-            
-            <!-- Gold Card (TEKsystems) -->
+          <!-- Gold Sponsors (Two Rows) -->
+          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
+            <!-- Gold: TEKsystems & Audubon 同一行 -->
+            <!-- TEKsystems -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
               </div>
               <a href="https://www.teksystems.com/en/industries/healthcare-technology-solutions"
-                 target="_blank"
-                 style="text-decoration:none;">
+                 target="_blank" style="text-decoration:none;">
                 <img 
                   src="./GS_Stacked_RGB (1).jpg" 
                   alt="TEKsystems Logo"
@@ -1415,66 +1434,63 @@
                 </ul>
               </div>
             </div>
-            
-            <!-- Gold Card (Audubon) -->
+    
+            <!-- Gold: Audubon Health Group -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
               </div>
-              
-              <!-- 去掉深色背景，并加大两个 logo 的尺寸 -->
-              <div class="audubon-logo-container">
-                <img 
-                  src="./Audubon Health Group Logo.png" 
-                  alt="Audubon Logo"
-                >
-                <img 
-                  src="./Mars Shot Logo.png" 
-                  alt="Cancer Mars Shot"
-                >
-              </div>
-              
+              <!-- Audubon Logo (big) -->
+              <img
+                src="./Audubon Health Group Logo.png"
+                alt="Audubon Logo"
+                style="width:60%; height:auto; margin-top:10px;"
+              >
               <div class="sponsor-name" style="margin-top:1em;">
                 Audubon Health Group
               </div>
               <div class="sponsor-description">
                 <p style="margin:0;">
-                  Audubon Health Group builds a collaborative network of cancer research scientists, 
-                  organizations and biobanks to accelerate discoveries of new biomarkers and 
+                  Audubon Health Group builds a collaborative network of cancer research scientists,
+                  organizations and biobanks to accelerate discoveries of new biomarkers and
                   treatments using AI/ML tools.
                 </p>
                 <p style="margin-top:0.5em;">
-                  Our current focus is on expanding access to patient biospecimens, improving clinical 
-                  and genomic data accumulation, and broadening usage of AI/ML tools for advanced 
+                  Our current focus is on expanding access to patient biospecimens, improving clinical
+                  and genomic data accumulation, and broadening usage of AI/ML tools for advanced
                   genomic analysis.
                 </p>
                 <p style="margin-top:0.5em;">
-                  We suggest our Mars Shot approach. The key pillars of such a program should be genuine 
-                  collaboration, true efficiency and international engagement.
+                  We suggest our Mars Shot approach. The key pillars of such a program should be
+                  genuine collaboration, true efficiency and international engagement.
                 </p>
+                <!-- 在此用一行顯示小的 Cancer Mars Shot logo，並帶有超連結 -->
                 <p style="margin-top:0.5em;">
-                  <strong>Learn more:</strong> 
-                  <a href="https://audubonbio.com/mars-shot-research/" target="_blank" style="color:#006791; text-decoration:underline;">
-                    audubonbio.com/mars-shot-research
+                  <strong>Mars Shot:</strong>
+                  <a href="https://audubonbio.com/mars-shot-research/" target="_blank" style="text-decoration:none;">
+                    <img 
+                      src="./Mars Shot Logo.png"
+                      alt="Cancer MARS Shot"
+                      class="mars-shot-small"
+                    >
                   </a>
                 </p>
               </div>
             </div>
-          </div><!-- End Gold Sponsors Row -->
+          </div><!-- End TEKsystems + Audubon Row -->
     
-          <!-- Another row: Audubon (Gold) + Visiopharm (Silver) -->
-          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px auto;">       
-
-            <!-- Gold Card (UTHealth) -->
+          <!-- Gold (UTHealth) + Silver (Visiopharm) 同一行 -->
+          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
+            <!-- Gold: UTHealth Houston -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
               </div>
               <a href="https://www.uth.edu" target="_blank" style="text-decoration:none;">
-                <img 
-                  src="./UTHealth.jpg" 
-                  alt="UTHealth Logo" 
-                  style="width:95%; max-width:500px; height:auto;" 
+                <img
+                  src="./UTHealth.jpg"
+                  alt="UTHealth Logo"
+                  style="width:95%; max-width:500px; height:auto;"
                 >
               </a>
               <div class="sponsor-name" style="margin-top:1em;">
@@ -1490,8 +1506,8 @@
                   <li>Disrupt, transform, and innovate to elicit biomedical discoveries, improve healthcare delivery, and aid in disease prevention by conducting outstanding basic and applied research and developing impactful information technology products and solutions</li>
                 </ul>
               </div>
-            </div>  
-            
+            </div>
+    
             <!-- Silver Card (Visiopharm) -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#C0C0C0;">
@@ -1499,9 +1515,9 @@
               </div>
               <a href="https://www.visiopharm.com" target="_blank" style="text-decoration:none;">
                 <img 
-                  src="./visiopharm.png" 
+                  src="./visiopharm.png"
                   alt="Visiopharm Logo"
-                  style="width:80%; height:auto;" 
+                  style="width:80%; height:auto;"
                 >
               </a>
               <div class="sponsor-name" style="margin-top:1em;">
@@ -1509,18 +1525,18 @@
               </div>
               <div class="sponsor-description">
                 <p style="margin:0;">
-                  Visiopharm is the leader in AI-driven precision pathology software for research 
-                  and diagnostics. Since 2001, its global footprint has grown by providing comprehensive 
+                  Visiopharm is the leader in AI-driven precision pathology software for research
+                  and diagnostics. Since 2001, its global footprint has grown by providing comprehensive
                   tools for advanced tissue analysis.
                 </p>
                 <p style="margin-top:0.5em;">
-                  Visiopharm’s platform supports biomarker discovery, drug development, and routine 
-                  pathology, enabling laboratories and research institutions worldwide to generate 
+                  Visiopharm’s platform supports biomarker discovery, drug development, and routine
+                  pathology, enabling laboratories and research institutions worldwide to generate
                   precise, reproducible data for better decision-making in life sciences and healthcare.
                 </p>
               </div>
             </div>
-          </div><!-- End Audubon & Visiopharm Row -->
+          </div><!-- End UTHealth + Visiopharm Row -->
     
         </div><!-- /.ai_sponsor-levels -->
       </div><!-- /.ai_sponsor-section -->
