@@ -356,6 +356,27 @@
       display: block;
     }
 
+    /* TEKsystems - Make it bigger */
+    .teksystems-logo {
+      width: 60% !important; /* 让它比原先 50% 更大 */
+      height: auto !important;
+    }
+
+    /* For Audubon + MarsShot smaller logo */
+    .mars-shot-small {
+      width: 30px; /* 缩小到30px */
+      height: auto;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* Adjust spacing for Healthconnect Texas card
+       We add extra margin between "Vision" text and the tagline. */
+    .healthconnect-vision {
+      margin-bottom: 1.5em; /* 在Vision段落下面增加一些留白 */
+    }
+    /* The tagline can remain with margin-top or so as needed. */    
+
     /* Audubon + MarsShot: 用於縮小Mars Shot Logo的style */
     .audubon-logo-container {
       display: flex;
@@ -367,14 +388,6 @@
     .audubon-logo-container img {
       width: 45%;
       height: auto;
-    }
-
-    /* For smaller Mars Shot Logo if placed separately */
-    .mars-shot-small {
-      width: 40px;
-      height: auto;
-      vertical-align: middle;
-      margin-left: 6px; /* optional spacing */
     }
 
     @media only screen and (max-width: 600px) {
@@ -1334,11 +1347,10 @@
         </p>
         
         <div class="ai_sponsor-levels">
+          <!-- Platinum Sponsors -->
+          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
     
-          <!-- Platinum Sponsors in One Row -->
-          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px auto;">
-            
-            <!-- Platinum Card (Healthconnect Texas) 放在左边 -->
+            <!-- Platinum: Healthconnect Texas -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#D9D9D9;">
                 Platinum
@@ -1354,19 +1366,21 @@
                 Healthconnect Texas
               </div>
               <div class="sponsor-description">
-                <p style="margin:0;">
+                <!-- 给 Vision 与 tagline 之间加大间距 -->
+                <p class="healthconnect-vision" style="margin:0;">
                   <strong>Vision:</strong> To operate a sustainable health information exchange that coordinates
                   care for the community, improves overall population health, enhances health and wellness
                   initiatives, reduces healthcare costs, and advances opportunities for long-term research
                   and disease prevention.
                 </p>
-                <p style="margin-top:0.5em; text-align:center; font-size:1.3em; font-weight:bold;">
+                <!-- Tagline 段落可在上面空出一段 -->
+                <p style="margin-top:1.5em; text-align:center; font-size:1.3em; font-weight:bold;">
                   "Connecting for a Healthier Texas"
                 </p>
               </div>
             </div>
     
-            <!-- Platinum Card (Nucleati) 放在右边 -->
+            <!-- Platinum: Nucleati -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#D9D9D9;">
                 Platinum
@@ -1391,20 +1405,23 @@
                 </p>
                 <p style="margin-top:0.5em;">
                   Nucleati specializes in leveraging artificial intelligence to streamline genetic evidence
-                  curation and variant classification. 
+                  curation and variant classification.
                 </p>
                 <p style="margin-top:0.5em;">
-                  <strong>Product:</strong> <strong><a href="https://adenine.ai" target="_blank" 
-                    style="color:#f37c20; text-decoration:none;">Adenine.ai</a></strong>.
+                  <strong>Product:</strong>
+                  <strong><a href="https://adenine.ai" target="_blank" style="color:#f37c20; text-decoration:none;">
+                    Adenine.ai
+                  </a></strong>.
                 </p>
               </div>
             </div>
-          </div><!-- End Platinum Sponsors Row -->
+          </div><!-- End Platinum -->
     
-          <!-- Gold Sponsors (Two Rows) -->
+          <!-- Gold Sponsors (2 rows) -->
           <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-            <!-- Gold: TEKsystems & Audubon 同一行 -->
-            <!-- TEKsystems -->
+            <!-- TEKsystems + Audubon -->
+            
+            <!-- TEKsystems: bigger logo -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
@@ -1412,9 +1429,9 @@
               <a href="https://www.teksystems.com/en/industries/healthcare-technology-solutions"
                  target="_blank" style="text-decoration:none;">
                 <img 
-                  src="./GS_Stacked_RGB (1).jpg" 
+                  src="./GS_Stacked_RGB (1).jpg"
                   alt="TEKsystems Logo"
-                  style="width:50%; max-width:500px; height:auto;"
+                  class="teksystems-logo"  <!-- 使用自定义class让其更大 -->
                 >
               </a>
               <div class="sponsor-name" style="margin-top:1em;">
@@ -1435,12 +1452,11 @@
               </div>
             </div>
     
-            <!-- Gold: Audubon Health Group -->
+            <!-- Audubon -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
               </div>
-              <!-- Audubon Logo (big) -->
               <img
                 src="./Audubon Health Group Logo.png"
                 alt="Audubon Logo"
@@ -1464,7 +1480,6 @@
                   We suggest our Mars Shot approach. The key pillars of such a program should be
                   genuine collaboration, true efficiency and international engagement.
                 </p>
-                <!-- 在此用一行顯示小的 Cancer Mars Shot logo，並帶有超連結 -->
                 <p style="margin-top:0.5em;">
                   <strong>Mars Shot:</strong>
                   <a href="https://audubonbio.com/mars-shot-research/" target="_blank" style="text-decoration:none;">
@@ -1477,11 +1492,12 @@
                 </p>
               </div>
             </div>
-          </div><!-- End TEKsystems + Audubon Row -->
+          </div><!-- End TEKsystems + Audubon -->
     
-          <!-- Gold (UTHealth) + Silver (Visiopharm) 同一行 -->
+          <!-- UTHealth + Visiopharm -->
           <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-            <!-- Gold: UTHealth Houston -->
+            
+            <!-- UTHealth -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#f2b826;">
                 Gold
@@ -1508,13 +1524,13 @@
               </div>
             </div>
     
-            <!-- Silver Card (Visiopharm) -->
+            <!-- Visiopharm -->
             <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
               <div class="sponsor-badge" style="background-color:#C0C0C0;">
                 Silver
               </div>
               <a href="https://www.visiopharm.com" target="_blank" style="text-decoration:none;">
-                <img 
+                <img
                   src="./visiopharm.png"
                   alt="Visiopharm Logo"
                   style="width:80%; height:auto;"
@@ -1536,7 +1552,7 @@
                 </p>
               </div>
             </div>
-          </div><!-- End UTHealth + Visiopharm Row -->
+          </div><!-- End UTHealth + Visiopharm -->
     
         </div><!-- /.ai_sponsor-levels -->
       </div><!-- /.ai_sponsor-section -->
