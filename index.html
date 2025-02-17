@@ -1461,33 +1461,87 @@
             
             </div><!-- End of Gold Sponsors Row -->
 
-            <!-- Silver Card (VisioPharm) -->
-            <div class="sponsor-card" style="text-align:left; max-width:480px;">
-              <!-- Silver label with #C0C0C0 -->
-              <div class="sponsor-badge" style="background-color:#C0C0C0;">
-                Silver
+            <!-- 新增：Audubon (Gold) + Visiopharm (Silver) 并列 -->
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px auto;">
+              
+              <!-- ====== Gold Card (Audubon) ====== -->
+              <div class="sponsor-card" style="text-align:left; max-width:480px;">
+                <div class="sponsor-badge" style="background-color:#f2b826;">
+                  Gold
+                </div>
+                <!-- 两个 Logo 并排：
+                     第一个：audubon.png
+                     第二个：cancer-mars-shot.png（透明背景，置于深色背景容器中） -->
+                <div style="display:flex; justify-content:center; align-items:center; gap:10px; margin-top:10px;">
+                  <img 
+                    src="./audubon.png" 
+                    alt="Audubon Logo" 
+                    style="width:40%; height:auto;"
+                  >
+                  <!-- 深色背景容器，用于显示透明logo -->
+                  <div style="background-color:#333; padding:5px; border-radius:4px;">
+                    <img 
+                      src="./cancer-mars-shot.png" 
+                      alt="Cancer Mars Shot" 
+                      style="width:100px; height:auto;" 
+                    >
+                  </div>
+                </div>
+                
+                <div class="sponsor-name" style="margin-top:1em;font-size:1.3em;">
+                  Audubon Health Group
+                </div>
+                <div class="sponsor-description" style="text-align:left; font-size:1.1em; line-height:1.6; margin-top:10px;">
+                  <p style="margin:0;">
+                    Audubon Health Group builds a collaborative network of cancer research scientists, 
+                    organizations and biobanks to accelerate discoveries of new biomarkers and 
+                    treatments using AI/ML tools.
+                  </p>
+                  <p style="margin-top:0.5em;">
+                    Our current focus is on expanding access to patient biospecimens, improving clinical 
+                    and genomic data accumulation, and broadening usage of AI/ML tools for advanced 
+                    genomic analysis.
+                  </p>
+                  <p style="margin-top:0.5em;">
+                    We suggest our Mars Shot approach. The key pillars of such a program should be genuine 
+                    collaboration, true efficiency and international engagement.
+                  </p>
+                  <p style="margin-top:0.5em;">
+                    <strong>Learn more:</strong> 
+                    <a href="https://audubonbio.com/mars-shot-research/" target="_blank" style="color:#006791; text-decoration:underline;">
+                      audubonbio.com/mars-shot-research
+                    </a>
+                  </p>
+                </div>
               </div>
-              <a href="https://www.visiopharm.com" target="_blank" style="text-decoration:none;">
-                <img 
-                  src="./visiopharm.png" 
-                  alt="Visiopharm Logo"
-                  style="width:80%; height:auto;" 
-                >
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;font-size:1.3em;">
-                VisioPharm
-              </div>
-              <div class="sponsor-description" style="text-align:left; font-size:1.1em; line-height:1.6; margin-top:10px;">
-                <p style="margin:0;">
-                  VisioPharm is the leader in AI-driven precision pathology software for research and diagnostics.
-                  Since 2001, its global footprint has grown by providing comprehensive tools for advanced tissue
-                  analysis.
-                </p>
-                <p style="margin-top:0.5em;">
-                  VisioPharm’s platform supports biomarker discovery, drug development, and routine pathology,
-                  enabling laboratories and research institutions worldwide to generate precise, reproducible
-                  data for better decision-making in life sciences and healthcare.
-                </p>
+              
+              <!-- ====== Silver Card (VisioPharm) ====== -->
+              <div class="sponsor-card" style="text-align:left; max-width:480px;">
+                <div class="sponsor-badge" style="background-color:#C0C0C0;">
+                  Silver
+                </div>
+                <a href="https://www.visiopharm.com" target="_blank" style="text-decoration:none;">
+                  <img 
+                    src="./visiopharm.png" 
+                    alt="Visiopharm Logo"
+                    style="width:80%; height:auto;" 
+                  >
+                </a>
+                <div class="sponsor-name" style="margin-top:1em;font-size:1.3em;">
+                  VisioPharm
+                </div>
+                <div class="sponsor-description" style="text-align:left; font-size:1.1em; line-height:1.6; margin-top:10px;">
+                  <p style="margin:0;">
+                    Visiopharm is the leader in AI-driven precision pathology software for research 
+                    and diagnostics. Since 2001, its global footprint has grown by providing comprehensive 
+                    tools for advanced tissue analysis.
+                  </p>
+                  <p style="margin-top:0.5em;">
+                    Visiopharm’s platform supports biomarker discovery, drug development, and routine 
+                    pathology, enabling laboratories and research institutions worldwide to generate 
+                    precise, reproducible data for better decision-making in life sciences and healthcare.
+                  </p>
+                </div>
               </div>
             </div>
   
