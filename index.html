@@ -81,6 +81,16 @@
       margin:12px 0 20px 0;
       line-height:1.5;
     }
+    /* Registration is now free - announcement callout */
+    .notice-success{
+      background:#d4edda;
+      border:1px solid #c3e6cb;
+      color:#155724;
+      padding:14px 16px;
+      border-radius:6px;
+      margin:12px 0 20px 0;
+      line-height:1.6;
+    }
 
 
     #mission {
@@ -935,13 +945,43 @@
             </div>
         
             <div style="margin-top: 20px; text-align: left;">
+
+              <!-- NEW: Free registration announcement -->
+              <div class="notice-success">
+                Thanks to the tremendous support from our generous sponsors, we’re excited to share that registration for the event is now completely free for all attendees.<br><br>
+                If you have already registered and submitted payment, our team will be reaching out to you directly with details regarding reimbursement.<br><br>
+                We are incredibly grateful for the strong community and industry support that has made this possible and look forward to welcoming everyone to an engaging and impactful event.
+              </div>
+            
+              <p class="quote-content" style="margin-top: 20px;">
+                <em>Registration is free. Please register here:</em>
+              </p>
+            
+              <!-- Keep this free registration form button (currently your Student Google Form).
+                   You can rename the text to apply to everyone. -->
+              <a style="
+                display: inline-block;
+                margin-bottom: 20px;
+                margin-left:80px !important;
+                padding: 10px 20px;
+                background-color: #4e738a;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdzBBaUwCZZdpgkCwBH_OfUc21rIkUPiv2Ekjo3FBrDFULkUQ/viewform"
+                target="_blank" rel="noopener">
+                Register (Free)
+              </a>
+            
+              <!-- OPTIONAL: Keep the paid ACI Pay link hidden but not deleted -->
+              <!--
               <p class="quote-content" style="margin-top: 20px;">
                 <em>Register Here:</em>
               </p>
               <a style="
                 display: inline-block;
                 margin-bottom: 20px;
-                margin-left:80px !important; 
+                margin-left:80px !important;
                 padding: 10px 20px;
                 background-color: #ae6042;
                 color: #fff;
@@ -951,34 +991,11 @@
                 target="_blank" rel="noopener">
                 Register
               </a>
-
-                <p class="quote-content" style="margin-top: 10px;">
-                  <em>Student Registration (Google Form):</em>
-                </p>
-                
-                <a style="
-                  display: inline-block;
-                  margin-bottom: 20px;
-                  margin-left:80px !important; 
-                  padding: 10px 20px;
-                  background-color: #4e738a;
-                  color: #fff;
-                  text-decoration: none;
-                  border-radius: 4px;"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdzBBaUwCZZdpgkCwBH_OfUc21rIkUPiv2Ekjo3FBrDFULkUQ/viewform"
-                  target="_blank" rel="noopener">
-                  Student Register (Google Form)
-                </a>
-
-                <!-- 
-                <div class="notice-warning">
-                  <strong>$1 Sponsor/Speaker/Volunteer Registration</strong><br>
-                    This option is <u>strictly reserved for approved sponsors, speakers, and volunteers</u>. All registrations under this category will be verified by the organization committee. 
-                    Registrations made by individuals who are not approved sponsors, speakers, or volunteers will be <strong>voided</strong>.
-                </div>
-                -->
-                             
-              <div style="margin-top: 20px;">                
+              -->
+            
+              <!-- OPTIONAL: Hide fee table (no longer needed) -->
+              <!--
+              <div style="margin-top: 20px;">
                 <table style="border-collapse: collapse; width: 100%;">
                   <tr style="background-color: #f0f0f0;">
                     <th style="text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd;">Participant</th>
@@ -989,19 +1006,16 @@
                     <td style="padding: 8px 12px; border-bottom: 1px solid #ddd;">$200.00</td>
                   </tr>
                   <tr>
-                      <td style="padding: 8px 12px;">Student</td>
-                      <td style="padding: 8px 12px;">
-                        $0.00 &nbsp;|&nbsp;
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzBBaUwCZZdpgkCwBH_OfUc21rIkUPiv2Ekjo3FBrDFULkUQ/viewform"
-                           target="_blank" rel="noopener"
-                           style="color:#006791; text-decoration:underline;">
-                          Register via Google Form
-                        </a>
-                      </td>
-                    </tr>
+                    <td style="padding: 8px 12px;">Student</td>
+                    <td style="padding: 8px 12px;">$0.00</td>
+                  </tr>
                 </table>
               </div>
+              -->
+            
             </div>
+
+              
           </div>
         </div>
          
