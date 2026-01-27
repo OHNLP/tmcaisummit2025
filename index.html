@@ -392,6 +392,87 @@
     #diamond-sponsor-wrapper { display:flex; justify-content:center; }
     #diamond-sponsor-carousel { width:100%; max-width:520px; }
     #diamond-sponsor-carousel .diamond-slide { padding:10px 0; }
+    #diamond-sponsor-carousel .owl-stage { display:flex; }
+    #diamond-sponsor-carousel .owl-item { display:flex; }
+    #diamond-sponsor-carousel .diamond-slide { width:100%; }
+
+
+        /* ===== Pretty Owl Nav Arrows (Diamond) ===== */
+        #diamond-sponsor-wrapper { position: relative; }
+        
+        #diamond-sponsor-carousel .owl-nav{
+          position:absolute;
+          top:50%;
+          left:0;
+          right:0;
+          transform:translateY(-50%);
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          pointer-events:none; /* 让容器不挡点击 */
+          padding:0 6px;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button{
+          pointer-events:auto; /* 只让按钮可点 */
+          width:44px;
+          height:44px;
+          border-radius:999px;
+          border:1px solid rgba(0,0,0,0.10) !important;
+          background: rgba(255,255,255,0.92) !important;
+          box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+          outline:none !important;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button:hover{
+          transform: translateY(-1px) scale(1.03);
+          background: rgba(255,255,255,0.98) !important;
+          box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button:active{
+          transform: scale(0.98);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button span{
+          display:flex; /* owl 默认用 span 包裹 */
+          align-items:center;
+          justify-content:center;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button svg{
+          width:18px;
+          height:18px;
+          display:block;
+          fill:none;
+          stroke:#222;
+          stroke-width:2.6;
+          stroke-linecap:round;
+          stroke-linejoin:round;
+        }
+        
+        /* 让箭头在 card 外侧一点点，不压到内容 */
+        #diamond-sponsor-carousel .owl-nav .owl-prev{ margin-left:-10px; }
+        #diamond-sponsor-carousel .owl-nav .owl-next{ margin-right:-10px; }
+        
+        /* Mobile：按钮稍小一点，并靠近内容 */
+        @media (max-width: 600px){
+          #diamond-sponsor-carousel .owl-nav button{
+            width:38px;
+            height:38px;
+          }
+          #diamond-sponsor-carousel .owl-nav .owl-prev{ margin-left:-4px; }
+          #diamond-sponsor-carousel .owl-nav .owl-next{ margin-right:-4px; }
+        }
+        
+        /* 可选：隐藏 dots（如果你想只保留箭头） */
+        /* #diamond-sponsor-carousel .owl-dots{ display:none; } */
+
 
     @media only screen and (max-width: 600px) {
         .circular-image {
@@ -526,7 +607,9 @@
     <link rel="stylesheet" id="convey-layout-css" href="./style(1).css" type="text/css" media="all">
     <script type="text/javascript" src="./jquery.js"></script>
     <script type="text/javascript" src="./jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="./owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./owl.carousel.min.js"></script>    
+    <link rel="stylesheet" href="./owl.carousel.min.css">
+    <link rel="stylesheet" href="./owl.theme.default.min.css">
     <script type="text/javascript" src="./external-tracking.min.js"></script>
     <link rel="https://api.w.org/" href="http://conveyux.com/wp-json/">
 </head>
@@ -1811,10 +1894,7 @@
     <script type="text/javascript" src="./tweetMachine.min.js"></script>
     <script type="text/javascript" src="./wp-embed.min.js"></script>
 
-    <!-- ✅ IMPORTANT: 你 head 里已经有 owl.carousel.min.js，这里就不要再加载一次 -->
-    <!-- <script type="text/javascript" src="./owl.carousel.min.js"></script> -->
-    <link rel="stylesheet" href="./owl.carousel.min.css">
-    <link rel="stylesheet" href="./owl.theme.default.min.css">
+    
 
     <!-- SCROLL UP BTN -->
     <div id="scroll">
@@ -1838,26 +1918,37 @@
     <!-- ✅ NEW: Diamond carousel init
          - 只有 1 个：不启用（不滚动）
          - 2+：每次显示 1 个 -->
+    <!-- ✅ Diamond carousel init (2+ slides -> carousel; 1 slide -> static) -->
     <script>
       jQuery(document).ready(function($){
         var $diamond = $('#diamond-sponsor-carousel');
         if (!$diamond.length) return;
-
+    
         var slideCount = $diamond.children('.diamond-slide').length;
-
-        if (slideCount <= 1) {
-          // 只有一个就不滚动，也不初始化 owl
-          return;
-        }
-
-        // 2 个及以上：每次显示 1 个
+    
+        // 只有一个：不初始化 owl，不显示箭头/点
+        if (slideCount <= 1) return;
+    
+        // 2+：初始化 owl，每次显示 1 个
         $diamond.addClass('owl-carousel');
+    
+        var prevSvg =
+          '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M15 18l-6-6 6-6"></path>' +
+          '</svg>';
+    
+        var nextSvg =
+          '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M9 6l6 6-6 6"></path>' +
+          '</svg>';
+    
         $diamond.owlCarousel({
           items: 1,
           loop: true,
           margin: 20,
           nav: true,
-          dots: true,
+          dots: true, // 只要箭头就改成 false
+          navText: [prevSvg, nextSvg],
           autoplay: true,
           autoplayHoverPause: true,
           autoplayTimeout: 3500,
@@ -1865,6 +1956,7 @@
         });
       });
     </script>
+
 
 </body>
 </html>
