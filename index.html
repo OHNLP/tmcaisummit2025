@@ -1647,61 +1647,90 @@
 
     <div class="ai_sponsor-levels">
     
-      <!-- ===== Diamond Sponsors (Carousel) ===== -->
-        <div class="sponsor-carousel owl-carousel" style="margin:20px auto;">
-        
-          <div>
-            <!-- Newton's Tree -->
-            <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-              <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo" style="width:80%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">Newton's Tree</div>
-              <div class="sponsor-description">
-                <p style="margin:0;">Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test, deploy, and monitor in-house and third-party AI products through its enterprise AI platform.</p>
-              </div>
+    <!-- ===== Diamond Sponsors (auto: 1 item -> no carousel; 2+ -> carousel) ===== -->
+    <div id="diamond-sponsor-wrapper" style="margin:20px auto;">
+      <div id="diamond-sponsor-carousel" class="sponsor-carousel">
+    
+        <!-- Diamond: Newton's Tree -->
+        <div class="diamond-slide">
+          <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+            <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+            <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
+              <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo" style="width:80%; height:auto;">
+            </a>
+            <div class="sponsor-name" style="margin-top:1em;">Newton's Tree</div>
+            <div class="sponsor-description">
+              <p style="margin:0;">
+                Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test, deploy,
+                and monitor in-house and third-party AI products through its enterprise AI platform.
+              </p>
             </div>
           </div>
-        
-          <div>
-            <!-- OneSource Cloud -->
-            <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-              <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./OneSourceCloud.png" alt="OneSource Cloud Logo" style="width:85%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">OneSource Cloud</div>
-              <div class="sponsor-description">
-                <p style="margin:0 0 0.8em 0;"><strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling enterprises to securely design, deploy, manage, and scale AI workloads across private, public, and hybrid environments.</p>
-                <p style="margin:0 0 0.8em 0;">Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong>... We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong>...</p>
-                <p style="margin:0;">Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>... and <strong>production-ready AI operations</strong>...</p>
-              </div>
-            </div>
-          </div>
-        
-          <div>
-            <!-- AWS (NEW) -->
-            <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-              <a href="https://aws.amazon.com/free/?trk=4bff893e-6f19-4cd8-accc-699c73895d8c&sc_channel=ps&trk=4bff893e-6f19-4cd8-accc-699c73895d8c&sc_channel=ps&ef_id=EAIaIQobChMIntSTuuiskgMV8F1_AB081AAHEAAYASAAEgIWSvD_BwE:G:s&s_kwcid=AL!4422!3!651751059780!e!!g!!aws!19852662197!145019195897&gad_campaignid=19852662197&gbraid=0AAAAADjHtp-txcevRGqq4449E7QtjMQEd&gclid=EAIaIQobChMIntSTuuiskgMV8F1_AB081AAHEAAYASAAEgIWSvD_BwE"
-                 target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./AWS_logo_RGB_1c_Gray850.png" alt="AWS Logo" style="width:80%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">AWS</div>
-              <div class="sponsor-description">
-                <p style="margin:0;">
-                  With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
-                  and the most performant, low-cost infrastructure, healthcare organizations trust AWS to provide the data and tools
-                  they need to connect their organization and accelerate generative AI-powered innovations that dramatically improve
-                  time to diagnosis and overall cost and quality of patient care.
-                </p>
-              </div>
-            </div>
-          </div>
-        
         </div>
-        <!-- ===== End Diamond Sponsors (Carousel) ===== -->
+    
+        <!-- Diamond: OneSource Cloud -->
+        <div class="diamond-slide">
+          <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+            <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+    
+            <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
+              <img src="./OneSourceCloud.png" alt="OneSource Cloud Logo" style="width:85%; height:auto;">
+            </a>
+    
+            <div class="sponsor-name" style="margin-top:1em;">OneSource Cloud</div>
+    
+            <div class="sponsor-description">
+              <p style="margin:0 0 0.8em 0;">
+                <strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling
+                enterprises to securely design, deploy, manage, and scale AI workloads across private, public,
+                and hybrid environments.
+              </p>
+    
+              <p style="margin:0 0 0.8em 0;">
+                Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong> built to meet stringent data
+                privacy, security, and compliance requirements for healthcare and other regulated industries.
+                We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong> with full data isolation,
+                control, and ownership.
+              </p>
+    
+              <p style="margin:0;">
+                Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>,
+                <strong>load balancing</strong>, <strong>predictable cost control, and scalable, production-ready AI operations</strong>,
+                helping organizations confidently run AI in mission-critical environments.
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Diamond: AWS -->
+        <div class="diamond-slide">
+          <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+            <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+    
+            <a href="https://aws.amazon.com/free/?trk=4bff893e-6f19-4cd8-accc-699c73895d8c&sc_channel=ps&trk=4bff893e-6f19-4cd8-accc-699c73895d8c&sc_channel=ps&ef_id=EAIaIQobChMIntSTuuiskgMV8F1_AB081AAHEAAYASAAEgIWSvD_BwE:G:s&s_kwcid=AL!4422!3!651751059780!e!!g!!aws!19852662197!145019195897&gad_campaignid=19852662197&gbraid=0AAAAADjHtp-txcevRGqq4449E7QtjMQEd&gclid=EAIaIQobChMIntSTuuiskgMV8F1_AB081AAHEAAYASAAEgIWSvD_BwE"
+               target="_blank" rel="noopener" style="text-decoration:none;">
+              <img src="./AWS_logo_RGB_1c_Gray850.png" alt="AWS Logo" style="width:85%; height:auto;">
+            </a>
+    
+            <div class="sponsor-name" style="margin-top:1em;">AWS</div>
+    
+            <div class="sponsor-description">
+              <p style="margin:0;">
+                With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
+                and the most performant, low-cost infrastructure, healthcare organizations trust AWS to provide the data and tools
+                they need to connect their organization and accelerate generative AI-powered innovations that dramatically improve
+                time to diagnosis and overall cost and quality of patient care.
+              </p>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <!-- ===== End Diamond Sponsors ===== -->
+
+
+
 
     
     
