@@ -389,7 +389,7 @@
     }
 
     /* ✅ NEW: Diamond carousel layout stabilize */
-    #diamond-sponsor-wrapper { display:flex; justify-content:center; }
+    #diamond-sponsor-wrapper { display:block; }
     #diamond-sponsor-carousel { width:100%; max-width:520px; }
     #diamond-sponsor-carousel .diamond-slide { padding:10px 0; }
     #diamond-sponsor-carousel .owl-stage { display:flex; }
@@ -399,6 +399,7 @@
 
         /* ===== Pretty Owl Nav Arrows (Diamond) ===== */
         #diamond-sponsor-wrapper { position: relative; }
+        #diamond-sponsor-carousel .owl-stage-outer{ overflow: visible; } /* 允许箭头露出来 */
         
         #diamond-sponsor-carousel .owl-nav{
           position:absolute;
@@ -427,6 +428,20 @@
           transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
           outline:none !important;
         }
+
+        /* ✅ 关键：让 nav 的 absolute 定位以 carousel 自己为参照，并且在最上层 */
+        #diamond-sponsor-carousel{
+          position: relative;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav{
+          z-index: 50;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button{
+          z-index: 60;
+        }
+
         
         #diamond-sponsor-carousel .owl-nav button:hover{
           transform: translateY(-1px) scale(1.03);
@@ -472,6 +487,18 @@
         
         /* 可选：隐藏 dots（如果你想只保留箭头） */
         /* #diamond-sponsor-carousel .owl-dots{ display:none; } */
+
+        /* ✅ Force show nav on desktop (防止主题隐藏) */
+        @media (min-width: 601px){
+          #diamond-sponsor-carousel .owl-nav{
+            display:flex !important;
+            opacity:1 !important;
+            visibility:visible !important;
+          }
+        }
+        
+        /* ✅ 防止外层裁剪箭头 */
+        #diamond-sponsor-wrapper{ overflow: visible; }
 
 
     @media only screen and (max-width: 600px) {
@@ -1925,11 +1952,8 @@
         if (!$diamond.length) return;
     
         var slideCount = $diamond.children('.diamond-slide').length;
-    
-        // 只有一个：不初始化 owl，不显示箭头/点
         if (slideCount <= 1) return;
     
-        // 2+：初始化 owl，每次显示 1 个
         $diamond.addClass('owl-carousel');
     
         var prevSvg =
@@ -1947,15 +1971,28 @@
           loop: true,
           margin: 20,
           nav: true,
-          dots: true, // 只要箭头就改成 false
+          dots: true,
           navText: [prevSvg, nextSvg],
+    
           autoplay: true,
-          autoplayHoverPause: true,
           autoplayTimeout: 3500,
-          smartSpeed: 600
+          autoplayHoverPause: true,   // 桌面 hover 暂停
+          smartSpeed: 600,
+    
+          // ✅ Mobile swipe behavior
+          touchDrag: true,
+          mouseDrag: true,
+          pullDrag: true
+        });
+    
+        // ✅ 关键：用户滑动/切换后，把 autoplay 再启动一次（避免“手滑后停住”）
+        $diamond.on('dragged.owl.carousel translated.owl.carousel', function(){
+          $diamond.trigger('stop.owl.autoplay');
+          $diamond.trigger('play.owl.autoplay', [3500]);
         });
       });
     </script>
+
 
 
 </body>
