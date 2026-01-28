@@ -391,14 +391,19 @@
     /* ✅ NEW: Diamond carousel layout stabilize */
     #diamond-sponsor-wrapper { display:block; }
     #diamond-sponsor-carousel { width:100%; max-width:520px; }
-    #diamond-sponsor-carousel .diamond-slide { padding:10px 0; }
-    #diamond-sponsor-carousel .owl-stage { display:flex; }
-    #diamond-sponsor-carousel .owl-item { display:flex; }
-    #diamond-sponsor-carousel .diamond-slide { width:100%; }
+    #diamond-sponsor-carousel .owl-item{
+      display:flex;
+      justify-content:center;
+    }
+    #diamond-sponsor-carousel .diamond-slide{
+      width:100%;              /* 这一条可留也可不留，但不要去动 owl-stage */
+      max-width:520px;
+    }
+
 
 
         /* ===== Pretty Owl Nav Arrows (Diamond) ===== */
-        #diamond-sponsor-wrapper { position: relative; }
+        #diamond-sponsor-wrapper { position: relative; overflow: visible;}
         #diamond-sponsor-carousel .owl-stage-outer{ overflow: visible; } /* 允许箭头露出来 */
         
         #diamond-sponsor-carousel .owl-nav{
@@ -407,7 +412,9 @@
           left:0;
           right:0;
           transform:translateY(-50%);
-          display:flex;
+          display: flex !important;
+          visibility: visible !important;
+          opacity: 1 !important;
           justify-content:space-between;
           align-items:center;
           pointer-events:none; /* 让容器不挡点击 */
@@ -497,11 +504,7 @@
           }
         }
         
-        /* ✅ 防止外层裁剪箭头 */
-        #diamond-sponsor-wrapper{ overflow: visible; }
-
-
-    @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 600px) {
         .circular-image {
             width: 120px;
             height: 120px;
@@ -1947,12 +1950,20 @@
          - 2+：每次显示 1 个 -->
     <!-- ✅ Diamond carousel init (2+ slides -> carousel; 1 slide -> static) -->
     <script>
-      jQuery(document).ready(function($){
+      jQuery(function($){
         var $diamond = $('#diamond-sponsor-carousel');
         if (!$diamond.length) return;
     
         var slideCount = $diamond.children('.diamond-slide').length;
-        if (slideCount <= 1) return;
+        if (slideCount <= 1) return; // 只有1张就不启用轮播
+    
+        // ✅ 防止被别的脚本初始化过（常见：home.js / main.js 里扫 .owl-carousel）
+        if ($diamond.hasClass('owl-loaded')) {
+          $diamond.trigger('destroy.owl.carousel');
+          $diamond.removeClass('owl-carousel owl-loaded');
+          $diamond.find('.owl-stage-outer').children().unwrap();
+          $diamond.find('.owl-stage').children().unwrap();
+        }
     
         $diamond.addClass('owl-carousel');
     
@@ -1969,29 +1980,37 @@
         $diamond.owlCarousel({
           items: 1,
           loop: true,
-          margin: 20,
+          margin: 24,
+    
+          // ✅ 你要的箭头
           nav: true,
           dots: true,
           navText: [prevSvg, nextSvg],
     
+          // ✅ 速度别眼花：更慢的切换
           autoplay: true,
-          autoplayTimeout: 3500,
-          autoplayHoverPause: true,   // 桌面 hover 暂停
-          smartSpeed: 600,
+          autoplayTimeout: 8000,     // 原来 3500 太快 → 8000
+          smartSpeed: 450,           // 动画速度（越小越“干脆”）
+          autoplayHoverPause: true,
     
-          // ✅ Mobile swipe behavior
+          // ✅ 强制任何屏幕都只显示 1 张（防止被 responsive 覆盖）
+          responsive: {
+            0:   { items: 1 },
+            600: { items: 1 },
+            1024:{ items: 1 }
+          },
+    
           touchDrag: true,
-          mouseDrag: true,
-          pullDrag: true
+          mouseDrag: true
         });
     
-        // ✅ 关键：用户滑动/切换后，把 autoplay 再启动一次（避免“手滑后停住”）
-        $diamond.on('dragged.owl.carousel translated.owl.carousel', function(){
-          $diamond.trigger('stop.owl.autoplay');
-          $diamond.trigger('play.owl.autoplay', [3500]);
+        // ✅ 确保 nav 不被主题隐藏
+        $diamond.on('initialized.owl.carousel refreshed.owl.carousel', function(){
+          $diamond.find('.owl-nav').css({ display:'flex', visibility:'visible', opacity:1 });
         });
       });
     </script>
+
 
 
 
