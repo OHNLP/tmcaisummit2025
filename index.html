@@ -394,55 +394,59 @@
       justify-content:center;
     }
     
-    #diamond-sponsor-carousel{
-      width:100%;
-      max-width: 1100px; /* 让两张卡并排更舒服 */
-      position: relative;
-    }
-    
-    #diamond-sponsor-carousel .diamond-slide{
-      padding: 10px;
-    }
-    
-    /* Owl nav buttons (arrows) */
-    #diamond-sponsor-carousel .owl-nav button{
-      position:absolute;
-      top: 45%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.9) !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-      font-size: 26px !important;
-      line-height: 44px !important;
-      margin: 0 !important;
-    }
-    
-    #diamond-sponsor-carousel .owl-nav .owl-prev{
-      left: -14px;
-    }
-    #diamond-sponsor-carousel .owl-nav .owl-next{
-      right: -14px;
-    }
-    
-    /* dots spacing */
-    #diamond-sponsor-carousel .owl-dots{
-      margin-top: 8px;
-    }
-    
-    /* Mobile: still 1 item */
-    @media only screen and (max-width: 600px){
-      #diamond-sponsor-carousel{
-        max-width: 520px;
-      }
-      #diamond-sponsor-carousel .owl-nav .owl-prev{
-        left: -8px;
-      }
-      #diamond-sponsor-carousel .owl-nav .owl-next{
-        right: -8px;
-      }
-    }
+    /* ✅ Right-peek only (desktop) */
+        @media (min-width: 768px){
+          /* 关键：把整个 stage 往左拉回去，抵消左侧露出 */
+          #diamond-sponsor-carousel .owl-stage-outer{
+            overflow: hidden; /* 默认就是 hidden，强调一下 */
+          }
+          #diamond-sponsor-carousel .owl-stage{
+            margin-left: -70px; /* ✅ 这里要和 JS 里 stagePadding 一致 */
+          }
+        }
+        
+        /* ✅ Arrows on the sides of the carousel (not below) */
+        #diamond-sponsor-carousel{
+          position: relative;
+        }
+        
+        /* owl 默认会把 nav 放在下面，这里强制绝对定位到两侧 */
+        #diamond-sponsor-carousel .owl-nav{
+          position:absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+          pointer-events: none;  /* 让容器不挡点击 */
+          margin: 0 !important;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav button{
+          pointer-events: auto;  /* 按钮可点击 */
+          position:absolute;
+          width: 44px;
+          height: 44px;
+          border-radius: 999px;
+          background: rgba(255,255,255,0.92) !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+          font-size: 26px !important;
+          line-height: 44px !important;
+          margin: 0 !important;
+        }
+        
+        #diamond-sponsor-carousel .owl-nav .owl-prev{
+          left: -18px;   /* ✅ 位于卡片左侧 */
+        }
+        #diamond-sponsor-carousel .owl-nav .owl-next{
+          right: -18px;  /* ✅ 位于卡片右侧 */
+        }
+        
+        /* 小屏稍微收回来 */
+        @media (max-width: 600px){
+          #diamond-sponsor-carousel .owl-nav .owl-prev{ left: -10px; }
+          #diamond-sponsor-carousel .owl-nav .owl-next{ right: -10px; }
+        }
+
 
 
     @media only screen and (max-width: 600px) {
