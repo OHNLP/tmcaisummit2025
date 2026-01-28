@@ -1900,40 +1900,39 @@
         if (!$diamond.length) return;
     
         var slideCount = $diamond.children('.diamond-slide').length;
-    
-        // 0/1 个：不需要 carousel
         if (slideCount <= 1) return;
     
-        // >=2：启用 owl
         $diamond.addClass('owl-carousel');
     
-        // 桌面端显示 2 个；移动端显示 1 个
         $diamond.owlCarousel({
           margin: 20,
           nav: true,
           dots: true,
-          navText: ['&#10094;','&#10095;'], // ‹ ›
-          autoplay: true,
-          autoplayHoverPause: true,
-          autoplayTimeout: 4500,
+          navText: ['&#10094;','&#10095;'],
           smartSpeed: 600,
     
-          // 当总数 > 当前可见数时才 loop（比如 3 个、显示 2 个 -> 会 loop）
+          // 3 个且显示 2 个：允许 loop
           loop: (slideCount > 2),
     
           responsive: {
             0: {
               items: 1,
-              stagePadding: 0
+              stagePadding: 0,
+              autoplay: false,            // ✅ 手机不自动滚动
+              autoplayHoverPause: true
             },
             768: {
               items: 2,
-              stagePadding: 70   // ✅ 露出一点点下一张：明确提示“还有第三个”
+              stagePadding: 70,           // ✅ 右侧露出一点
+              autoplay: true,             // 桌面仍可自动滚动
+              autoplayHoverPause: true,
+              autoplayTimeout: 4500
             }
           }
         });
       });
     </script>
+
 
 
 </body>
