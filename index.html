@@ -579,6 +579,85 @@
         }
 
     }
+
+        /* ===========================
+   ✅ Diamond carousel FIX
+   - Desktop: 2 cards centered, arrows on far sides (not on cards)
+   - Mobile: no side padding (avoid text clipping), arrows smaller & slightly outside
+   =========================== */
+
+#diamond-sponsor-wrapper{
+  display:flex;
+  justify-content:center;
+}
+
+#diamond-sponsor-carousel{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  position:relative !important;
+  overflow: visible !important;   /* 允许箭头在外侧显示 */
+}
+
+/* 每个 slide 里把 card 居中 */
+#diamond-sponsor-carousel .diamond-slide{
+  padding:10px;
+  display:flex;
+  justify-content:center;
+}
+
+/* 桌面：给箭头留出“安全区”，避免压到卡片上 */
+#diamond-sponsor-carousel .owl-stage-outer{
+  overflow:hidden !important;
+  padding: 0 90px !important;     /* 左右留白更大，箭头放这里不会压到卡片 */
+}
+
+/* arrows: 强制放到轮播最左右侧 */
+#diamond-sponsor-carousel .owl-nav{
+  position:absolute !important;
+  top:50% !important;
+  left:0 !important;
+  right:0 !important;
+  transform:translateY(-50%) !important;
+  pointer-events:none !important;
+  margin:0 !important;
+  z-index: 50 !important;
+}
+
+#diamond-sponsor-carousel .owl-nav button{
+  pointer-events:auto !important;
+  position:absolute !important;
+  width:44px !important;
+  height:44px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,0.92) !important;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18) !important;
+  font-size:26px !important;
+  line-height:44px !important;
+  margin:0 !important;
+  z-index: 60 !important;
+}
+
+/* ✅ 关键：prev/next 固定在最左/最右（不会跑到中间） */
+#diamond-sponsor-carousel .owl-nav .owl-prev{ left: 18px !important; }
+#diamond-sponsor-carousel .owl-nav .owl-next{ right: 18px !important; }
+
+/* Mobile：不要 stage padding（否则卡片可视区域太窄会裁字） */
+@media (max-width: 600px){
+  #diamond-sponsor-carousel .owl-stage-outer{
+    padding: 0 !important;        /* ✅ 解决“文字被裁掉” */
+  }
+  #diamond-sponsor-carousel .owl-nav button{
+    width:36px !important;
+    height:36px !important;
+    font-size:22px !important;
+    line-height:36px !important;
+  }
+  /* 箭头稍微放到屏幕外侧一点点，尽量不压卡片内容 */
+  #diamond-sponsor-carousel .owl-nav .owl-prev{ left: -6px !important; }
+  #diamond-sponsor-carousel .owl-nav .owl-next{ right: -6px !important; }
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
     <link rel="stylesheet" id="contact-form-7-css" href="./styles.css" type="text/css" media="all">
@@ -589,7 +668,9 @@
     <link rel="stylesheet" id="tyler-blueimp-gallery-css" href="./blueimp-gallery.min.css" type="text/css" media="all">
     <link rel="stylesheet" id="tyler-jquery-scrollpane-css" href="./jquery.scrollpane.css" type="text/css" media="all">
     <link rel="stylesheet" id="tyler-icons-css" href="./icon.css" type="text/css" media="all">
-    <link rel="stylesheet" id="convey-layout-css" href="./style(1).css" type="text/css" media="all">
+    <link rel="stylesheet" id="convey-layout-css" href="./style(1).css" type="text/css" media="all">    
+    <link rel="stylesheet" href="./owl.carousel.min.css">
+    <link rel="stylesheet" href="./owl.theme.default.min.css">
     <script type="text/javascript" src="./jquery.js"></script>
     <script type="text/javascript" src="./jquery-migrate.min.js"></script>
     <script type="text/javascript" src="./owl.carousel.min.js"></script>
@@ -1877,10 +1958,7 @@
     <script type="text/javascript" src="./tweetMachine.min.js"></script>
     <script type="text/javascript" src="./wp-embed.min.js"></script>
 
-    <!-- ✅ IMPORTANT: 你 head 里已经有 owl.carousel.min.js，这里就不要再加载一次 -->
-    <!-- <script type="text/javascript" src="./owl.carousel.min.js"></script> -->
-    <link rel="stylesheet" href="./owl.carousel.min.css">
-    <link rel="stylesheet" href="./owl.theme.default.min.css">
+    
 
     <!-- SCROLL UP BTN -->
     <div id="scroll">
@@ -1901,9 +1979,6 @@
       }
     </script>
 
-    <!-- ✅ NEW: Diamond carousel init
-         - 只有 1 个：不启用（不滚动）
-         - 2+：每次显示 1 个 -->
     <script>
       jQuery(document).ready(function($){
         var $diamond = $('#diamond-sponsor-carousel');
@@ -1920,27 +1995,20 @@
           dots: true,
           navText: ['&#10094;','&#10095;'],
           smartSpeed: 600,
-    
-          // 3 个以上桌面显示 2 个才需要 loop；手机显示 1 个则 2 个以上也可 loop
-          loop: (slideCount > 2),
+          autoplay: true,              // ✅ 全局开启（手机/电脑都动）
+          autoplayHoverPause: true,
+          autoplayTimeout: 4000,
+          loop: (slideCount > 1),
     
           responsive: {
-            0: {
-              items: 1,
-              autoplay: true,            // ✅ 手机也自动滚动
-              autoplayHoverPause: true,
-              autoplayTimeout: 3500
-            },
-            768: {
-              items: 2,
-              autoplay: true,
-              autoplayHoverPause: true,
-              autoplayTimeout: 4500
-            }
+            0:   { items: 1 },
+            768: { items: 2 }
           }
         });
       });
     </script>
+
+
 
 </body>
 </html>
