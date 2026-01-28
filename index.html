@@ -442,6 +442,35 @@
           margin: 0;         /* 关键：别 auto 居中 */
         }
 
+        /* ===== AMIA-like Sponsors page text ===== */
+        .sponsors-intro{
+          font-size: 18px;
+          line-height: 1.7;
+          color: #333;
+          margin: 8px 0 14px 0;
+        }
+        
+        .sponsors-disclaimer{
+          font-size: 14px;
+          line-height: 1.6;
+          color: #666;
+          margin: 0 0 28px 0;
+        }
+        
+        /* Tier heading above each sponsor group */
+        .sponsor-tier{
+          margin-top: 34px;
+        }
+        
+        .tier-title{
+          text-align: center;
+          font-size: 34px;
+          font-weight: 700;
+          color: #222;
+          margin: 10px 0 18px 0;
+        }
+
+
         @media only screen and (max-width: 600px) {
         .circular-image {
             width: 120px;
@@ -594,8 +623,9 @@
                     <li class="menu-item"><a href="#registration">Registration</a></li>
                     <li class="menu-item"><a href="#keynote-speakers">Keynote Speakers</a></li>  
                     <li class="menu-item"><a href="#steering-committee">Steering Committee</a></li>                      
-                    <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li>
-                    <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li>  
+                      <!-- <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li> -->
+                    <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li>
+                      <li class="menu-item"><a href="#sponsors">Sponsors</a></li>
                     <li class="menu-item"><a href="#contact">Contact Us</a></li>
                   </ul>
                 </div>
@@ -1643,121 +1673,135 @@
           </div>
         </div>
 
-      <!-- Sponsor Section -->
-      <div class="ai_sponsor-section">
-        <h2 class="ai_sponsor-title">Sponsorship</h2>
-        <p class="ai_sponsor-thank-you">
-        We thank these organizations for their support. The content is solely managed by the organizers
-        and may not represent the views of these organizations.
-        </p>
+      <!-- ===============================
+ Sponsors Section (AMIA-like layout)
+================================ -->
+<div id="sponsors" class="widget widget-speakers">
+  <div class="container">
+    <div class="widget-header">
+      <h2 class="widget-body">Sponsors</h2>
+    </div>
 
-        <div class="ai_sponsor-levels">
+    <!-- Top thank-you text (AMIA-like) -->
+    <p class="sponsors-intro">
+      TMC AI Summit thanks its 2026 sponsors. The generous support from these organizations helps make
+      TMC AI Summit possible. When making your business and purchasing decisions, please consider the
+      companies that are supporting your professional community.
+    </p>
 
-          <!-- ===== Diamond Sponsors (auto: 1 item -> no carousel; 2+ -> carousel) ===== -->
-          <div id="diamond-sponsor-wrapper" style="margin:20px auto;">
-            <div id="diamond-sponsor-carousel" class="sponsor-carousel">
+    <!-- Optional disclaimer (keep if you want) -->
+    <p class="sponsors-disclaimer">
+      We thank these organizations for their support. The content is solely managed by the organizers
+      and may not represent the views of these organizations.
+    </p>
 
-              <!-- Diamond: Newton's Tree -->
-              <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-                  <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
-                    <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo" style="width:80%; height:auto;">
-                  </a>
-                  <div class="sponsor-name" style="margin-top:1em;">Newton's Tree</div>
-                  <div class="sponsor-description">
-                    <p style="margin:0;">
-                      Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test, deploy,
-                      and monitor in-house and third-party AI products through its enterprise AI platform.
-                    </p>
-                  </div>
+    <div class="ai_sponsor-levels">
+
+      <!-- ===== Diamond ===== -->
+      <div class="sponsor-tier">
+        <h2 class="tier-title">Diamond Sponsors</h2>
+
+        <div id="diamond-sponsor-wrapper" style="margin:20px auto;">
+          <div id="diamond-sponsor-carousel" class="sponsor-carousel">
+
+            <!-- Diamond: Newton's Tree -->
+            <div class="diamond-slide">
+              <div class="sponsor-card" style="text-align:left;">
+                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+                <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
+                  <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo" style="width:80%; height:auto;">
+                </a>
+                <div class="sponsor-name" style="margin-top:1em;">Newton's Tree</div>
+                <div class="sponsor-description">
+                  <p style="margin:0;">
+                    Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test, deploy,
+                    and monitor in-house and third-party AI products through its enterprise AI platform.
+                  </p>
                 </div>
-              </div>
-
-              <!-- Diamond: OneSource Cloud -->
-              <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-
-                  <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
-                    <img src="./OneSourceCloud.png" alt="OneSource Cloud Logo" style="width:85%; height:auto;">
-                  </a>
-
-                  <div class="sponsor-name" style="margin-top:1em;">OneSource Cloud</div>
-
-                  <div class="sponsor-description">
-                    <p style="margin:0 0 0.8em 0;">
-                      <strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling
-                      enterprises to securely design, deploy, manage, and scale AI workloads across private, public,
-                      and hybrid environments.
-                    </p>
-
-                    <p style="margin:0 0 0.8em 0;">
-                      Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong> built to meet stringent data
-                      privacy, security, and compliance requirements for healthcare and other regulated industries.
-                      We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong> with full data isolation,
-                      control, and ownership.
-                    </p>
-
-                    <p style="margin:0;">
-                      Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>,
-                      <strong>load balancing</strong>, <strong>predictable cost control, and scalable, production-ready AI operations</strong>,
-                      helping organizations confidently run AI in mission-critical environments.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Diamond: AWS -->
-              <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-
-                  <a href="https://aws.amazon.com/free/"
-                     target="_blank" rel="noopener" style="text-decoration:none;">
-                    <img src="./AWS_logo_RGB_1c_Gray850.png" alt="AWS Logo" style="width:85%; height:auto;">
-                  </a>
-
-                  <div class="sponsor-name" style="margin-top:1em;">AWS</div>
-
-                  <div class="sponsor-description">
-                    <p style="margin:0;">
-                      With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
-                      and the most performant, low-cost infrastructure, healthcare organizations trust AWS to provide the data and tools
-                      they need to connect their organization and accelerate generative AI-powered innovations that dramatically improve
-                      time to diagnosis and overall cost and quality of patient care.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- ===== End Diamond Sponsors ===== -->
-
-          <!-- ===== Platinum Sponsors ===== -->
-          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-            <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#D9D9D9;">Platinum</div>
-              <a href="https://www.ghhconnect.org/" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./HCT-Logo-Color-Stacked.png" alt="Healthconnect Texas Logo" style="width:80%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">Healthconnect Texas</div>
-              <div class="sponsor-description">
-                <p class="healthconnect-vision" style="margin:0;">
-                  <strong>Vision:</strong> To operate a sustainable health information exchange that coordinates
-                  care for the community, improves overall population health, enhances health and wellness
-                  initiatives, reduces healthcare costs, and advances opportunities for long-term research
-                  and disease prevention.
-                </p>
-                <p style="margin-top:1.5em; text-align:center; font-size:1.3em; font-weight:bold;">
-                  "Connecting for a Healthier Texas"
-                </p>
               </div>
             </div>
-          </div>
 
-          <!-- ===== Gold Sponsors ===== -->
+            <!-- Diamond: OneSource Cloud -->
+            <div class="diamond-slide">
+              <div class="sponsor-card" style="text-align:left;">
+                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+                <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
+                  <img src="./OneSourceCloud.png" alt="OneSource Cloud Logo" style="width:85%; height:auto;">
+                </a>
+                <div class="sponsor-name" style="margin-top:1em;">OneSource Cloud</div>
+                <div class="sponsor-description">
+                  <p style="margin:0 0 0.8em 0;">
+                    <strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling
+                    enterprises to securely design, deploy, manage, and scale AI workloads across private, public,
+                    and hybrid environments.
+                  </p>
+                  <p style="margin:0 0 0.8em 0;">
+                    Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong> built to meet stringent data
+                    privacy, security, and compliance requirements for healthcare and other regulated industries.
+                    We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong> with full data isolation,
+                    control, and ownership.
+                  </p>
+                  <p style="margin:0;">
+                    Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>,
+                    <strong>load balancing</strong>, <strong>predictable cost control</strong>, and <strong>scalable AI operations</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diamond: AWS -->
+            <div class="diamond-slide">
+              <div class="sponsor-card" style="text-align:left;">
+                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+                <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener" style="text-decoration:none;">
+                  <img src="./AWS_logo_RGB_1c_Gray850.png" alt="AWS Logo" style="width:85%; height:auto;">
+                </a>
+                <div class="sponsor-name" style="margin-top:1em;">AWS</div>
+                <div class="sponsor-description">
+                  <p style="margin:0;">
+                    With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
+                    and performant infrastructure, healthcare organizations trust AWS to accelerate generative AI-powered innovations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- ===== End Diamond ===== -->
+
+          <!-- ===== Platinum ===== -->
+          <div class="sponsor-tier">
+            <h2 class="tier-title">Platinum Sponsors</h2>
+    
+            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
+              <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
+                <div class="sponsor-badge" style="background-color:#D9D9D9;">Platinum</div>
+                <a href="https://www.ghhconnect.org/" target="_blank" rel="noopener" style="text-decoration:none;">
+                  <img src="./HCT-Logo-Color-Stacked.png" alt="Healthconnect Texas Logo" style="width:80%; height:auto;">
+                </a>
+                <div class="sponsor-name" style="margin-top:1em;">Healthconnect Texas</div>
+                <div class="sponsor-description">
+                  <p class="healthconnect-vision" style="margin:0;">
+                    <strong>Vision:</strong> To operate a sustainable health information exchange that coordinates
+                    care for the community, improves overall population health, enhances health and wellness
+                    initiatives, reduces healthcare costs, and advances opportunities for long-term research
+                    and disease prevention.
+                  </p>
+                  <p style="margin-top:1.5em; text-align:center; font-size:1.3em; font-weight:bold;">
+                    "Connecting for a Healthier Texas"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ===== End Platinum ===== -->
+        
+          <!-- ===== Gold ===== -->
+          <div class="sponsor-tier">
+            <h2 class="tier-title">Gold Sponsors</h2>
+    
             <div id="gold-sponsor-wrapper" style="margin:20px auto;">
               <div id="gold-sponsor-carousel" class="sponsor-carousel">
 
@@ -1855,34 +1899,42 @@
               </div>
             
             </div>
+        </div>
+      </div>
+      <!-- ===== End Gold ===== -->
 
-            </div>
-
-                      <!-- ===== Silver Sponsors ===== -->
-          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-            <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#C0C0C0;">Silver</div>
-
-              <a href="https://www.agilisium.com" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./Agilisium Color logo.png" alt="Agilisium Logo" style="width:85%; height:auto;">
-              </a>
-
-              <div class="sponsor-name" style="margin-top:1em;">Agilisium</div>
-
-              <div class="sponsor-description">
-                <p style="margin:0 0 0.6em 0;">
-                  <strong>Data Innovation Partner for Life Sciences</strong>
-                </p>
-                <p style="margin:0 0 0.6em 0;">
-                  Reimagining possibilities for life sciences with autonomous agentic AI—AI-powered insights and purpose-built solutions across the molecule-to-market journey.
-                </p>
-                <p style="margin:0;">
-                  <em>Insights. Humanity. Impact.</em>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- ===== End Silver Sponsors ===== -->
+                      <!-- ===== Silver ===== -->
+                      <div class="sponsor-tier">
+                        <h2 class="tier-title">Silver Sponsors</h2>
+                
+                        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
+                          <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
+                            <div class="sponsor-badge" style="background-color:#C0C0C0;">Silver</div>
+                
+                            <a href="https://www.agilisium.com" target="_blank" rel="noopener" style="text-decoration:none;">
+                              <img src="./Agilisium Color logo.png" alt="Agilisium Logo" style="width:85%; height:auto;">
+                            </a>
+                
+                            <div class="sponsor-name" style="margin-top:1em;">Agilisium</div>
+                
+                            <div class="sponsor-description">
+                              <p style="margin:0 0 0.6em 0;"><strong>Data Innovation Partner for Life Sciences</strong></p>
+                              <p style="margin:0 0 0.6em 0;">
+                                Reimagining possibilities for life sciences with autonomous agentic AI—AI-powered insights and purpose-built solutions across the molecule-to-market journey.
+                              </p>
+                              <p style="margin:0;"><em>Insights. Humanity. Impact.</em></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- ===== End Silver ===== -->
+                
+                    </div>
+                  </div>
+                </div>
+                <!-- ===============================
+                 End Sponsors Section
+                ================================ -->
 
       <!-- Footer (Contact Us) -->
       <footer id="contact" class="footer">
