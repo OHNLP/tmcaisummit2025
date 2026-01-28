@@ -388,7 +388,33 @@
       margin-bottom: 1.5em;
     }
 
-    
+    /* ===== Reduce spacing inside Diamond carousel ===== */
+        #diamond-sponsor-wrapper{
+          max-width: 1100px;      /* 可按需调：1000~1200 */
+          margin: 10px auto;      /* 上下更紧 */
+          padding: 0 10px;
+        }
+        
+        #diamond-sponsor-carousel .owl-stage{
+          display: flex;
+        }
+        
+        #diamond-sponsor-carousel .owl-item{
+          display: flex;
+        }
+        
+        #diamond-sponsor-carousel .diamond-slide{
+          width: 100%;
+          padding: 0 6px;         /* 左右内边距，控制两卡之间的“视觉间距” */
+          box-sizing: border-box;
+        }
+        
+        #diamond-sponsor-carousel .diamond-slide .sponsor-card{
+          width: 100%;
+          max-width: none;        /* 关键：不要 480px 限制 */
+          margin: 0;              /* 关键：不要 auto 居中 */
+        }
+
 
         @media only screen and (max-width: 600px) {
         .circular-image {
@@ -509,9 +535,7 @@
             margin: 0 !important;
         }
 
-    }
-
-        
+    }       
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
@@ -1609,7 +1633,7 @@
 
               <!-- Diamond: Newton's Tree -->
               <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+                <div class="sponsor-card" style="text-align:left;">
                   <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
                   <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
                     <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo" style="width:80%; height:auto;">
@@ -1846,7 +1870,7 @@
         if ($diamond.hasClass('owl-loaded')) return;
 
         $diamond.owlCarousel({
-          margin: 20,
+          margin: 12,
           nav: true,
           dots: true,
           navText: ['&#10094;','&#10095;'],
@@ -1864,8 +1888,6 @@
         });
       });
     </script>
-
-
 
 </body>
 </html>
