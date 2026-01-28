@@ -388,78 +388,9 @@
       margin-bottom: 1.5em;
     }
 
-    /* ✅ UPDATED: Diamond carousel - show 2 at a time (desktop) + arrows + peek next */
-    #diamond-sponsor-wrapper{
-      display:flex;
-      justify-content:center;
-    }
     
-    /* ===========================
-   ✅ Diamond carousel centered + arrows on both sides
-   =========================== */
-    #diamond-sponsor-wrapper{
-      display:flex;
-      justify-content:center;
-    }
-    
-    #diamond-sponsor-carousel{
-      width:100%;
-      max-width:1100px;
-      margin:0 auto;
-      position:relative;
-    }
-    
-    /* 每个 slide 里把 card 居中 */
-    #diamond-sponsor-carousel .diamond-slide{
-      padding:10px;
-      display:flex;
-      justify-content:center;
-    }
-    
-    /* 给左右箭头留空间，避免压到卡片 */
-    #diamond-sponsor-carousel .owl-stage-outer{
-      padding:0 70px;
-      overflow:hidden;
-    }
-    
-    /* arrows placed at left/right sides */
-    #diamond-sponsor-carousel .owl-nav{
-      position:absolute;
-      top:50%;
-      left:0;
-      right:0;
-      transform:translateY(-50%);
-      pointer-events:none;
-      margin:0 !important;
-    }
-    
-    #diamond-sponsor-carousel .owl-nav button{
-      pointer-events:auto;
-      position:absolute;
-      width:44px;
-      height:44px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.92) !important;
-      box-shadow:0 2px 8px rgba(0,0,0,0.18);
-      font-size:26px !important;
-      line-height:44px !important;
-      margin:0 !important;
-      z-index:10;
-    }
-    
-    #diamond-sponsor-carousel .owl-nav .owl-prev{ left:12px; }
-    #diamond-sponsor-carousel .owl-nav .owl-next{ right:12px; }
-    
-    /* Mobile: 箭头空间小一点 */
-    @media (max-width:600px){
-      #diamond-sponsor-carousel .owl-stage-outer{ padding:0 52px; }
-      #diamond-sponsor-carousel .owl-nav .owl-prev{ left:8px; }
-      #diamond-sponsor-carousel .owl-nav .owl-next{ right:8px; }
-    }
 
-
-
-    @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 600px) {
         .circular-image {
             width: 120px;
             height: 120px;
@@ -580,83 +511,7 @@
 
     }
 
-        /* ===========================
-   ✅ Diamond carousel FIX
-   - Desktop: 2 cards centered, arrows on far sides (not on cards)
-   - Mobile: no side padding (avoid text clipping), arrows smaller & slightly outside
-   =========================== */
-
-#diamond-sponsor-wrapper{
-  display:flex;
-  justify-content:center;
-}
-
-#diamond-sponsor-carousel{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  position:relative !important;
-  overflow: visible !important;   /* 允许箭头在外侧显示 */
-}
-
-/* 每个 slide 里把 card 居中 */
-#diamond-sponsor-carousel .diamond-slide{
-  padding:10px;
-  display:flex;
-  justify-content:center;
-}
-
-/* 桌面：给箭头留出“安全区”，避免压到卡片上 */
-#diamond-sponsor-carousel .owl-stage-outer{
-  overflow:hidden !important;
-  padding: 0 90px !important;     /* 左右留白更大，箭头放这里不会压到卡片 */
-}
-
-/* arrows: 强制放到轮播最左右侧 */
-#diamond-sponsor-carousel .owl-nav{
-  position:absolute !important;
-  top:50% !important;
-  left:0 !important;
-  right:0 !important;
-  transform:translateY(-50%) !important;
-  pointer-events:none !important;
-  margin:0 !important;
-  z-index: 50 !important;
-}
-
-#diamond-sponsor-carousel .owl-nav button{
-  pointer-events:auto !important;
-  position:absolute !important;
-  width:44px !important;
-  height:44px !important;
-  border-radius:999px !important;
-  background:rgba(255,255,255,0.92) !important;
-  box-shadow:0 2px 8px rgba(0,0,0,0.18) !important;
-  font-size:26px !important;
-  line-height:44px !important;
-  margin:0 !important;
-  z-index: 60 !important;
-}
-
-/* ✅ 关键：prev/next 固定在最左/最右（不会跑到中间） */
-#diamond-sponsor-carousel .owl-nav .owl-prev{ left: 18px !important; }
-#diamond-sponsor-carousel .owl-nav .owl-next{ right: 18px !important; }
-
-/* Mobile：不要 stage padding（否则卡片可视区域太窄会裁字） */
-@media (max-width: 600px){
-  #diamond-sponsor-carousel .owl-stage-outer{
-    padding: 0 !important;        /* ✅ 解决“文字被裁掉” */
-  }
-  #diamond-sponsor-carousel .owl-nav button{
-    width:36px !important;
-    height:36px !important;
-    font-size:22px !important;
-    line-height:36px !important;
-  }
-  /* 箭头稍微放到屏幕外侧一点点，尽量不压卡片内容 */
-  #diamond-sponsor-carousel .owl-nav .owl-prev{ left: -6px !important; }
-  #diamond-sponsor-carousel .owl-nav .owl-next{ right: -6px !important; }
-}
+        
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
@@ -1988,7 +1843,8 @@
         if (slideCount <= 1) return;
     
         $diamond.addClass('owl-carousel');
-    
+        if ($diamond.hasClass('owl-loaded')) return;
+
         $diamond.owlCarousel({
           margin: 20,
           nav: true,
@@ -2001,9 +1857,10 @@
           loop: (slideCount > 1),
     
           responsive: {
-            0:   { items: 1 },
-            768: { items: 2 }
-          }
+              0:   { items: 1 },
+              768: { items: 1 },
+              1024:{ items: 2 }
+            }
         });
       });
     </script>
