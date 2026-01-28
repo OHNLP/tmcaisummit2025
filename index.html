@@ -394,58 +394,68 @@
       justify-content:center;
     }
     
-    /* ✅ Right-peek only (desktop) */
-        @media (min-width: 768px){
-          /* 关键：把整个 stage 往左拉回去，抵消左侧露出 */
-          #diamond-sponsor-carousel .owl-stage-outer{
-            overflow: hidden; /* 默认就是 hidden，强调一下 */
-          }
-          #diamond-sponsor-carousel .owl-stage{
-            margin-left: -70px; /* ✅ 这里要和 JS 里 stagePadding 一致 */
-          }
-        }
-        
-        /* ✅ Arrows on the sides of the carousel (not below) */
-        #diamond-sponsor-carousel{
-          position: relative;
-        }
-        
-        /* owl 默认会把 nav 放在下面，这里强制绝对定位到两侧 */
-        #diamond-sponsor-carousel .owl-nav{
-          position:absolute;
-          top: 50%;
-          left: 0;
-          right: 0;
-          transform: translateY(-50%);
-          pointer-events: none;  /* 让容器不挡点击 */
-          margin: 0 !important;
-        }
-        
-        #diamond-sponsor-carousel .owl-nav button{
-          pointer-events: auto;  /* 按钮可点击 */
-          position:absolute;
-          width: 44px;
-          height: 44px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.92) !important;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-          font-size: 26px !important;
-          line-height: 44px !important;
-          margin: 0 !important;
-        }
-        
-        #diamond-sponsor-carousel .owl-nav .owl-prev{
-          left: -18px;   /* ✅ 位于卡片左侧 */
-        }
-        #diamond-sponsor-carousel .owl-nav .owl-next{
-          right: -18px;  /* ✅ 位于卡片右侧 */
-        }
-        
-        /* 小屏稍微收回来 */
-        @media (max-width: 600px){
-          #diamond-sponsor-carousel .owl-nav .owl-prev{ left: -10px; }
-          #diamond-sponsor-carousel .owl-nav .owl-next{ right: -10px; }
-        }
+    /* ===========================
+   ✅ Diamond carousel centered + arrows on both sides
+   =========================== */
+    #diamond-sponsor-wrapper{
+      display:flex;
+      justify-content:center;
+    }
+    
+    #diamond-sponsor-carousel{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+    }
+    
+    /* 每个 slide 里把 card 居中 */
+    #diamond-sponsor-carousel .diamond-slide{
+      padding:10px;
+      display:flex;
+      justify-content:center;
+    }
+    
+    /* 给左右箭头留空间，避免压到卡片 */
+    #diamond-sponsor-carousel .owl-stage-outer{
+      padding:0 70px;
+      overflow:hidden;
+    }
+    
+    /* arrows placed at left/right sides */
+    #diamond-sponsor-carousel .owl-nav{
+      position:absolute;
+      top:50%;
+      left:0;
+      right:0;
+      transform:translateY(-50%);
+      pointer-events:none;
+      margin:0 !important;
+    }
+    
+    #diamond-sponsor-carousel .owl-nav button{
+      pointer-events:auto;
+      position:absolute;
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.92) !important;
+      box-shadow:0 2px 8px rgba(0,0,0,0.18);
+      font-size:26px !important;
+      line-height:44px !important;
+      margin:0 !important;
+      z-index:10;
+    }
+    
+    #diamond-sponsor-carousel .owl-nav .owl-prev{ left:12px; }
+    #diamond-sponsor-carousel .owl-nav .owl-next{ right:12px; }
+    
+    /* Mobile: 箭头空间小一点 */
+    @media (max-width:600px){
+      #diamond-sponsor-carousel .owl-stage-outer{ padding:0 52px; }
+      #diamond-sponsor-carousel .owl-nav .owl-prev{ left:8px; }
+      #diamond-sponsor-carousel .owl-nav .owl-next{ right:8px; }
+    }
 
 
 
@@ -1911,20 +1921,19 @@
           navText: ['&#10094;','&#10095;'],
           smartSpeed: 600,
     
-          // 3 个且显示 2 个：允许 loop
+          // 3 个以上桌面显示 2 个才需要 loop；手机显示 1 个则 2 个以上也可 loop
           loop: (slideCount > 2),
     
           responsive: {
             0: {
               items: 1,
-              stagePadding: 0,
-              autoplay: false,            // ✅ 手机不自动滚动
-              autoplayHoverPause: true
+              autoplay: true,            // ✅ 手机也自动滚动
+              autoplayHoverPause: true,
+              autoplayTimeout: 3500
             },
             768: {
               items: 2,
-              stagePadding: 70,           // ✅ 右侧露出一点
-              autoplay: true,             // 桌面仍可自动滚动
+              autoplay: true,
               autoplayHoverPause: true,
               autoplayTimeout: 4500
             }
@@ -1932,8 +1941,6 @@
         });
       });
     </script>
-
-
 
 </body>
 </html>
