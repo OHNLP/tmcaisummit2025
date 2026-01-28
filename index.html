@@ -415,6 +415,32 @@
           margin: 0;              /* 关键：不要 auto 居中 */
         }
 
+        /* ===== Reduce spacing inside Gold carousel ===== */
+        #gold-sponsor-wrapper{
+          max-width: 1200px;   /* 可调：1100~1300 */
+          margin: 10px auto;
+          padding: 0 10px;
+        }
+        
+        #gold-sponsor-carousel .owl-stage{
+          display: flex;
+        }
+        
+        #gold-sponsor-carousel .owl-item{
+          display: flex;
+        }
+        
+        #gold-sponsor-carousel .gold-slide{
+          width: 100%;
+          padding: 0 6px;
+          box-sizing: border-box;
+        }
+        
+        #gold-sponsor-carousel .gold-slide .sponsor-card{
+          width: 100%;
+          max-width: none;   /* 关键：别限制 480 */
+          margin: 0;         /* 关键：别 auto 居中 */
+        }
 
         @media only screen and (max-width: 600px) {
         .circular-image {
@@ -1650,7 +1676,7 @@
 
               <!-- Diamond: OneSource Cloud -->
               <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+                <div class="sponsor-card" style="text-align:left;">
                   <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
 
                   <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
@@ -1684,7 +1710,7 @@
 
               <!-- Diamond: AWS -->
               <div class="diamond-slide">
-                <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0 auto;">
+                <div class="sponsor-card" style="text-align:left;">
                   <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
 
                   <a href="https://aws.amazon.com/free/"
@@ -1732,71 +1758,81 @@
           </div>
 
           <!-- ===== Gold Sponsors ===== -->
-          <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-            <div class="sponsor-card gold-sponsor" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-              <a href="https://www.teksystems.com/en/industries/healthcare-technology-solutions"
-                 target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./GS_Stacked_RGB (1).jpg" alt="TEKsystems Logo" class="teksystems-logo">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">TEKsystems</div>
-              <div class="sponsor-description">
-                <p style="margin:0;">
-                  TEKsystems partners with leading healthcare organizations to accelerate digital
-                  transformation and optimize clinical outcomes through agile technology solutions.
-                </p>
-                <ul style="margin-top:0.5em; margin-left:1.5em;">
-                  <li>Advanced analytics and cloud-based infrastructure</li>
-                  <li>EMR and clinical data integration to enhance patient care</li>
-                  <li>Deep healthcare-IT expertise to accelerate transformation</li>
-                </ul>
+            <div id="gold-sponsor-wrapper" style="margin:20px auto;">
+              <div id="gold-sponsor-carousel" class="sponsor-carousel">
+            
+                <div class="gold-slide">
+                  <div class="sponsor-card gold-sponsor" style="text-align:left;">
+                    <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+                    <a href="https://www.teksystems.com/en/industries/healthcare-technology-solutions"
+                       target="_blank" rel="noopener" style="text-decoration:none;">
+                      <img src="./GS_Stacked_RGB (1).jpg" alt="TEKsystems Logo" class="teksystems-logo">
+                    </a>
+                    <div class="sponsor-name" style="margin-top:1em;">TEKsystems</div>
+                    <div class="sponsor-description">
+                      <p style="margin:0;">
+                        TEKsystems partners with leading healthcare organizations to accelerate digital
+                        transformation and optimize clinical outcomes through agile technology solutions.
+                      </p>
+                      <ul style="margin-top:0.5em; margin-left:1.5em;">
+                        <li>Advanced analytics and cloud-based infrastructure</li>
+                        <li>EMR and clinical data integration to enhance patient care</li>
+                        <li>Deep healthcare-IT expertise to accelerate transformation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="gold-slide">
+                  <div class="sponsor-card gold-sponsor" style="text-align:left;">
+                    <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+                    <a href="https://usa.united-imaging.com/" target="_blank" rel="noopener" style="text-decoration:none;">
+                      <img src="./United Imaging.png" alt="United Imaging North America Logo" style="width:88%; height:auto;">
+                    </a>
+                    <div class="sponsor-name" style="margin-top:1em;">United Imaging North America</div>
+                    <div class="sponsor-description">
+                      <p style="margin:0;">
+                        United Imaging is driven by the mission <strong>“Equal Healthcare for All™”</strong> and the vision
+                        <strong>“Leading Healthcare Innovation.”</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="gold-slide">
+                  <div class="sponsor-card gold-sponsor" style="text-align:left;">
+                    <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+                    <a href="https://www.gehealthcare.com/services/refresh-payment-solutions"
+                       target="_blank" rel="noopener" style="text-decoration:none;">
+                      <img src="./GE-HLTHCR_Standard_RGB-CompPrpl.jpg" alt="GE HealthCare Logo" style="width:88%; height:auto;">
+                    </a>
+                    <div class="sponsor-name" style="margin-top:1em;">GE HealthCare</div>
+                    <div class="sponsor-description">
+                      <p style="margin:0;">
+                        GE HealthCare is a leading global healthcare solutions provider and trusted partner...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="gold-slide">
+                  <div class="sponsor-card gold-sponsor" style="text-align:left;">
+                    <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+                    <a href="https://sbmi.uth.edu/" target="_blank" rel="noopener" style="text-decoration:none;">
+                      <img src="./UTHealth.jpg" alt="UTHealth Houston Logo" style="width:98%; height:auto;">
+                    </a>
+                    <div class="sponsor-name" style="margin-top:1em;">UTHealth Houston</div>
+                    <div class="sponsor-description">
+                      <p style="margin:0 0 0.6em 0;">
+                        McWilliams School of Biomedical Informatics is Transforming Data to Power Human Health.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            
               </div>
             </div>
 
-            <div class="sponsor-card gold-sponsor" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-              <a href="https://usa.united-imaging.com/" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./United Imaging.png" alt="United Imaging North America Logo" style="width:88%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">United Imaging North America</div>
-              <div class="sponsor-description">
-                <p style="margin:0;">
-                  United Imaging is driven by the mission <strong>“Equal Healthcare for All™”</strong> and the vision
-                  <strong>“Leading Healthcare Innovation.”</strong>
-                </p>
-              </div>
-            </div>
-
-            <div class="sponsor-card gold-sponsor" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-              <a href="https://www.gehealthcare.com/services/refresh-payment-solutions"
-                 target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./GE-HLTHCR_Standard_RGB-CompPrpl.jpg" alt="GE HealthCare Logo" style="width:88%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">GE HealthCare</div>
-              <div class="sponsor-description">
-                <p style="margin:0;">
-                  GE HealthCare is a leading global healthcare solutions provider and trusted partner...
-                </p>
-              </div>
-            </div>
-
-            <div class="sponsor-card gold-sponsor" style="text-align:left; max-width:480px; margin:0;">
-              <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-              <a href="https://sbmi.uth.edu/" target="_blank" rel="noopener" style="text-decoration:none;">
-                <img src="./UTHealth.jpg" alt="UTHealth Houston Logo" style="width:98%; height:auto;">
-              </a>
-              <div class="sponsor-name" style="margin-top:1em;">UTHealth Houston</div>
-              <div class="sponsor-description">
-                <p style="margin:0 0 0.6em 0;">
-                  McWilliams School of Biomedical Informatics is Transforming Data to Power Human Health.
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
 
       <!-- Footer (Contact Us) -->
       <footer id="contact" class="footer">
@@ -1888,6 +1924,38 @@
         });
       });
     </script>
+
+    <script>
+      jQuery(document).ready(function($){
+        var $gold = $('#gold-sponsor-carousel');
+        if (!$gold.length) return;
+    
+        var slideCount = $gold.children('.gold-slide').length;
+        if (slideCount <= 1) return;
+    
+        $gold.addClass('owl-carousel');
+        if ($gold.hasClass('owl-loaded')) return;
+    
+        $gold.owlCarousel({
+          margin: 12,
+          nav: true,
+          dots: true,
+          navText: ['&#10094;','&#10095;'],
+          smartSpeed: 600,
+          autoplay: true,
+          autoplayHoverPause: true,
+          autoplayTimeout: 4000,
+          loop: (slideCount > 1),
+    
+          responsive: {
+            0:   { items: 1 },
+            768: { items: 1 },
+            1024:{ items: 2 }
+          }
+        });
+      });
+    </script>
+
 
 </body>
 </html>
