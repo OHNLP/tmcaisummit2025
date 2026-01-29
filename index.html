@@ -388,59 +388,69 @@
       margin-bottom: 1.5em;
     }
 
-    /* ===== Reduce spacing inside Diamond carousel ===== */
-        #diamond-sponsor-wrapper{
-          max-width: 1100px;      /* 可按需调：1000~1200 */
-          margin: 10px auto;      /* 上下更紧 */
-          padding: 0 10px;
-        }
+        /* =========================
+           Sponsors: show ALL cards (no carousel)
+           ========================= */
         
-        #diamond-sponsor-carousel .owl-stage{
-          display: flex;
-        }
-        
-        #diamond-sponsor-carousel .owl-item{
-          display: flex;
-        }
-        
-        #diamond-sponsor-carousel .diamond-slide{
-          width: 100%;
-          padding: 0 6px;         /* 左右内边距，控制两卡之间的“视觉间距” */
+        /* Common: remove slide padding/margins that were for carousel */
+        #diamond-sponsor-carousel .diamond-slide,
+        #gold-sponsor-carousel .gold-slide{
+          padding: 0;
           box-sizing: border-box;
         }
         
-        #diamond-sponsor-carousel .diamond-slide .sponsor-card{
+        /* Keep wrappers but make them simple containers */
+        #diamond-sponsor-wrapper,
+        #gold-sponsor-wrapper{
+          max-width: 1200px;
+          margin: 20px auto;
+          padding: 0 10px;
+        }
+        
+        /* ===== Diamond: always show 3 cards on desktop ===== */
+        #diamond-sponsor-carousel{
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+          align-items: stretch;
+        }
+        
+        /* Tablet: 2 columns */
+        @media (max-width: 1024px){
+          #diamond-sponsor-carousel{
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+        
+        /* Mobile: 1 column */
+        @media (max-width: 700px){
+          #diamond-sponsor-carousel{
+            grid-template-columns: 1fr;
+          }
+        }
+        
+        /* ===== Gold: show all cards; 2 columns on desktop, 1 column on small screens ===== */
+        #gold-sponsor-carousel{
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+          align-items: stretch;
+        }
+        
+        @media (max-width: 1024px){
+          #gold-sponsor-carousel{
+            grid-template-columns: 1fr;
+          }
+        }
+        
+        /* Make sponsor cards fill the grid cell nicely */
+        #diamond-sponsor-carousel .sponsor-card,
+        #gold-sponsor-carousel .sponsor-card{
           width: 100%;
-          max-width: none;        /* 关键：不要 480px 限制 */
-          margin: 0;              /* 关键：不要 auto 居中 */
+          max-width: none;
+          margin: 0;
         }
 
-        /* ===== Reduce spacing inside Gold carousel ===== */
-        #gold-sponsor-wrapper{
-          max-width: 1200px;   /* 可调：1100~1300 */
-          margin: 10px auto;
-          padding: 0 10px;
-        }
-        
-        #gold-sponsor-carousel .owl-stage{
-          display: flex;
-        }
-        
-        #gold-sponsor-carousel .owl-item{
-          display: flex;
-        }
-        
-        #gold-sponsor-carousel .gold-slide{
-          width: 100%;
-          padding: 0 6px;
-          box-sizing: border-box;
-        }
-        
-        #gold-sponsor-carousel .gold-slide .sponsor-card{
-          width: 100%;
-          max-width: none;   /* 关键：别限制 480 */
-          margin: 0;         /* 关键：别 auto 居中 */
-        }
 
         /* ===== AMIA-like Sponsors page text ===== */
         .sponsors-intro{
@@ -2014,68 +2024,5 @@
       }
     </script>
 
-    <script>
-      jQuery(document).ready(function($){
-        var $diamond = $('#diamond-sponsor-carousel');
-        if (!$diamond.length) return;
-    
-        var slideCount = $diamond.children('.diamond-slide').length;
-        if (slideCount <= 1) return;
-    
-        $diamond.addClass('owl-carousel');
-        if ($diamond.hasClass('owl-loaded')) return;
-
-        $diamond.owlCarousel({
-          margin: 12,
-          nav: true,
-          dots: true,
-          navText: ['&#10094;','&#10095;'],
-          smartSpeed: 600,
-          autoplay: true,              // ✅ 全局开启（手机/电脑都动）
-          autoplayHoverPause: true,
-          autoplayTimeout: 4000,
-          loop: (slideCount > 1),
-    
-          responsive: {
-              0:   { items: 1 },
-              768: { items: 1 },
-              1024:{ items: 2 }
-            }
-        });
-      });
-    </script>
-
-    <script>
-      jQuery(document).ready(function($){
-        var $gold = $('#gold-sponsor-carousel');
-        if (!$gold.length) return;
-    
-        var slideCount = $gold.children('.gold-slide').length;
-        if (slideCount <= 1) return;
-    
-        $gold.addClass('owl-carousel');
-        if ($gold.hasClass('owl-loaded')) return;
-    
-        $gold.owlCarousel({
-          margin: 12,
-          nav: true,
-          dots: true,
-          navText: ['&#10094;','&#10095;'],
-          smartSpeed: 600,
-          autoplay: true,
-          autoplayHoverPause: true,
-          autoplayTimeout: 4000,
-          loop: (slideCount > 1),
-    
-          responsive: {
-            0:   { items: 1 },
-            768: { items: 1 },
-            1024:{ items: 2 }
-          }
-        });
-      });
-    </script>
-
-
-</body>
+    </body>
 </html>
