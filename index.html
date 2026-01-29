@@ -428,34 +428,49 @@
     }
 
         /* =========================
-           Sponsors: Platinum-style cards, one per line
+           Sponsors: Unified containers (Diamond/Platinum/Gold/Silver)
+           One card per line, centered
            ========================= */
-        
-        /* Diamond / Gold: stack cards vertically, centered */
         #diamond-sponsor-wrapper,
-        #gold-sponsor-wrapper{
+        #platinum-sponsor-wrapper,
+        #gold-sponsor-wrapper,
+        #silver-sponsor-wrapper{
           margin: 20px auto;
         }
         
         #diamond-sponsor-carousel,
-        #gold-sponsor-carousel{
+        #platinum-sponsor-carousel,
+        #gold-sponsor-carousel,
+        #silver-sponsor-carousel{
           display: flex;
           flex-direction: column;   /* 一张一行 */
           align-items: center;      /* 居中 */
           gap: 20px;
         }
         
-        /* 每张卡和 Platinum 一样窄 */
+        /* 每张卡统一宽度 */
         #diamond-sponsor-carousel .sponsor-card,
-        #gold-sponsor-carousel .sponsor-card{
+        #platinum-sponsor-carousel .sponsor-card,
+        #gold-sponsor-carousel .sponsor-card,
+        #silver-sponsor-carousel .sponsor-card{
           max-width: 480px;
           width: 100%;
           margin: 0;
         }
         
-        /* 保持 Platinum 那种“logo 在上”图片展示 */
+        /* 保持 logo 在上（你现在的 card 写法），避免两栏 sponsor-row 影响 */
+        #diamond-sponsor-carousel .sponsor-row,
+        #platinum-sponsor-carousel .sponsor-row,
+        #gold-sponsor-carousel .sponsor-row,
+        #silver-sponsor-carousel .sponsor-row{
+          display: block;
+        }
+        
+        /* 统一 logo 展示 */
         #diamond-sponsor-carousel .sponsor-card img,
-        #gold-sponsor-carousel .sponsor-card img{
+        #platinum-sponsor-carousel .sponsor-card img,
+        #gold-sponsor-carousel .sponsor-card img,
+        #silver-sponsor-carousel .sponsor-card img{
           width: 80%;
           height: auto;
           object-fit: contain;
@@ -463,12 +478,7 @@
           margin: 0 auto;
           display: block;
         }
-        
-        /* 关键：不要让 sponsor-row 两栏布局影响 Diamond/Gold（我们下面 HTML 也会去掉 sponsor-row） */
-        #diamond-sponsor-carousel .sponsor-row,
-        #gold-sponsor-carousel .sponsor-row{
-          display: block;
-        }
+
 
 
         /* ===== AMIA-like Sponsors page text ===== */
@@ -1825,32 +1835,41 @@
 
 
           <!-- ===== Platinum ===== -->
-          <div class="sponsor-tier">
-            <h2 class="tier-title">Platinum Sponsors</h2>
-    
-            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-              <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-                <div class="sponsor-badge" style="background-color:#D9D9D9;">Platinum</div>
-                  
-                <a href="https://www.ghhconnect.org/" target="_blank" rel="noopener" style="text-decoration:none;">
-                  <img src="./HCT-Logo-Color-Stacked.png" alt="Healthconnect Texas Logo" style="width:80%; height:auto;">
-                </a>
-                <div class="sponsor-name" style="margin-top:1em;">Healthconnect Texas</div>
-                <div class="sponsor-description">
-                  <p class="healthconnect-vision" style="margin:0;">
-                    <strong>Vision:</strong> To operate a sustainable health information exchange that coordinates
-                    care for the community, improves overall population health, enhances health and wellness
-                    initiatives, reduces healthcare costs, and advances opportunities for long-term research
-                    and disease prevention.
-                  </p>
-                  <p style="margin-top:1.5em; text-align:center; font-size:1.3em; font-weight:bold;">
-                    "Connecting for a Healthier Texas"
-                  </p>
+            <div class="sponsor-tier">
+              <h2 class="tier-title">Platinum Sponsors</h2>
+            
+              <div id="platinum-sponsor-wrapper">
+                <div id="platinum-sponsor-carousel" class="sponsor-carousel">
+            
+                  <!-- Platinum: Healthconnect Texas -->
+                  <div class="platinum-slide">
+                    <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
+                      <div class="sponsor-badge" style="background-color:#D9D9D9;">Platinum</div>
+            
+                      <a href="https://www.ghhconnect.org/" target="_blank" rel="noopener" style="text-decoration:none;">
+                        <img src="./HCT-Logo-Color-Stacked.png" alt="Healthconnect Texas Logo" style="width:80%; height:auto;">
+                      </a>
+            
+                      <div class="sponsor-name" style="margin-top:1em;">Healthconnect Texas</div>
+                      <div class="sponsor-description">
+                        <p class="healthconnect-vision" style="margin:0;">
+                          <strong>Vision:</strong> To operate a sustainable health information exchange that coordinates
+                          care for the community, improves overall population health, enhances health and wellness
+                          initiatives, reduces healthcare costs, and advances opportunities for long-term research
+                          and disease prevention.
+                        </p>
+                        <p style="margin-top:1.5em; text-align:center; font-size:1.3em; font-weight:bold;">
+                          "Connecting for a Healthier Texas"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            
                 </div>
               </div>
             </div>
-          </div>
-          <!-- ===== End Platinum ===== -->
+            <!-- ===== End Platinum ===== -->
+
         
           <!-- ===== Gold ===== -->
             <div class="sponsor-tier">
@@ -1956,33 +1975,67 @@
             </div>
             <!-- ===== End Gold ===== -->
 
-
-
-                      <!-- ===== Silver ===== -->
-                      <div class="sponsor-tier">
-                        <h2 class="tier-title">Silver Sponsors</h2>
-                
-                        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px auto;">
-                          <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
-                            <div class="sponsor-badge" style="background-color:#C0C0C0;">Silver</div>
-                
-                            <a href="https://www.agilisium.com" target="_blank" rel="noopener" style="text-decoration:none;">
-                              <img src="./Agilisium Color logo.png" alt="Agilisium Logo" style="width:85%; height:auto;">
-                            </a>
-                
-                            <div class="sponsor-name" style="margin-top:1em;">Agilisium</div>
-                
-                            <div class="sponsor-description">
-                              <p style="margin:0 0 0.6em 0;"><strong>Data Innovation Partner for Life Sciences</strong></p>
-                              <p style="margin:0 0 0.6em 0;">
-                                Reimagining possibilities for life sciences with autonomous agentic AI—AI-powered insights and purpose-built solutions across the molecule-to-market journey.
-                              </p>
-                              <p style="margin:0;"><em>Insights. Humanity. Impact.</em></p>
-                            </div>
-                          </div>
-                        </div>
+            <!-- ===== Silver ===== -->
+            <div class="sponsor-tier">
+              <h2 class="tier-title">Silver Sponsors</h2>
+            
+              <div id="silver-sponsor-wrapper">
+                <div id="silver-sponsor-carousel" class="sponsor-carousel">
+            
+                  <!-- Silver: Agilisium -->
+                  <div class="silver-slide">
+                    <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
+                      <div class="sponsor-badge" style="background-color:#C0C0C0;">Silver</div>
+            
+                      <a href="https://www.agilisium.com" target="_blank" rel="noopener" style="text-decoration:none;">
+                        <img src="./Agilisium Color logo.png" alt="Agilisium Logo" style="width:85%; height:auto;">
+                      </a>
+            
+                      <div class="sponsor-name" style="margin-top:1em;">Agilisium</div>
+            
+                      <div class="sponsor-description">
+                        <p style="margin:0 0 0.6em 0;"><strong>Data Innovation Partner for Life Sciences</strong></p>
+                        <p style="margin:0 0 0.6em 0;">
+                          Reimagining possibilities for life sciences with autonomous agentic AI—AI-powered insights and purpose-built solutions across the molecule-to-market journey.
+                        </p>
+                        <p style="margin:0;"><em>Insights. Humanity. Impact.</em></p>
                       </div>
-                      <!-- ===== End Silver ===== -->
+                    </div>
+                  </div>
+            
+                  <!-- Silver: Palantir -->
+                  <div class="silver-slide palantir">
+                    <div class="sponsor-card" style="text-align:left; max-width:480px; margin:0;">
+                      <div class="sponsor-badge" style="background-color:#C0C0C0;">Silver</div>
+            
+                      <a href="https://www.palantir.com/" target="_blank" rel="noopener" style="text-decoration:none;">
+                        <img src="./Palantir_Technologies_logo.svg" alt="Palantir Logo" style="width:80%; height:auto;">
+                      </a>
+            
+                      <div class="sponsor-name" style="margin-top:1em;">Palantir</div>
+            
+                      <div class="sponsor-description">
+                        <p style="margin:0 0 0.8em 0;">
+                          <strong>Operationalize AI on trusted data—securely and at scale.</strong>
+                        </p>
+                        <p style="margin:0 0 0.8em 0;">
+                          Palantir’s platforms help organizations integrate data, build decision-ready workflows, and deploy analytics and AI with governance built in.
+                        </p>
+                        <ul style="margin-top:0.6em; margin-left:1.5em;">
+                          <li><strong>Foundry</strong>: unify siloed data into a governed data &amp; workflow layer for real-time decisions</li>
+                          <li><strong>Gotham</strong>: accelerate mission-critical insights by connecting data to operations</li>
+                          <li><strong>Apollo</strong>: continuously deliver and manage software across cloud, on-prem, and edge environments</li>
+                          <li><strong>AIP</strong>: bring AI/LLMs into production with security, control, and human-in-the-loop workflows</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+            <!-- ===== End Silver ===== -->
+
                 
                     </div>
                   </div>
