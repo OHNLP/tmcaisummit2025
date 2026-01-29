@@ -441,7 +441,7 @@
         /* Keep wrappers but make them simple containers */
         #diamond-sponsor-wrapper,
         #gold-sponsor-wrapper{
-          max-width: 1200px;
+          max-width: 520px;
           margin: 20px auto;
           padding: 0 10px;
         }
@@ -452,15 +452,8 @@
         #diamond-sponsor-carousel .diamond-slide{
           padding: 0;
           box-sizing: border-box;
-        }
-        
-        /* Make sponsor cards fill the grid cell nicely */
-        #diamond-sponsor-carousel .diamond-slide .sponsor-card{
-          width: 100%;
-          max-width: none;
-          margin: 0;
-        }   
-        
+        }       
+              
         
         /* Mobile: 1 column, 按顺序堆叠 */
         @media (max-width: 700px){
@@ -471,17 +464,8 @@
               "aws"
               "osc";
           }
-        }        
+        }                
         
-        
-        /* Make sponsor cards fill the grid cell nicely */
-        #diamond-sponsor-carousel .sponsor-card,
-        #gold-sponsor-carousel .sponsor-card{
-          width: 100%;
-          max-width: none;
-          margin: 0;
-        }
-
         /* Diamond / Gold: vertical list */
         #diamond-sponsor-carousel,
         #gold-sponsor-carousel{
@@ -496,6 +480,23 @@
           width: 100%;
         }
 
+        /* 关键：卡片宽度统一 */
+        #diamond-sponsor-carousel .sponsor-card,
+        #gold-sponsor-carousel .sponsor-card{
+          max-width: 480px;     /* = Healthconnect TX */
+          width: 100%;
+          margin: 0 auto;       /* 居中 */
+        }
+        
+        /* 避免 .sponsor-card img 把左侧 logo 样式冲掉：只作用于 card 的“直接子元素图片” */
+        .sponsor-card > img{
+          width: 80%;
+          height: auto;
+          object-fit: contain;
+          border-radius: 0;
+          margin: 0 auto;
+          display: block;
+        }
 
         /* ===== AMIA-like Sponsors page text ===== */
         .sponsors-intro{
@@ -1769,91 +1770,97 @@
     <div class="ai_sponsor-levels">
 
       <!-- ===== Diamond ===== -->
-      <div class="sponsor-tier">
-        <h2 class="tier-title">Diamond Sponsors</h2>
-
-        <div id="diamond-sponsor-wrapper" style="margin:20px auto;">
-          <div id="diamond-sponsor-carousel" class="sponsor-carousel">
-
-            <!-- Diamond: Newton's Tree -->
-            <div class="diamond-slide nt">
-              <div class="sponsor-card" style="text-align:left;">
-                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-
-                <div class="sponsor-row">
+        <div class="sponsor-tier">
+          <h2 class="tier-title">Diamond Sponsors</h2>
+        
+          <div id="diamond-sponsor-wrapper">
+            <div id="diamond-sponsor-carousel" class="sponsor-carousel">
+        
+              <!-- Diamond: Newton's Tree -->
+              <div class="diamond-slide nt">
+                <div class="sponsor-card">
+                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+        
+                  <div class="sponsor-row">
                     <a class="sponsor-logo" href="https://www.newtonstree.ai/" target="_blank" rel="noopener">
                       <img src="./NT logo-evergreen.svg" alt="Newton's Tree Logo">
-                    </a>                      
-                
-                <div class="sponsor-text">
-                  <div class="sponsor-name">Newton's Tree</div>
-                    <div class="sponsor-description">
-                      <p style="margin:0;">
-                        Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test, deploy,
-                        and monitor in-house and third-party AI products through its enterprise AI platform.
-                      </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Diamond: OneSource Cloud -->
-            <div class="diamond-slide osc">
-              <div class="sponsor-card" style="text-align:left;">
-                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-
-                <div class="sponsor-row">
+                    </a>
+        
+                    <div class="sponsor-text">
+                      <div class="sponsor-name">Newton's Tree</div>
+                      <div class="sponsor-description">
+                        <p style="margin:0;">
+                          Newton’s Tree is a global healthcare AI company that enables healthcare providers to select, test,
+                          deploy, and monitor in-house and third-party AI products through its enterprise AI platform.
+                        </p>
+                      </div>
+                    </div>
+                  </div><!-- /.sponsor-row -->
+                </div><!-- /.sponsor-card -->
+              </div><!-- /.diamond-slide -->
+        
+              <!-- Diamond: OneSource Cloud -->
+              <div class="diamond-slide osc">
+                <div class="sponsor-card">
+                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+        
+                  <div class="sponsor-row">
                     <a class="sponsor-logo" href="https://www.onesourcecloud.net/" target="_blank" rel="noopener">
                       <img src="./OneSourceCloud.png" alt="OneSource Cloud Logo">
-                    </a>  
-
-                <div class="sponsor-text">
-                  <div class="sponsor-name">Newton's TreeOneSource Cloud</div>                
-                    <div class="sponsor-description">
-                      <p style="margin:0 0 0.8em 0;">
-                        <strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling
-                        enterprises to securely design, deploy, manage, and scale AI workloads across private, public,
-                        and hybrid environments.
-                      </p>
-                      <p style="margin:0 0 0.8em 0;">
-                        Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong> built to meet stringent data
-                        privacy, security, and compliance requirements for healthcare and other regulated industries.
-                        We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong> with full data isolation,
-                        control, and ownership.
-                      </p>
-                      <p style="margin:0;">
-                        Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>,
-                        <strong>load balancing</strong>, <strong>predictable cost control</strong>, and <strong>scalable AI operations</strong>.
-                      </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Diamond: AWS -->
-            <div class="diamond-slide aws">
-              <div class="sponsor-card" style="text-align:left;">
-                <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
-
-                <div class="sponsor-row">
+                    </a>
+        
+                    <div class="sponsor-text">
+                      <div class="sponsor-name">Newton's TreeOneSource Cloud</div>
+                      <div class="sponsor-description">
+                        <p style="margin:0 0 0.8em 0;">
+                          <strong>OneSource Cloud</strong> delivers end-to-end private AI infrastructure and services, enabling
+                          enterprises to securely design, deploy, manage, and scale AI workloads across private, public,
+                          and hybrid environments.
+                        </p>
+                        <p style="margin:0 0 0.8em 0;">
+                          Our offerings include <strong>HIPAA-aligned private AI infrastructure</strong> built to meet stringent data
+                          privacy, security, and compliance requirements for healthcare and other regulated industries.
+                          We provide <strong>dedicated GPU cloud and AI bare-metal solutions</strong> with full data isolation,
+                          control, and ownership.
+                        </p>
+                        <p style="margin:0;">
+                          Designed for enterprise production, OneSource Cloud supports <strong>high availability</strong>,
+                          <strong>load balancing</strong>, <strong>predictable cost control</strong>, and <strong>scalable AI operations</strong>.
+                        </p>
+                      </div>
+                    </div>
+                  </div><!-- /.sponsor-row -->
+                </div><!-- /.sponsor-card -->
+              </div><!-- /.diamond-slide -->
+        
+              <!-- Diamond: AWS -->
+              <div class="diamond-slide aws">
+                <div class="sponsor-card">
+                  <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
+        
+                  <div class="sponsor-row">
                     <a class="sponsor-logo" href="https://aws.amazon.com/free/" target="_blank" rel="noopener">
                       <img src="./AWS_logo_RGB_1c_Gray850.png" alt="AWS Logo">
-                    </a>  
-
-                <div class="sponsor-text">
-                  <div class="sponsor-name">AWS</div>    
-                
-                    <div class="sponsor-description">
-                      <p style="margin:0;">
-                        With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
-                        and performant infrastructure, healthcare organizations trust AWS to accelerate generative AI-powered innovations.
-                      </p>
+                    </a>
+        
+                    <div class="sponsor-text">
+                      <div class="sponsor-name">AWS</div>
+                      <div class="sponsor-description">
+                        <p style="margin:0;">
+                          With purpose-built health services, enterprise-grade security and privacy, a choice of leading foundation models,
+                          and performant infrastructure, healthcare organizations trust AWS to accelerate generative AI-powered innovations.
+                        </p>
+                      </div>
                     </div>
-              </div>
-            </div>
-
-          </div>
+                  </div><!-- /.sponsor-row -->
+                </div><!-- /.sponsor-card -->
+              </div><!-- /.diamond-slide -->
+        
+            </div><!-- /#diamond-sponsor-carousel -->
+          </div><!-- /#diamond-sponsor-wrapper -->
         </div>
-      </div>
-      <!-- ===== End Diamond ===== -->
+        <!-- ===== End Diamond ===== -->
+
 
           <!-- ===== Platinum ===== -->
           <div class="sponsor-tier">
@@ -1884,107 +1891,106 @@
           <!-- ===== End Platinum ===== -->
         
           <!-- ===== Gold ===== -->
-          <div class="sponsor-tier">
-            <h2 class="tier-title">Gold Sponsors</h2>
-    
-            <div id="gold-sponsor-wrapper" style="margin:20px auto;">
-              <div id="gold-sponsor-carousel" class="sponsor-carousel">
-
-              <!-- ===== Gold: TEKsystems ===== -->
-              <div class="gold-slide">
-                <div class="sponsor-card gold-sponsor" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-
-                  <div class="sponsor-row">
-                    <a class="sponsor-logo" href="https://www.teksystems.com/en/industries/healthcare-technology-solutions" target="_blank" rel="noopener">
-                      <img src="./GS_Stacked_RGB (1).jpg" alt="TEKsystems Logo">
-                    </a>  
-
-                  <div class="sponsor-text">
-                      <div class="sponsor-name">TEKsystems</div>   
-                      <div class="sponsor-description">
-                        <p style="margin:0;">
-                          TEKsystems partners with leading healthcare organizations to accelerate digital transformation and optimize clinical outcomes
-                          through agile technology solutions. Our focus on data modernization, advanced analytics, and AI/ML helps create more efficient,
-                          patient-centered healthcare ecosystems.
-                        </p>
-                        <ul style="margin-top:0.8em; margin-left:1.5em;">
-                          <li>Advanced analytics, AI/ML, and cloud-based infrastructure</li>
-                          <li>EMR and clinical data integration to enhance patient care</li>
-                          <li>Deep healthcare-IT expertise to accelerate transformation</li>
-                        </ul>
-                      </div>
-                </div>
-              </div>
+            <div class="sponsor-tier">
+              <h2 class="tier-title">Gold Sponsors</h2>
             
-              <!-- ===== Gold: United Imaging North America ===== -->
-              <div class="gold-slide">
-                <div class="sponsor-card gold-sponsor" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-
-                  <div class="sponsor-row">
-                    <a class="sponsor-logo" href="https://usa.united-imaging.com/" target="_blank" rel="noopener">
-                      <img src="./United Imaging.png" alt="United Imaging North America Logo"> 
-                    </a>
-
-                  <div class="sponsor-text">
-                      <div class="sponsor-name">United Imaging North America</div>    
-                  
-                      <div class="sponsor-description">
-                        <p style="margin:0;">
-                          United Imaging is driven by the mission <strong>“Equal Healthcare for All™”</strong> and the vision
-                          <strong>“Leading Healthcare Innovation.”</strong> Its imaging portfolio spans MRI, PET/CT, CT, X-ray, and interventional
-                          solutions, designed to deliver exceptional image quality and more efficient workflows.
-                        </p>
-                        <ul style="margin-top:0.8em; margin-left:1.5em;">
-                          <li><strong>Born with AI:</strong> AI integration starts at the design phase</li>
-                          <li><strong>AI-empowered imaging</strong> for faster exams, seamless workflows, and lower-dose advancements</li>
-                          <li><strong>Deep-learning capabilities</strong> (e.g., noise reduction, motion correction, cardio modules)</li>
-                        </ul>
-                      </div>
-                </div>
-              </div>
+              <div id="gold-sponsor-wrapper">
+                <div id="gold-sponsor-carousel" class="sponsor-carousel">
             
-              <!-- ===== Gold: GE HealthCare ===== -->
-              <div class="gold-slide">
-                <div class="sponsor-card gold-sponsor" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-
-                  <div class="sponsor-row">
-                    <a class="sponsor-logo" href="https://www.gehealthcare.com/" target="_blank" rel="noopener">
-                      <img src="./GE-HLTHCR_Standard_RGB-CompPrpl.jpg" alt="GE HealthCare Logo">
-                    </a>
-                
-                    <div class="sponsor-text">
-                      <div class="sponsor-name">GE HealthCare</div>                    
-                  
-                      <div class="sponsor-description">
-                        <p style="margin:0;">
-                          GE HealthCare is a leading global healthcare solutions provider and trusted partner, innovating medical technology,
-                          pharmaceutical diagnostics, and integrated, cloud-first AI-enabled solutions that empower clinicians, health systems,
-                          and researchers to improve patient outcomes at scale. Our AI-driven platforms, advanced imaging, and data analytics are
-                          designed to streamline clinical workflows, reduce cognitive and administrative burden, and unlock actionable insights
-                          from complex biomedical data. At the TMC AI Summit, we are focused on harnessing the power of intelligent systems to
-                          advance precision medicine, accelerate discovery, and support healthier outcomes across the human lifespan, including a
-                          commitment to pediatric care and lifelong health.
-                        </p>
-                      </div>
-                </div>
-              </div>
+                  <!-- Gold: TEKsystems -->
+                  <div class="gold-slide">
+                    <div class="sponsor-card gold-sponsor">
+                      <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
             
-              <!-- ===== Gold: UTHealth Houston (McWilliams School of Biomedical Informatics) ===== -->
-              <div class="gold-slide">
-                <div class="sponsor-card gold-sponsor" style="text-align:left;">
-                  <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
-
-                    <div class="sponsor-row">
+                      <div class="sponsor-row">
+                        <a class="sponsor-logo" href="https://www.teksystems.com/en/industries/healthcare-technology-solutions" target="_blank" rel="noopener">
+                          <img src="./GS_Stacked_RGB (1).jpg" alt="TEKsystems Logo">
+                        </a>
+            
+                        <div class="sponsor-text">
+                          <div class="sponsor-name">TEKsystems</div>
+                          <div class="sponsor-description">
+                            <p style="margin:0;">
+                              TEKsystems partners with leading healthcare organizations to accelerate digital transformation and optimize clinical outcomes
+                              through agile technology solutions. Our focus on data modernization, advanced analytics, and AI/ML helps create more efficient,
+                              patient-centered healthcare ecosystems.
+                            </p>
+                            <ul style="margin-top:0.8em; margin-left:1.5em;">
+                              <li>Advanced analytics, AI/ML, and cloud-based infrastructure</li>
+                              <li>EMR and clinical data integration to enhance patient care</li>
+                              <li>Deep healthcare-IT expertise to accelerate transformation</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div><!-- /.sponsor-row -->
+                    </div><!-- /.sponsor-card -->
+                  </div><!-- /.gold-slide -->
+            
+                  <!-- Gold: United Imaging North America -->
+                  <div class="gold-slide">
+                    <div class="sponsor-card gold-sponsor">
+                      <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+            
+                      <div class="sponsor-row">
+                        <a class="sponsor-logo" href="https://usa.united-imaging.com/" target="_blank" rel="noopener">
+                          <img src="./United Imaging.png" alt="United Imaging North America Logo">
+                        </a>
+            
+                        <div class="sponsor-text">
+                          <div class="sponsor-name">United Imaging North America</div>
+                          <div class="sponsor-description">
+                            <p style="margin:0;">
+                              United Imaging is driven by the mission <strong>“Equal Healthcare for All™”</strong> and the vision
+                              <strong>“Leading Healthcare Innovation.”</strong> Its imaging portfolio spans MRI, PET/CT, CT, X-ray, and interventional
+                              solutions, designed to deliver exceptional image quality and more efficient workflows.
+                            </p>
+                            <ul style="margin-top:0.8em; margin-left:1.5em;">
+                              <li><strong>Born with AI:</strong> AI integration starts at the design phase</li>
+                              <li><strong>AI-empowered imaging</strong> for faster exams, seamless workflows, and lower-dose advancements</li>
+                              <li><strong>Deep-learning capabilities</strong> (e.g., noise reduction, motion correction, cardio modules)</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div><!-- /.sponsor-row -->
+                    </div><!-- /.sponsor-card -->
+                  </div><!-- /.gold-slide -->
+            
+                  <!-- Gold: GE HealthCare -->
+                  <div class="gold-slide">
+                    <div class="sponsor-card gold-sponsor">
+                      <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+            
+                      <div class="sponsor-row">
+                        <a class="sponsor-logo" href="https://www.gehealthcare.com/" target="_blank" rel="noopener">
+                          <img src="./GE-HLTHCR_Standard_RGB-CompPrpl.jpg" alt="GE HealthCare Logo">
+                        </a>
+            
+                        <div class="sponsor-text">
+                          <div class="sponsor-name">GE HealthCare</div>
+                          <div class="sponsor-description">
+                            <p style="margin:0;">
+                              GE HealthCare is a leading global healthcare solutions provider and trusted partner, innovating medical technology,
+                              pharmaceutical diagnostics, and integrated, cloud-first AI-enabled solutions that empower clinicians, health systems,
+                              and researchers to improve patient outcomes at scale.
+                            </p>
+                          </div>
+                        </div>
+                      </div><!-- /.sponsor-row -->
+                    </div><!-- /.sponsor-card -->
+                  </div><!-- /.gold-slide -->
+            
+                  <!-- Gold: UTHealth Houston -->
+                  <div class="gold-slide">
+                    <div class="sponsor-card gold-sponsor">
+                      <div class="sponsor-badge" style="background-color:#f2b826;">Gold</div>
+            
+                      <div class="sponsor-row">
                         <a class="sponsor-logo" href="https://sbmi.uth.edu/" target="_blank" rel="noopener">
                           <img src="./UTHealth.jpg" alt="UTHealth Houston Logo">
                         </a>
-                    
+            
                         <div class="sponsor-text">
-                          <div class="sponsor-name">UTHealth Houston</div>        
-                  
+                          <div class="sponsor-name">UTHealth Houston</div>
                           <div class="sponsor-description">
                             <p style="margin:0;">
                               McWilliams School of Biomedical Informatics is Transforming Data to Power Human Health.
@@ -1992,19 +1998,19 @@
                             <ul style="margin-top:0.8em; margin-left:1.5em;">
                               <li>Collect, process, and convert data into actionable information, knowledge, and intelligence</li>
                               <li>Educate current and future leaders, innovators, and problem solvers across Texas, the nation, and the world</li>
-                              <li>
-                                Disrupt, transform, and innovate to elicit biomedical discoveries, improve healthcare delivery, and aid in disease prevention
-                                by conducting outstanding basic and applied research and developing impactful information technology products and solutions
-                              </li>
+                              <li>Disrupt, transform, and innovate to elicit biomedical discoveries and improve healthcare delivery</li>
                             </ul>
                           </div>
-                </div>
-              </div>
+                        </div>
+                      </div><!-- /.sponsor-row -->
+                    </div><!-- /.sponsor-card -->
+                  </div><!-- /.gold-slide -->
             
+                </div><!-- /#gold-sponsor-carousel -->
+              </div><!-- /#gold-sponsor-wrapper -->
             </div>
-        </div>
-      </div>
-      <!-- ===== End Gold ===== -->
+            <!-- ===== End Gold ===== -->
+
 
                       <!-- ===== Silver ===== -->
                       <div class="sponsor-tier">
