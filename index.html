@@ -407,27 +407,33 @@
           padding: 0 10px;
         }
         
-        /* ===== Diamond: always show 3 cards on desktop ===== */
+        /* ===== Diamond: custom layout ===== */
         #diamond-sponsor-carousel{
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-areas:
+            "nt aws"
+            "osc osc";
           gap: 16px;
           align-items: stretch;
         }
         
-        /* Tablet: 2 columns */
-        @media (max-width: 1024px){
-          #diamond-sponsor-carousel{
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-        }
+        /* 绑定每张卡的位置 */
+        #diamond-sponsor-carousel .diamond-slide.nt  { grid-area: nt; }
+        #diamond-sponsor-carousel .diamond-slide.aws { grid-area: aws; }
+        #diamond-sponsor-carousel .diamond-slide.osc { grid-area: osc; }
         
-        /* Mobile: 1 column */
+        /* Mobile: 1 column, 按顺序堆叠 */
         @media (max-width: 700px){
           #diamond-sponsor-carousel{
             grid-template-columns: 1fr;
+            grid-template-areas:
+              "nt"
+              "aws"
+              "osc";
           }
         }
+
         
         /* ===== Gold: show all cards; 2 columns on desktop, 1 column on small screens ===== */
         #gold-sponsor-carousel{
@@ -1733,7 +1739,7 @@
           <div id="diamond-sponsor-carousel" class="sponsor-carousel">
 
             <!-- Diamond: Newton's Tree -->
-            <div class="diamond-slide">
+            <div class="diamond-slide nt">
               <div class="sponsor-card" style="text-align:left;">
                 <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
                 <a href="https://www.newtonstree.ai/" target="_blank" rel="noopener" style="text-decoration:none;">
@@ -1750,7 +1756,7 @@
             </div>
 
             <!-- Diamond: OneSource Cloud -->
-            <div class="diamond-slide">
+            <div class="diamond-slide osc">
               <div class="sponsor-card" style="text-align:left;">
                 <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
                 <a href="https://www.onesourcecloud.net/" target="_blank" rel="noopener" style="text-decoration:none;">
@@ -1778,7 +1784,7 @@
             </div>
 
             <!-- Diamond: AWS -->
-            <div class="diamond-slide">
+            <div class="diamond-slide aws">
               <div class="sponsor-card" style="text-align:left;">
                 <div class="sponsor-badge" style="background-color:#b9f2ff;">Diamond</div>
                 <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener" style="text-decoration:none;">
