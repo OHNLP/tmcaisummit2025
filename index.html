@@ -407,16 +407,30 @@
           padding: 0 10px;
         }
         
-        /* ===== Diamond: custom layout ===== */
+        /* ===== Diamond: left stacked (NT + AWS), OneSource fills right column ===== */
         #diamond-sponsor-carousel{
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           grid-template-areas:
-            "nt aws"
-            "osc osc";
+            "nt  osc"
+            "aws osc";
           gap: 16px;
           align-items: stretch;
         }
+        
+        /* Keep each slide clean */
+        #diamond-sponsor-carousel .diamond-slide{
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        /* Make sponsor cards fill the grid cell nicely */
+        #diamond-sponsor-carousel .diamond-slide .sponsor-card{
+          width: 100%;
+          max-width: none;
+          margin: 0;
+        }
+
         
         /* 绑定每张卡的位置 */
         #diamond-sponsor-carousel .diamond-slide.nt  { grid-area: nt; }
@@ -629,11 +643,9 @@
     <link rel="stylesheet" id="tyler-jquery-scrollpane-css" href="./jquery.scrollpane.css" type="text/css" media="all">
     <link rel="stylesheet" id="tyler-icons-css" href="./icon.css" type="text/css" media="all">
     <link rel="stylesheet" id="convey-layout-css" href="./style(1).css" type="text/css" media="all">    
-    <link rel="stylesheet" href="./owl.carousel.min.css">
     <link rel="stylesheet" href="./owl.theme.default.min.css">
     <script type="text/javascript" src="./jquery.js"></script>
     <script type="text/javascript" src="./jquery-migrate.min.js"></script>
-    <script type="text/javascript" src="./owl.carousel.min.js"></script>
     <script type="text/javascript" src="./external-tracking.min.js"></script>
     <link rel="https://api.w.org/" href="http://conveyux.com/wp-json/">
 </head>
