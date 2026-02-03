@@ -25,6 +25,30 @@
         text-decoration: none;
     }
 
+    /* ===== Agenda (PDF embed) ===== */
+    .agenda-embed{
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    
+    .agenda-embed iframe{
+      width: 100%;
+      height: 900px;
+      border: 0;
+    }
+    
+    /* Smaller height on mobile */
+    @media only screen and (max-width: 600px){
+      .agenda-embed iframe{
+        height: 520px;
+      }
+    }
+    
     /* =========================================
        2. 折叠区域：Registration Info 样式
        ========================================= */
@@ -668,6 +692,7 @@
                   <ul id="menu-primary" class="navbar-menu">
                     <li class="menu-item"><a href="#vision">Vision</a></li>
                     <li class="menu-item"><a href="#registration">Registration</a></li>
+                      <li class="menu-item"><a href="#agenda">Agenda</a></li>
                     <li class="menu-item"><a href="#keynote-speakers">Keynote Speakers</a></li>  
                     <li class="menu-item"><a href="#steering-committee">Steering Committee</a></li>                      
                       <!-- <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li> -->
@@ -1033,6 +1058,44 @@
           </div>
         </div>
       </div>
+
+        <!-- Agenda Section -->
+        <div id="agenda" class="widget widget-speakers">
+          <div class="container">
+            <div class="widget-header">
+              <h2 class="widget-body">Agenda</h2>
+            </div>
+        
+            <p class="quote-content" style="margin-top: 10px;">
+              View or download the summit agenda below:
+            </p>
+        
+            <div style="text-align:center; margin: 10px 0 20px 0;">
+              <a class="btn-register-inner"
+                 href="./TMC%20AI%20SUMMIT%20AGENDA.pdf"
+                 target="_blank" rel="noopener">
+                Open Agenda (PDF)
+              </a>
+              &nbsp;&nbsp;
+              <a class="btn-register-inner"
+                 href="./TMC%20AI%20SUMMIT%20AGENDA.pdf"
+                 download>
+                Download Agenda
+              </a>
+            </div>
+        
+            <!-- Embedded PDF (best on desktop); mobile users can use the buttons above -->
+            <div class="agenda-embed">
+              <iframe
+                src="./TMC%20AI%20SUMMIT%20AGENDA.pdf#view=FitH"
+                title="TMC AI Summit Agenda"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <!-- End Agenda Section -->
+
       
       <!-- Registration Section -->
         <div id="registration" class="widget widget-speakers">
