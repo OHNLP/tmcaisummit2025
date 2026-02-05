@@ -663,7 +663,33 @@
             margin: 0 !important;
         }
 
-    }       
+    }  
+
+        /* ===== Parking Map ===== */
+        .map-section{
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        .map-card{
+          background:#fff;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 18px;
+          margin-top: 12px;
+        }
+        .map-card img{
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 6px;
+        }
+        .map-note{
+          font-size: 16px;
+          color: #444;
+          line-height: 1.6;
+          margin: 10px 0 0 0;
+        }
+
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
@@ -696,8 +722,9 @@
                     <li class="menu-item"><a href="#keynote-speakers">Keynote Speakers</a></li>  
                     <li class="menu-item"><a href="#steering-committee">Steering Committee</a></li>                      
                       <!-- <li class="menu-item"><a href="#organizational-committee">Organization Committee</a></li> -->
-                    <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li>
+                    <!-- <li class="menu-item"><a href="#sponsorship">Call for Sponsorship</a></li> -->
                       <li class="menu-item"><a href="#sponsors">Sponsors</a></li>
+                      <li class="menu-item"><a href="#parking">Parking</a></li>
                     <li class="menu-item"><a href="#contact">Contact Us</a></li>
                   </ul>
                 </div>
@@ -730,7 +757,27 @@
             <h3 class="widget-heading" style="font-size: 30px; color: #333; text-align: center; margin-top: 20px;">Location</h3>
             <h3 style="margin-left:20px">
               <strong><span style="font-size:20px">Duncan Neurological Research Institute (NRI)<br>Texas Medical Center, 1250 Moursund St, Houston, TX 77030</span></strong>
-            </h3>    
+            </h3>
+
+              <!-- Parking Map Section -->
+                <div id="parking" class="widget widget-speakers">
+                  <div class="container map-section">
+                    <div class="widget-header">
+                      <h2 class="widget-body">Parking</h2>
+                    </div>
+                
+                    <div class="map-card">
+                      <a href="./TMC_AI_Summit2026_Parking.jpg" target="_blank" rel="noopener">
+                        <img src="./TMC_AI_Summit2026_Parking.jpg" alt="TMC AI Summit 2026 Parking Map">
+                      </a>
+                      <p class="map-note">
+                        Click the map to open it in a new tab.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Parking Map Section -->
+
             
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
               <!-- ===== Submission Button: Commented Out =====
