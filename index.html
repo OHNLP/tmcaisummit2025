@@ -664,113 +664,7 @@
         }
 
     }  
-
-        /* ===== Parking Map ===== */
-        .map-section{
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-        .map-card{
-          background:#fff;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          padding: 18px;
-          margin-top: 12px;
-        }
-        .map-card img{
-          width: 100%;
-          height: auto;
-          display: block;
-          border-radius: 6px;
-        }
-        .map-note{
-          font-size: 16px;
-          color: #444;
-          line-height: 1.6;
-          margin: 10px 0 0 0;
-        }
-        /* ===== Parking Map (thumbnail + lightbox) ===== */
-        .parking-wrap{
-          max-width: 1000px;
-          margin: 0 auto;
-        }
         
-        .parking-card{
-          background:#fff;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          padding: 18px;
-          margin-top: 12px;
-        }
-        
-        .parking-thumb{
-          width: 100%;
-          max-width: 900px;
-          height: auto;
-          display: block;
-          margin: 0 auto;
-          border-radius: 8px;
-          cursor: zoom-in;
-        }
-        
-        .parking-actions{
-          margin-top: 10px;
-          display: flex;
-          gap: 14px;
-          justify-content: center;
-          flex-wrap: wrap;
-          font-size: 16px;
-        }
-        
-        .parking-actions a{
-          color: #006791;
-          text-decoration: underline;
-        }
-        
-        /* Lightbox overlay */
-        .lightbox{
-          position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.8);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          padding: 20px;
-          z-index: 9999;
-        }
-        
-        .lightbox.open{ display:flex; }
-        
-        .lightbox-content{
-          position: relative;
-          max-width: 1100px;
-          width: 100%;
-        }
-        
-        .lightbox-img{
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-          display:block;
-          cursor: zoom-out;
-          background:#fff;
-        }
-        
-        .lightbox-close{
-          position: absolute;
-          top: -12px;
-          right: -12px;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          border: none;
-          background: #fff;
-          font-size: 22px;
-          cursor: pointer;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.35);
-        }
-
-
     </style>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
     <link rel="stylesheet" id="contact-form-7-css" href="./styles.css" type="text/css" media="all">
@@ -838,20 +732,18 @@
             <h2 class="widget-heading">Welcome to TMC AI Summit 2026</h2>
                 
             <h3 class="widget-heading" style="font-size: 30px; color: #333; text-align: center; margin-top: 20px;">Location</h3>
-            <h3 style="margin-left:20px">
-              <strong><span style="font-size:20px">Duncan Neurological Research Institute (NRI)<br>Texas Medical Center, 1250 Moursund St, Houston, TX 77030
-                  <br><!-- Parking map link (under Location) -->
-                <p class="quote-content" style="margin-left:20px; margin-top:10px;">
-                  <strong>Parking Map:</strong>
-                  <a href="./TMC_AI_Summit2026_Parking.jpg" target="_blank" rel="noopener">
-                    Open Parking Map
-                  </a>
-                  &nbsp;|&nbsp;
-                  <a href="./TMC_AI_Summit2026_Parking.jpg" download>
-                    Download Parking Map
-                  </a>
-                </p></span></strong>
+            <h3 style="margin-left:20px; font-size:20px; font-weight:bold; line-height:1.5;">
+              Duncan Neurological Research Institute (NRI)<br>
+              Texas Medical Center, 1250 Moursund St, Houston, TX 77030
             </h3>
+            
+            <p style="margin-left:20px; margin-top:10px; margin-bottom:0; font-size:16px; line-height:1.6;">
+              <strong>Parking Map:</strong>
+              <a href="./TMC_AI_Summit2026_Parking.jpg" target="_blank" rel="noopener">Open Parking Map</a>
+              &nbsp;|&nbsp;
+              <a href="./TMC_AI_Summit2026_Parking.jpg" download>Download Parking Map</a>
+            </p>
+
 
               
             
@@ -2334,55 +2226,6 @@
         }
       }
     </script>
-
-    <script>
-      (function(){
-        const thumb = document.getElementById('parkingThumb');
-        const lightbox = document.getElementById('parkingLightbox');
-        const closeBtn = document.getElementById('parkingCloseBtn');
-        const largeImg = document.getElementById('parkingLargeImg');
-    
-        function openLightbox(){
-          lightbox.classList.add('open');
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        }
-    
-        function closeLightbox(){
-          lightbox.classList.remove('open');
-          lightbox.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        }
-    
-        if(thumb){
-          thumb.addEventListener('click', openLightbox);
-        }
-    
-        if(closeBtn){
-          closeBtn.addEventListener('click', closeLightbox);
-        }
-    
-        // Click outside image closes
-        if(lightbox){
-          lightbox.addEventListener('click', function(e){
-            if(e.target === lightbox) closeLightbox();
-          });
-        }
-    
-        // Click on large image closes (optional)
-        if(largeImg){
-          largeImg.addEventListener('click', closeLightbox);
-        }
-    
-        // ESC closes
-        document.addEventListener('keydown', function(e){
-          if(e.key === 'Escape' && lightbox && lightbox.classList.contains('open')){
-            closeLightbox();
-          }
-        });
-      })();
-    </script>
-
 
     </body>
 </html>
